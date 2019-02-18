@@ -51,19 +51,25 @@
                 Sistema:
             </th>
             <th>
-                Cenario:
-            </th>
-            <th>
                 Executor:
             </th>
             <th>
                 Status da execução:
             </th>
             <th>
+                Status do chamado:
+            </th>
+            <th>
                 Funcionalidade:
             </th>
             <th>
-                Data planejada:
+                Cenario:
+            </th>
+            <th>
+                Massa:
+            </th>
+            <th>
+                Data execução prevista:
             </th>
             <th>
                 Data executado:
@@ -90,33 +96,59 @@
                 @item.sistema
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cenario)
-            </td>
-            <td>
                 @item.executor
             </td>
             <td>
                 @switch (item.execucao_status)
                 {
                     case 0:
-                <text>Não Executado</text>
+                        <text>Não Executado</text>
                         break;
                     case 1:
-                <text>Em execução</text>
+                        <text>Em execução</text>
                         break;
                     case 2:
-                <text>Bloqueado</text>
+                        <text>Bloqueado</text>
                         break;
                     case 3:
-                <text>Teste Falhou</text>
+                        <text>Teste Falhou</text>
                         break;
                     case 4:
-                <text>Teste com sucesso</text>
+                        <text>Teste com sucesso</text>
+                        break;
+                }
+            </td>
+            <td>
+                @switch (item.chamado_status)
+                {
+                    case 0:
+                        <text>N/A</text>
+                        break;
+                    case 1:
+                        <text>Aberto</text>
+                        break;
+                    case 2:
+                        <text>Em correção</text>
+                        break;
+                    case 3:
+                        <text>Liberado para teste</text>
+                        break;
+                    case 4:
+                        <text>Em teste</text>
+                        break;
+                    case 5:
+                        <text>Fechado</text>
                         break;
                 }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.funcionalidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cenario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.massa)
             </td>
             <td>
                 @if (item.data_execucao is null)
@@ -125,7 +157,7 @@
                 }
                 else
                 {
-                <text> @item.data_execucao.Value.Day/@item.data_execucao.Value.Month/@item.data_execucao.Value.Year</text>
+                    <text> @item.data_execucao.Value.Day/@item.data_execucao.Value.Month/@item.data_execucao.Value.Year</text>
                 }
             </td>
             <td>
@@ -135,7 +167,7 @@
                 }
                 else
                 {
-                <text> @item.data_executado.Day/@item.data_executado.Month/@item.data_executado.Year</text>
+                    <text> @item.data_executado.Day/@item.data_executado.Month/@item.data_executado.Year</text>
                 }
             </td>
             <td>
