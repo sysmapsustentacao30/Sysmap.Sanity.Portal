@@ -1,0 +1,250 @@
+﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.NaturaTeste>
+
+@{
+    ViewData["Title"] = "NaturaTestes";
+}
+
+
+@section head{
+    <!-- third party css -->
+    <link href="~/assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li><a asp-action="NaturaHome" asp-controller="Natura">Natura</a> <i class="fas fa-angle-right"></i> </li>
+                    <li><a asp-action="ReleasesNatura" asp-controller="Natura">Releases</a> <i class="fas fa-angle-right"></i> </li>
+                    <li class="active">Testes</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Testes release codigo: @ViewBag.CodRelease</h4>
+        </div>
+    </div>
+</div>
+
+@if (User.IsInRole("Natura-Admin") || User.IsInRole("All-Admin"))
+{
+    <div class="row">
+        <button type="button" class="btn btn-outline-secondary btn-sm btn-rounded" data-toggle="modal" data-target="#centermodal"><i class="fas fa-plus-square"></i> Adicionar Teste</button> <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" data-toggle="modal" data-target="#danger-header-modal">Deletar Teste</button>
+    </div>
+}
+<br />
+
+<table id="basic-datatable" class="table dt-responsive nowrap" width="100%">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Editar:
+            </th>
+            <th>
+                Nº Teste:
+            </th>
+            <th>
+                Sistema:
+            </th>
+            <th>
+                Executor:
+            </th>
+            <th>
+                Status da execução:
+            </th>
+            <th>
+                Status do chamado:
+            </th>
+            <th>
+                Funcionalidade:
+            </th>
+            <th>
+                Cenario:
+            </th>
+            <th>
+                Massa:
+            </th>
+            <th>
+                Data execução prevista:
+            </th>
+            <th>
+                Data executado:
+            </th>
+            <th>
+                Observação:
+            </th>
+            <th>
+                Documentação:
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <a href="@Url.Action("EditarTesteNatura","Natura",new {idTeste = item.id_natura_teste })" class="btn btn-outline-info btn-rounded"><i class="fas fa-edit"></i> Editar</a>
+            </td>
+            <td>
+                @item.numero_teste
+            </td>
+            <td>
+                @item.sistema
+            </td>
+            <td>
+                @item.executor
+            </td>
+            <td>
+                @switch (item.execucao_status)
+                {
+                    case 0:
+                        <text>Não Executado</text>
+                        break;
+                    case 1:
+                        <text>Em execução</text>
+                        break;
+                    case 2:
+                        <text>Bloqueado</text>
+                        break;
+                    case 3:
+                        <text>Teste Falhou</text>
+                        break;
+                    case 4:
+                        <text>Teste com sucesso</text>
+                        break;
+                }
+            </td>
+            <td>
+                @switch (item.chamado_status)
+                {
+                    case 0:
+                        <text>N/A</text>
+                        break;
+                    case 1:
+                        <text>Aberto</text>
+                        break;
+                    case 2:
+                        <text>Em correção</text>
+                        break;
+                    case 3:
+                        <text>Liberado para teste</text>
+                        break;
+                    case 4:
+                        <text>Em teste</text>
+                        break;
+                    case 5:
+                        <text>Fechado</text>
+                        break;
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcionalidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cenario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.massa)
+            </td>
+            <td>
+                @if (item.data_execucao is null)
+                {
+
+                }
+                else
+                {
+                    <text> @item.data_execucao.Value.Day/@item.data_execucao.Value.Month/@item.data_execucao.Value.Year</text>
+                }
+            </td>
+            <td>
+                @if (item.data_executado.Year <= 0001)
+                {
+
+                }
+                else
+                {
+                    @item.data_executado.ToShortDateString()
+                }
+            </td>
+            <td>
+                @item.observacao
+            </td>
+            <td>
+                <a href="@item.url_doc" target="_blank"><i class="fas fa-file"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+<!-- Modal para adicionar teste(s) -->
+<div class="modal fade" id="centermodal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myCenterModalLabel">Adicionar teste a release.</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <h5>Selecione uma das opçoes:</h5>
+                <a href="@Url.Action("AddTesteNatura","Natura",new {codRelease = ViewBag.CodRelease})" class=""><i class="fas fa-plus"></i> Adicionar um teste</a> ou <a href="@Url.Action("AddTestesNatura","Natura",new {codRelease = @ViewBag.CodRelease})" class=""><i class="fas fa-list-ol"></i> Adicionar lista de testes</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<!-- Modal para deletar cenario -->
+<div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="danger-header-modalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-colored-header bg-danger">
+                <h4 class="modal-title" id="danger-header-modalLabel">Deletar teste</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="DelTesteNatura" asp-controller="Natura">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Codigo da release:</label>
+                        <input type="text" class="form-control" value="@ViewBag.CodRelease" id="codRelease" name="codRelease" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Numero do teste:</label>
+                        <input type="number" class="form-control" id="nTeste" name="nTeste">
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary btn-rounded" data-dismiss="modal">Fechar</button> | <button type="submit" class="btn btn-outline-danger btn-rounded"><i class="fas fa-minus-square"></i> Deletar</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+@section scripts{
+
+    <!-- third party js -->
+    <script src="~/assets/js/vendor/jquery.dataTables.js"></script>
+    <script src="~/assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="~/assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.buttons.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.html5.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.flash.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.print.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.keyTable.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.select.min.js"></script>
+    <!-- third party js ends -->
+    <!-- demo app -->
+    <script src="~/assets/js/pages/demo.datatable-init.js"></script>
+    <!-- end demo js-->
+}

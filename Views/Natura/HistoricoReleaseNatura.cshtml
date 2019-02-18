@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.NaturaRelease>
+
+@{
+    ViewData["Title"] = "Historico Release Natura";
+}
+
+@section head{
+    <!-- third party css -->
+    <link href="~/assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li><a asp-action="NaturaHome" asp-controller="Natura">Natura</a> <i class="fas fa-angle-right"></i> </li>
+                        <li class="active"> Historico</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Historico de releases.</h4>
+            </div>
+        </div>
+    </div>
+
+<table id="basic-datatable" class="table dt-responsive nowrap" width="100%">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Sistema
+            </th>
+            <th>
+                Status
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cod_release)
+                </td>
+                <td>
+                    @item.sistema
+                </td>
+                <td>
+                    @switch (item.status)
+                    {
+                        case 0:
+                            <text>Não Executado</text>
+                            break;
+                        case 1:
+                            <text> Em execução </text>
+                            break;
+                        case 2:
+                            <text> Executado </text>
+                            break;
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("ExportarReleaseNatura","Natura",new {idRelease = item.id_release })" class="btn btn-outline-success btn-rounded"><i class="fas fa-file-excel"></i> Exportar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section scripts{
+
+    <!-- third party js -->
+    <script src="~/assets/js/vendor/jquery.dataTables.js"></script>
+    <script src="~/assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="~/assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.buttons.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.html5.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.flash.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.print.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.keyTable.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.select.min.js"></script>
+    <!-- third party js ends -->
+    <!-- demo app -->
+    <script src="~/assets/js/pages/demo.datatable-init.js"></script>
+    <!-- end demo js-->
+}

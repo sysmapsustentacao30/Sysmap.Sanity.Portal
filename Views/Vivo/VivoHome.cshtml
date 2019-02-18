@@ -1,0 +1,113 @@
+﻿@model Sysmap.Portal.Sanity.Models.VivoRelease
+@{
+    ViewData["Title"] = "Home - Vivo";
+}
+
+<h2 style="text-align:center;">Plataforma Vivo</h2>
+<br />
+
+<div class="row">
+    @if (ViewBag.ReleaseAtiva)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <h5 class="card-header"> Release Codigo: @Model.CodRelease</h5>
+                <div class="card-body">
+                    <h4 class="card-title">Informações:</h4>
+                    <p><i class="fas fa-calendar-day"></i> Data da Release: @Model.DataRelease.ToShortDateString()</p>
+                    @if (!User.IsInRole("Vivo-User"))
+                    {
+                        <a class="" data-toggle="modal" data-target="#exampleModal" href="#"><i class="fas fa-edit"></i> Alterar Status</a>
+                    }
+                    | <a asp-action="CenariosVivo" asp-controller="Vivo">Cenarios <i class="fas fa-angle-double-right"></i></a>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col-->
+    }
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Hitorico de release
+                </div>
+                <div class="card-body">
+                    <p>Pesquisar release criadas/feitas a partir do mês de Agosto </p>
+                    <a asp-action="HistoricoReleaseVivo" class=""><i class="fas fa-search"></i> Pesquisar</a>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col-->
+
+        <div class="col-md-4">
+            <div class="card text-xs-center">
+                <div class="card-header">
+                    Criar Nova Release
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Atenção!!</h5>
+                    <p>Só será possivel criar uma nova release caso todas as outras releases ja tenham sido feitas e alteradas o status para "Executada".</p>
+                    <!-- Small modal -->
+                    @if (ViewBag.ReleaseAtiva)
+                    {
+
+                    }
+                    else
+                    {
+                        <a href="#" class="" data-toggle="modal" data-target="#info-alert-modal"><i class="fas fa-plus"></i> Criar</a>
+                    }
+                </div>
+            </div> <!-- end card-->
+        </div> <!-- end col-->
+    </div>
+
+
+
+
+
+
+
+@if (ViewBag.ReleaseAtiva && !User.IsInRole("Vivo-User"))
+{
+<!--Modal para alterar a Release-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Release Codigo @Model.CodRelease</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                <div class="modal-body">
+                    <form asp-action="AtualizaReleaseVivo">
+                        <div class="form-group">
+                            <label class="col-form-label">Status:</label>
+                            <select class="form-control" asp-for="Status">
+                                <option value="0">Não Executado</option>
+                                <option value="1">Executado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" asp-for="CodRelease" hidden>
+                        </div>
+
+                        <input type="submit" class="btn btn-outline-primary" value="Salvar" /> |
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+}
+
+@section Scripts{ 
+    <script type="text/javascript">
+        $(function () {
+            $(".card").mousemove(function () {
+                $(this).addClass("shadow-lg")
+            });
+
+            $(".card").mouseout(function () {
+                $(this).removeClass("shadow-lg")
+            });
+        });
+</script>}

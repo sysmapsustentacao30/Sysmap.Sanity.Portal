@@ -1,0 +1,47 @@
+﻿
+<li class="side-nav-title side-nav-item">Portal Sanity</li>
+
+<li class="side-nav-item">
+    <a asp-action="Home" asp-controller="Home" class="side-nav-link">
+        <i class="fas fa-home"></i>
+        <span> Home </span>
+    </a>
+</li>
+<li class="side-nav-item">
+    <!--Lista de Plataformas-->
+    <a href="javascript: void(0);" class="side-nav-link">
+        <i class="fas fa-cubes"></i>
+        <span> Plataformas </span>
+    </a>
+    <ul class="side-nav-second-level" aria-expanded="false">
+        <!--Plataformas-->
+        <li>
+            <a asp-action="VivoHome" asp-controller="Vivo"><i class="fas fa-cube"></i> Vivo</a>
+        </li>
+        <li>
+            <a asp-action="NaturaHome" asp-controller="Natura"><i class="fas fa-cube"></i> Natura</a>
+        </li>
+    </ul>
+</li>
+<li class="side-nav-item">
+    <!--Lista de Graficos -->
+    <a href="javascript: void(0);" class="side-nav-link">
+        <i class="fas fa-chart-pie"></i>
+        <span> Grafana </span>
+    </a>
+    <ul class="side-nav-second-level" aria-expanded="false">
+        <!--Graficos-->
+        <li>
+            <a href="http://zeta.sysmap.com.br:3000/d/2-VjWt5mz/release-vivo?refresh=5s&orgId=1" target="_blank"><i class="fas fa-chart-pie"></i> Vivo Grafana</a>
+        <li>
+            <a href="http://zeta.sysmap.com.br:3000/d/2-VjWt5mz/release-natura?refresh=10s&orgId=1&var-release=TestesNatura_16" target="_blank"><i class="fas fa-chart-pie"></i> Natura Grafana</a>
+        </li>
+</li>
+    </ul>
+</li>
+<li class="side-nav-item">
+    <a asp-action="ListUser" asp-controller="UserControl" class="side-nav-link">
+        <i class="fas fa-address-book"></i>
+        <span> Lista de usuarios </span>
+    </a>
+</li>

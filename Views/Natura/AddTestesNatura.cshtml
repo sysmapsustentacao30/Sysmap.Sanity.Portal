@@ -1,0 +1,58 @@
+﻿@model Sysmap.Portal.Sanity.Models.NaturaRelease
+
+@{
+    ViewData["Title"] = "Natura";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li><a asp-action="NaturaHome" asp-controller="Natura">Natura</a> <i class="fas fa-angle-right"></i> </li>
+                    <li class="active"> Add Teste</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Adicionar lista de testes</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Importar Testes</h4>
+
+                <p class="text-muted">
+                    <h5>Atenção: </h5>
+                    <ul>
+                        <li>Todos os campos(dados e sequencia dos campos) da planilha deve estar conforme o combinado.</li>
+                        <li>No campo de "Quatidade de testes" deve ser informado a quantidade exata que possui na planilha.</li>
+                        @*<li>Download demo da planilha: <a href="@Url.Action("ReleaseDemoNatura","Natura",new { idRelease = 12} )"><i class="fas fa-file-excel"></i> TesteRelease.xls</a></li>*@
+                    </ul>
+                </p>
+                <form enctype="multipart/form-data" asp-action="InsertTestesNatura" asp-controller="Natura" method="post">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="example-number">Quantidade total de testes: </label>
+                            <input class="form-control" type="number" name="qtdTeste">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Planilha: </label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" id="file" name="file">
+                            </div>
+                        </div>
+                    </div>
+                    <input value="@ViewBag.CodRelease" name="codRelease" hidden readonly/>
+                    <button type="submit" class="btn btn-outline-success btn-rounded"><i class="fas fa-save"></i> Salvar</button> | <a href="@Url.Action("TestesNatura","Natura", new {codRelease = ViewBag.CodRelease })" class="btn btn-outline-secondary btn-rounded"><i class="fas fa-backward"></i> Voltar</a>
+                </form>
+            </div> <!-- end card-body -->
+        </div> <!-- end card-->
+    </div> <!-- end col -->
+</div>

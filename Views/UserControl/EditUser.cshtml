@@ -1,0 +1,50 @@
+﻿@model Sysmap.Portal.Sanity.Models.User
+
+@{
+    ViewData["Title"] = "EditUser";
+}
+
+<h2>Editar usuario:</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="idUser" class="form-control" type="hidden" readonly/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            @if (User.IsInRole("All-Admin"))
+            {
+                <div class="form-group">
+                    <label asp-for="TypeUser" class="control-label"></label>
+                    <select class="form-control" asp-for="TypeUser" id="TypeUser">
+                        <option value="All-Admin">All-Admin</option>
+                        <option value="All-User">All-User</option>
+                        <option value="Vivo-Admin">Vivo-Admin</option>
+                        <option value="Vivo-User">Vivo-User</option>
+                        <option value="Natura-Admin">Natura-Admin</option>
+                        <option value="Natura-User">Natura-User</option>
+                    </select>
+                    <span asp-validation-for="TypeUser" class="text-danger"></span>
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-outline-info" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ListUser"><i class="fas fa-angle-double-left"></i> Voltar a Lista</a>
+</div>

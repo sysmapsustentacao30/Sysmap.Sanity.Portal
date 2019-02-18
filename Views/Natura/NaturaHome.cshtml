@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Natura";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item active"> Natura</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Natura</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <h3 class="card-header">Releases Ativas</h3>
+            <div class="card-body">
+                <p class="card-text">
+                    Pagina contendo todas as release que foram criadas ou estão em execução.
+                </p>
+                <a asp-action="ReleasesNatura" asp-controller="Natura" class="btn btn-outline-primary btn-rounded">Releases Natura</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+@if (User.IsInRole("All-Admin") || User.IsInRole("Natura-Admin")) {
+    <div class="col-md-4">
+        <div class="card">
+            <h3 class="card-header">Cadastrar Release</h3>
+            <div class="card-body">
+                <p class="card-text">
+                   Cadastra uma nova lista de testa.
+                </p>
+                <a asp-action="CadReleaseNatura" asp-controller="Natura" class="btn btn-outline-primary btn-rounded">Cadastrar Release</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+}
+    <div class="col-md-4">
+        <div class="card">
+            <h3 class="card-header">Hitorico de Releases</h3>
+            <div class="card-body">
+                <p class="card-text">
+                    Lista com todas a releases.
+                </p>
+                <a asp-action="HistoricoReleaseNatura" asp-controller="Natura" class="btn btn-outline-primary btn-rounded">Historico Natura</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+
+</div>
