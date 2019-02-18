@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.VivoCenarios>
+
+@{
+    ViewData["Title"] = "Cenarios Vivo";
+}
+
+
+@section head{
+    <!-- third party css -->
+    <link href="~/assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
+}
+
+<h2 style="text-align:center">Cenarios Vivo</h2>
+@if (!User.IsInRole("Vivo-User"))
+{
+    <p>
+        <a asp-action="CriarCenarioVivo" class="btn btn-outline-info"><i class="fas fa-plus-square"></i> Criar Cenario</a>
+    </p>
+}
+<div class="">
+    <table id="basic-datatable" class="table dt-responsive nowrap" width="100%">
+        <thead class="thead-dark">
+            <tr>
+                <th>Editar</th>
+                <th>
+                    Cenario
+                </th>
+                <th>
+                    Demanda
+                </th>
+                <th>
+                    Analista
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Sistema
+                </th>
+                <th>
+                    Plataforma
+                </th>
+                <th>
+                    Massa
+                </th>
+                <th>
+                    Tipo de Massa
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("EditarCenarioVivo","Vivo",new {nCenario = item.Cenario })" class="btn btn-outline-info"><i class="fas fa-edit"></i> Editar</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cenario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Demanda)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Analista)
+                    </td>
+                    <td>
+                        @if (item.Executado == 0)
+                        {
+                            <text>Não Executado</text>
+                        }
+                        else if (item.Executado == 1)
+                        {
+                            <text>Em Execução</text>
+                        }
+                        else if (item.Executado == 2)
+                        {
+                            <text>Executado com Erro</text>
+                        }
+                        else
+                        {
+                            <text>Executado com Sucesso</text>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sistema)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Plataforma)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Massa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoMassa)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a asp-action="VivoHome"><i class="fas fa-angle-double-left"></i> Voltar para Home</a>
+</div>
+
+@section scripts{
+ 
+    <!-- third party js -->
+    <script src="~/assets/js/vendor/jquery.dataTables.js"></script>
+    <script src="~/assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="~/assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.buttons.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.html5.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.flash.min.js"></script>
+    <script src="~/assets/js/vendor/buttons.print.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.keyTable.min.js"></script>
+    <script src="~/assets/js/vendor/dataTables.select.min.js"></script>
+    <!-- third party js ends -->
+    <!-- demo app -->
+    <script src="~/assets/js/pages/demo.datatable-init.js"></script>
+    <!-- end demo js-->
+}

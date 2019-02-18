@@ -1,0 +1,164 @@
+﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.NaturaRelease>
+@{
+    ViewData["Title"] = "Natura Releases";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li><a asp-action="NaturaHome" asp-controller="Natura">Natura</a> <i class="fas fa-angle-right"></i> </li>
+                    <li class="active"> Releases</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Release(s) Ativa(s) Natura</h4>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    @if (ViewBag.CaptaAtiva)
+    {
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6">
+                <div class="card">
+                    <h5 class="card-header"> @item.sistema código: @item.cod_release.</h5>
+                    <div class="card-body">
+                        <h4 class="card-title">Informações:</h4>
+                        <p><i class="fas fa-sitemap"></i> Sistema: @item.sistema</p>
+                        <p><i class="fas fa-calendar-day"></i> Data inicial: @item.data_inicial.ToShortDateString()</p>
+                        <p><i class="fas fa-calendar-day"></i> Data final: @item.data_final.ToShortDateString()</p>
+                        @switch (item.status)
+                        {
+                            case 0:
+                                <p><i class="fas fa-pen"></i> Status: Não executado</p>
+                                break;
+                            case 1:
+                                <p><i class="fas fa-pen"></i> Status: Em execução</p>
+                                break;
+                            case 2:
+                                <p><i class="fas fa-pen"></i> Status: Executada</p>
+                                break;
+
+                        }
+                        @if (!User.IsInRole("Natura-User"))
+                        {
+                            <input value="@item.status" id="status_@item.cod_release" hidden />
+                            <input value="@item.data_inicial.ToShortDateString()" id="datainicio_@item.cod_release" hidden />
+                            <input value="@item.data_final.ToShortDateString()" id="datafinal_@item.cod_release" hidden />
+                            <input value="@item.id_release" id="id_release_@item.cod_release" hidden />
+                            <input value="@item.sistema" id="sistema_@item.cod_release" hidden />
+
+                            <button type="button" class="btn btn-outline-primary btn-rounded" data-toggle="modal" data-target="#exampleModal" data-whatever="@item.cod_release"><i class="fas fa-edit"></i> Alterar Status</button>
+                        }
+                        | <a href="@Url.Action("TestesNatura","Natura",new {codRelease = item.cod_release })" class="btn btn-outline-primary btn-rounded"><i class="fas fa-list-ol"></i> Lista de Testes </a>
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col-->
+        }
+    }
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="AtualizaReleaseNatura" asp-controller="Natura">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Data Inicial:</label>
+                        @if (!User.IsInRole("Natura-User"))
+                        {
+                            <input type="date" class="form-control" id="data_inicial_modal" name="data_inicial">
+                        }
+                        else
+                        {
+                            <input type="date" class="form-control" id="data_inicial_modal" name="data_inicial" readonly>
+
+                        }
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Data Final: </label>
+                        @if (!User.IsInRole("Natura-User"))
+                        {
+                            <input type="date" class="form-control" id="data_final_modal" name="data_final">
+                        }
+                        else
+                        {
+                            <input type="date" class="form-control" id="data_final_modal" name="data_final" readonly>
+
+                        }
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Status da Release:</label>
+                        <select id="status_modal" name="status" class="form-control">
+                            <option value="0">0- Não Executado.</option>
+                            <option value="1">1- Em execução.</option>
+                            <option value="2">2- Executado.</option>
+                        </select>
+                    </div>
+                    <input id="id_release_modal" name="id_release" hidden />
+                    <input id="sistema_modal" name="sistema" hidden />
+                    <input id="codigo_modal" name="cod_release" hidden />
+
+                    <button type="submit" class="btn btn-outline-primary btn-rounded"><i class="fas fa-save"></i> Salvar</button> | <button type="button" class="btn btn-outline-secondary btn-rounded" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $(".card").mousemove(function () {
+                $(this).addClass("shadow-lg")
+            });
+
+            $(".card").mouseout(function () {
+                $(this).removeClass("shadow-lg")
+            });
+        });
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+                        
+            //Dados da release selecionada
+            var codigo = button.data('whatever');
+            var id_release = document.getElementById('id_release_' + codigo).value;
+            var sistema = document.getElementById("sistema_" + codigo).value;
+            var data_inicio = document.getElementById("datainicio_" + codigo).value;
+            var data_final = document.getElementById("datafinal_" + codigo).value;
+            var status = document.getElementById("status_" + codigo).value;
+            
+            var modal = $(this);
+            modal.find('.modal-title').text('Sistema: ' + sistema);
+
+            var arr_data_inicio = data_inicio.split('/');
+            data_inicio = new Date(arr_data_inicio[2], arr_data_inicio[1] - 1, arr_data_inicio[0])
+
+            var arr_data_final = data_final.split('/');
+            data_final = new Date(arr_data_final[2], arr_data_final[1] - 1, arr_data_final[0])
+
+
+            document.getElementById("status_modal").value = status;
+            document.getElementById("codigo_modal").value = codigo;
+            document.getElementById("sistema_modal").value = sistema;
+            document.getElementById("data_inicial_modal").value = data_inicio.toISOString().slice(0, 10);
+            document.getElementById("data_final_modal").value = data_final.toISOString().slice(0, 10);
+            document.getElementById("id_release_modal").value = id_release;
+        });
+    </script>
+}
+
+

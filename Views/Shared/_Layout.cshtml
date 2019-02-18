@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Portal Sanity</title>
+    <link rel="icon" href="~/assets/images/favicon.ico" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- App css -->
+    <link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    @RenderSection("head", required: false)
+</head>
+<body class="enlarged" data-keep-enlarged="true">
+    <!-- Begin Wrapper -->
+    <div class="wrapper">
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <div class="slimscroll-menu">
+
+                <!-- LOGO -->
+                <a href="#" class="logo text-center">
+                    <span class="logo-lg">
+                        <img src="~/assets/images/logo_Sys_beta.png" alt="" height="52">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="~/assets/images/logo_Sys_beta.png" alt="" height="16">
+                    </span>
+                </a>
+
+                <!--- Sidemenu -->
+                <ul class="metismenu side-nav">
+                    @if (User.IsInRole("All-Admin") || User.IsInRole("All-User"))
+                    {
+                        <partial name="../MenuPartial/_AllMenu" />
+                    }
+                    else if (User.IsInRole("Vivo-Admin") || User.IsInRole("Vivo-User"))
+                    {
+                        <partial name="../MenuPartial/_VivoMenu" />
+                    }
+                    else if (User.IsInRole("Natura-Admin") || User.IsInRole("Natura-User"))
+                    {
+                        <partial name="../MenuPartial/_NaturaMenu" />
+                    }
+                </ul><!-- End Sidebar -->
+                <div class="clearfix"></div>
+
+            </div><!-- Sidebar -left -->
+
+        </div><!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <!--Content-page-->
+        <div class="content-page">
+
+            <!--Content-->
+            <div class="content">
+
+                <!-- Topbar Start -->
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                               aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="~/assets/images/user.png" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">@User.Identity.Name</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <div class=" dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">Bem-vindo!</h6>
+                                </div>
+
+                                <!-- item-->
+                                @*<a href="#" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-lifebuoy mr-1"></i>
+                                    <span>Alterar Senha</span>
+                                </a>*@
+
+                                <!-- item-->
+                                <a asp-action="Logout" asp-controller="Auth" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout mr-1"></i>
+                                    <span>Logout</span>
+                                </a>
+
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div><!-- end Topbar -->
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    @RenderBody()
+
+                    <!-- Info Alert Modal -->
+                    <div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-body p-4">
+                                    <div class="text-center">
+                                        <i class="fas fa-exclamation-triangle fa-3x text-info" ></i>
+                                        <h4 class="mt-2">Atenção!</h4>
+                                        <p class="mt-3">Ação ainda não implementada.</p>
+                                        <button type="button" class="btn btn-info my-2" data-dismiss="modal">Continue</button>
+                                    </div>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                </div> <!--container END-->
+
+            </div><!--Content END-->
+
+        </div><!--Content-page END-->
+
+    </div><!-- END wraper -->
+
+        <!-- App js -->
+        <script src="~/assets/js/app.min.js"></script>
+        @RenderSection("scripts", required: false)
+</body>
+</html>
