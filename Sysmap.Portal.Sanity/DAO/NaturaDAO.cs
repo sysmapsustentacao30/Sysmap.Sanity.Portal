@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
 using Sysmap.Portal.Sanity.Models;
 
@@ -12,9 +13,11 @@ namespace Sysmap.Portal.Sanity.DAO
     public class NaturaDAO
     {
         private IConfiguration _configuracoes;
+        private readonly ILogger _logger;
 
-        public NaturaDAO(IConfiguration config)
+        public NaturaDAO(IConfiguration config, ILogger<NaturaDAO> logger)
         {
+            _logger = logger;
             _configuracoes = config;
         }
 
@@ -25,6 +28,8 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
+                _logger.LogInformation("Natura - Verificando releases ativas");
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (MySqlConnection mysqlCon = new MySqlConnection(ConnectionString))
@@ -38,9 +43,10 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 captaAtivo = false;
+                _logger.LogError("Erro: {0}", ex);
             }
 
             return captaAtivo;
@@ -54,6 +60,8 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
+                _logger.LogInformation("Natura - Pegando releases ativas");
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
@@ -68,10 +76,35 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError("Erro: {0}", ex);
             }
 
             return releases;
+        }
+        #endregion
+
+        #region Select Release x
+        internal NaturaRelease GetRelease(string codRelease)
+        {
+            NaturaRelease release = new NaturaRelease();
+
+            try
+            {
+                _logger.LogInformation("Natura - Get release: {0}", codRelease);
+                string ConnectionString = _configuracoes.GetConnectionString("Sanity");
+
+                using (MySqlConnection mysqlCon = new MySqlConnection(ConnectionString))
+                {
+                    release = mysqlCon.Query<NaturaRelease>("SELECT * FROM Sanity.release_natura WHERE cod_release = @codRelease;", new { codRelease }).SingleOrDefault();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro: {0}", ex);
+            }
+
+            return release;
         }
         #endregion
 
@@ -80,6 +113,8 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
+                _logger.LogInformation("Natura - Atualizando dados da release: {0}", naturaRelease.cod_release);
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 string query = @"UPDATE Sanity.release_natura SET status = @status, data_inicial = @data_inicial, data_final = @data_final WHERE id_release = @id_release;";
@@ -89,9 +124,9 @@ namespace Sysmap.Portal.Sanity.DAO
                     mysqlCon.Execute(query, new {naturaRelease.status, naturaRelease.data_inicial, naturaRelease.data_final, naturaRelease.id_release});
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Erro: {0}", ex);
             }
         }
         #endregion
@@ -103,6 +138,8 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
+                _logger.LogInformation("Natura - lista de releases");
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
@@ -117,7 +154,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError("Erro: {0}", ex);
             }
 
             return captas;
@@ -129,6 +166,8 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
+                _logger.LogInformation("Natura - Cadastrando release: {0} /n Ambiente: {1}, Status: {2}, Data Inicial: {3}, Data Final: {4}", naturaRelease.cod_release,naturaRelease.sistema,naturaRelease.status,naturaRelease.data_inicial,naturaRelease.data_final);
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
@@ -136,9 +175,9 @@ namespace Sysmap.Portal.Sanity.DAO
                     mysqlCon.Execute("INSERT INTO `Sanity`.`release_natura` (`cod_release`,`sistema`,`status`,`data_inicial`,`data_final`) VALUES (@cod_release,@sistema,@status,@data_inicial,@data_final);", new {naturaRelease.cod_release, naturaRelease.sistema, status = 0, naturaRelease.data_inicial, naturaRelease.data_final} );
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Erro: {0}", ex);
             }
         }
         #endregion
@@ -148,6 +187,7 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
+                _logger.LogInformation("Natura - Add Teste na release cod: {0}", naturaTeste.cod_release);
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
@@ -157,7 +197,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError("Erro: {0}", ex);
             }
         }
         #endregion
@@ -169,6 +209,8 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
+                _logger.LogInformation("Natura - Carregando lista de teste release cod: {0}", codRelease);
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 string query = @"SELECT * FROM Sanity.testes_natura t
@@ -186,7 +228,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError("Erro: {0}", ex);
             }
 
             return natura;
@@ -200,6 +242,8 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
+                _logger.LogInformation("Natura carregando teste id: {0}", idTeste.ToString());
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (MySqlConnection mysqlCon = new MySqlConnection(ConnectionString))
@@ -208,9 +252,9 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Erro: {0}", ex);
             }
 
             return teste;
@@ -222,6 +266,7 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
+                _logger.LogInformation("Natura - Atualizando teste id: {0}", teste.id_natura_teste.ToString());
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 string query = @"UPDATE Sanity.testes_natura
@@ -246,42 +291,10 @@ namespace Sysmap.Portal.Sanity.DAO
                     mysqlCon.Execute(query,teste);
                 }
             }
-            catch (Exception)
-            {
-
-            }
-        }
-        #endregion
-
-        #region Lista de teste por id da Release
-        internal List<NaturaTeste> TestesByIdRelease_Natura(int idRelease)
-        {
-            List<NaturaTeste> natura = new List<NaturaTeste>();
-
-            try
-            {
-                string ConnectionString = _configuracoes.GetConnectionString("Sanity");
-
-                string query = @"SELECT * FROM Sanity.testes_natura t
-                                Join Sanity.release_natura c on t.cod_release = c.cod_release
-                                WHERE c.id_release = @idRelease ;";
-
-                using (var mysqlCon = new MySqlConnection(ConnectionString))
-                {
-                    var result = mysqlCon.Query<NaturaTeste>(query,new {idRelease});
-
-                    foreach (NaturaTeste cenario in result)
-                    {
-                        natura.Add(cenario);
-                    }
-                }
-            }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError("Erro: {0}", ex);
             }
-
-            return natura;
         }
         #endregion
         
@@ -291,6 +304,8 @@ namespace Sysmap.Portal.Sanity.DAO
             int maxId = 0;
             try
             {
+              
+
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (MySqlConnection mysqlCon = new MySqlConnection(ConnectionString))
@@ -299,9 +314,9 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Erro: {0}", ex);
             }
 
             return maxId + 1;
@@ -313,6 +328,7 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
+                _logger.LogInformation("Deletando teste CodRelease: {0} e Nº teste: {1}", codRelease, nTeste);
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 string query = @"CALL Sanity.procDeletaTeste_Natura(@codRelease,@nTeste);";
@@ -322,9 +338,9 @@ namespace Sysmap.Portal.Sanity.DAO
                     mysqlCon.Execute(query, new { codRelease, nTeste });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Erro: {0}", ex);
             }
 
              return Task.FromResult<object>(null);

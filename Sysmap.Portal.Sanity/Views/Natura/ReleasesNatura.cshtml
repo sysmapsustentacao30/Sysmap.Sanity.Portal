@@ -29,9 +29,9 @@
                     <h5 class="card-header"> @item.sistema código: @item.cod_release.</h5>
                     <div class="card-body">
                         <h4 class="card-title">Informações:</h4>
-                        <p><i class="fas fa-sitemap"></i> Sistema: @item.sistema</p>
-                        <p><i class="fas fa-calendar-day"></i> Data inicial: @item.data_inicial.ToShortDateString()</p>
-                        <p><i class="fas fa-calendar-day"></i> Data final: @item.data_final.ToShortDateString()</p>
+                        <p><i class="fas fa-sitemap"></i> Ambiente: @item.sistema</p>
+                        <p><i class="fas fa-calendar-day"></i> Data inicial: @item.data_inicial.ToString("dd/MM/yyyy")</p>
+                        <p><i class="fas fa-calendar-day"></i> Data final: @item.data_final.ToString("dd/MM/yyyy")</p>
                         @switch (item.status)
                         {
                             case 0:

@@ -47,7 +47,6 @@ C:\GITHUB\Sysmap.Portal.Sanity\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Razo
 C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.csproj.CoreCompileInputs.cache
 C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.RazorAssemblyInfo.cache
 C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.RazorAssemblyInfo.cs
-C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.AssemblyInfoInputs.cache
 C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.AssemblyInfo.cs
 C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.TagHelpers.input.cache
@@ -142,3 +141,4 @@ C:\Sandbox\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sys
 C:\Sandbox\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.dll
 C:\Sandbox\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.pdb
 C:\Sandbox\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\Sysmap.Portal.Sanity.csproj.CopyComplete
+C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

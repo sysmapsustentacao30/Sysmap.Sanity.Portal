@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 using Sysmap.Portal.Sanity.DAO;
 
 namespace Sysmap.Portal.Sanity
