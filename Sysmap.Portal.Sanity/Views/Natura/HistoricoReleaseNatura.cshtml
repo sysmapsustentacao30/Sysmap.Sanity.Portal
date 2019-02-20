@@ -34,7 +34,7 @@
                 Codigo
             </th>
             <th>
-                Sistema
+                Ambiente
             </th>
             <th>
                 Status
@@ -67,7 +67,7 @@
                     }
                 </td>
                 <td>
-                    <a href="@Url.Action("ExportarReleaseNatura","Natura",new {idRelease = item.id_release })" class="btn btn-outline-success btn-rounded"><i class="fas fa-file-excel"></i> Exportar</a>
+                    <a href="@Url.Action("ExportarReleaseNatura","Natura",new {codRelease = item.cod_release })" class="btn btn-outline-success btn-rounded"><i class="fas fa-file-excel"></i> Exportar</a>
                 </td>
             </tr>
         }

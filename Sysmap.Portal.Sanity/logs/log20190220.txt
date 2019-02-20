@@ -1,0 +1,898 @@
+2019-02-20 15:34:52.903 -03:00 [INF] Starting Amplifier web host
+2019-02-20 15:34:55.931 -03:00 [DBG] Hosting starting
+2019-02-20 15:34:56.067 -03:00 [INF] User profile is available. Using 'C:\Users\marcelo.martins\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-20 15:34:56.085 -03:00 [DBG] Reading data from file 'C:\Users\marcelo.martins\AppData\Local\ASP.NET\DataProtection-Keys\key-b0c9c91d-2aee-44c9-bec4-b801c1e78c74.xml'.
+2019-02-20 15:34:56.132 -03:00 [DBG] Found key "b0c9c91d-2aee-44c9-bec4-b801c1e78c74".
+2019-02-20 15:34:56.160 -03:00 [DBG] Considering key "b0c9c91d-2aee-44c9-bec4-b801c1e78c74" with expiration date "2019-02-24T17:38:58.3307899+00:00" as default key.
+2019-02-20 15:34:56.206 -03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=1.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-02-20 15:34:56.209 -03:00 [DBG] Decrypting secret element using Windows DPAPI.
+2019-02-20 15:34:56.227 -03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=1.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-02-20 15:34:56.230 -03:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2019-02-20 15:34:56.235 -03:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2019-02-20 15:34:56.243 -03:00 [DBG] Using key "b0c9c91d-2aee-44c9-bec4-b801c1e78c74" as the default key.
+2019-02-20 15:34:56.245 -03:00 [DBG] Key ring with default key "b0c9c91d-2aee-44c9-bec4-b801c1e78c74" was loaded during application startup.
+2019-02-20 15:34:56.303 -03:00 [DBG] Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.327 -03:00 [DBG] Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.329 -03:00 [DBG] Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.332 -03:00 [DBG] Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.340 -03:00 [DBG] Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using compatibility value "MalformedInputExceptions" for version "Version_2_1"
+2019-02-20 15:34:56.343 -03:00 [DBG] Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.378 -03:00 [DBG] Compatibility switch AllowAreas in type RazorPagesOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.381 -03:00 [DBG] Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.442 -03:00 [DBG] Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using compatibility value true for version "Version_2_1"
+2019-02-20 15:34:56.492 -03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-02-20 15:34:56.615 -03:00 [DBG] Failed to locate the development https certificate at 'null'.
+2019-02-20 15:34:56.715 -03:00 [DBG] Hosting started
+2019-02-20 15:34:56.716 -03:00 [DBG] Loaded hosting startup assembly Sysmap.Portal.Sanity
+2019-02-20 15:34:56.831 -03:00 [DBG] Connection id "0HLKNC8EF65CD" started.
+2019-02-20 15:34:56.900 -03:00 [DBG] Connection id "0HLKNC8EF65CD" received FIN.
+2019-02-20 15:34:56.919 -03:00 [DBG] Connection id "0HLKNC8EF65CD" disconnecting.
+2019-02-20 15:34:56.963 -03:00 [DBG] Connection id "0HLKNC8EF65CD" sending FIN.
+2019-02-20 15:34:57.085 -03:00 [DBG] Connection id "0HLKNC8EF65CD" stopped.
+2019-02-20 15:34:57.410 -03:00 [DBG] Connection id "0HLKNC8EF65CE" started.
+2019-02-20 15:34:57.625 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/  
+2019-02-20 15:34:57.633 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2019-02-20 15:34:57.679 -03:00 [DBG] The request path / does not match a supported file type
+2019-02-20 15:34:57.765 -03:00 [DBG] AuthenticationScheme: Cookies was successfully authenticated.
+2019-02-20 15:34:58.013 -03:00 [DBG] Request successfully matched the route with name 'default' and template '{controller=Auth}/{action=Login}/{id?}'.
+2019-02-20 15:34:58.029 -03:00 [DBG] Action 'Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)' with id 'e2fbb150-95a6-4a83-b7e2-69986fea9a02' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2019-02-20 15:34:58.058 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:34:58.062 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2019-02-20 15:34:58.066 -03:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-02-20 15:34:58.074 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-02-20 15:34:58.080 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2019-02-20 15:34:58.083 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-02-20 15:34:58.100 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:34:58.110 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.3653ms.
+2019-02-20 15:34:58.131 -03:00 [DBG] View lookup cache miss for view 'Login' in controller 'Auth'.
+2019-02-20 15:34:58.138 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Auth/Login.cshtml'.
+2019-02-20 15:34:58.140 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Home.cshtml'.
+2019-02-20 15:34:58.144 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/MenuPartial/_AllMenu.cshtml'.
+2019-02-20 15:34:58.148 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/MenuPartial/_NaturaMenu.cshtml'.
+2019-02-20 15:34:58.151 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/MenuPartial/_VivoMenu.cshtml'.
+2019-02-20 15:34:58.156 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/AddTesteNatura.cshtml'.
+2019-02-20 15:34:58.159 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/AddTestesNatura.cshtml'.
+2019-02-20 15:34:58.161 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/CadReleaseNatura.cshtml'.
+2019-02-20 15:34:58.166 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/EditarTesteNatura.cshtml'.
+2019-02-20 15:34:58.171 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/HistoricoReleaseNatura.cshtml'.
+2019-02-20 15:34:58.176 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/NaturaHome.cshtml'.
+2019-02-20 15:34:58.179 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/ReleasesNatura.cshtml'.
+2019-02-20 15:34:58.182 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Natura/TestesNatura.cshtml'.
+2019-02-20 15:34:58.187 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2019-02-20 15:34:58.191 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2019-02-20 15:34:58.195 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/UserControl/CreateUser.cshtml'.
+2019-02-20 15:34:58.199 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/UserControl/DeleteUser.cshtml'.
+2019-02-20 15:34:58.201 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/UserControl/EditUser.cshtml'.
+2019-02-20 15:34:58.206 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/UserControl/ListUser.cshtml'.
+2019-02-20 15:34:58.209 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Vivo/CenariosVivo.cshtml'.
+2019-02-20 15:34:58.211 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Vivo/CriarCenarioVivo.cshtml'.
+2019-02-20 15:34:58.213 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Vivo/EditarCenarioVivo.cshtml'.
+2019-02-20 15:34:58.217 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Vivo/HistoricoReleaseVivo.cshtml'.
+2019-02-20 15:34:58.220 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Vivo/VivoHome.cshtml'.
+2019-02-20 15:34:58.224 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2019-02-20 15:34:58.228 -03:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2019-02-20 15:34:58.250 -03:00 [DBG] Using precompiled view for '/Views/Auth/Login.cshtml'.
+2019-02-20 15:34:58.256 -03:00 [INF] Executing ViewResult, running view Login.
+2019-02-20 15:34:58.261 -03:00 [DBG] The view path '/Views/Auth/Login.cshtml' was found in 129.9613ms.
+2019-02-20 15:34:58.352 -03:00 [DBG] An antiforgery cookie token was reused.
+2019-02-20 15:34:58.412 -03:00 [INF] Executed ViewResult - view Login executed in 284.5101ms.
+2019-02-20 15:34:58.417 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 329.0572ms
+2019-02-20 15:34:58.438 -03:00 [DBG] Connection id "0HLKNC8EF65CE" completed keep alive response.
+2019-02-20 15:34:58.458 -03:00 [INF] Request finished in 834.3162ms 200 text/html; charset=utf-8
+2019-02-20 15:35:22.148 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5001/ application/x-www-form-urlencoded 283
+2019-02-20 15:35:22.153 -03:00 [DBG] POST requests are not supported
+2019-02-20 15:35:22.158 -03:00 [DBG] AuthenticationScheme: Cookies was successfully authenticated.
+2019-02-20 15:35:22.161 -03:00 [DBG] Request successfully matched the route with name 'default' and template '{controller=Auth}/{action=Login}/{id?}'.
+2019-02-20 15:35:22.167 -03:00 [DBG] Action 'Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)' with id 'c6a1ef8b-b24f-4152-8e46-42517d383923' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2019-02-20 15:35:22.213 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:35:22.218 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2019-02-20 15:35:22.225 -03:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-02-20 15:35:22.231 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-02-20 15:35:22.240 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2019-02-20 15:35:22.243 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-02-20 15:35:22.277 -03:00 [DBG] Connection id "0HLKNC8EF65CE", Request id "0HLKNC8EF65CE:00000002": started reading request body.
+2019-02-20 15:35:22.296 -03:00 [DBG] Connection id "0HLKNC8EF65CE", Request id "0HLKNC8EF65CE:00000002": done reading request body.
+2019-02-20 15:35:22.313 -03:00 [DBG] Attempting to bind parameter 'loginValue' of type 'Sysmap.Portal.Sanity.Models.Login' ...
+2019-02-20 15:35:22.322 -03:00 [DBG] Attempting to bind parameter 'loginValue' of type 'Sysmap.Portal.Sanity.Models.Login' using the name '' in request data ...
+2019-02-20 15:35:22.330 -03:00 [DBG] Attempting to bind property 'Sysmap.Portal.Sanity.Models.Login.Email' of type 'System.String' using the name 'Email' in request data ...
+2019-02-20 15:35:22.337 -03:00 [DBG] Done attempting to bind property 'Sysmap.Portal.Sanity.Models.Login.Email' of type 'System.String'.
+2019-02-20 15:35:22.342 -03:00 [DBG] Attempting to bind property 'Sysmap.Portal.Sanity.Models.Login.Password' of type 'System.String' using the name 'Password' in request data ...
+2019-02-20 15:35:22.345 -03:00 [DBG] Done attempting to bind property 'Sysmap.Portal.Sanity.Models.Login.Password' of type 'System.String'.
+2019-02-20 15:35:22.353 -03:00 [DBG] Done attempting to bind parameter 'loginValue' of type 'Sysmap.Portal.Sanity.Models.Login'.
+2019-02-20 15:35:22.355 -03:00 [DBG] Done attempting to bind parameter 'loginValue' of type 'Sysmap.Portal.Sanity.Models.Login'.
+2019-02-20 15:35:22.359 -03:00 [DBG] Attempting to validate the bound parameter 'loginValue' of type 'Sysmap.Portal.Sanity.Models.Login' ...
+2019-02-20 15:35:22.373 -03:00 [DBG] Done attempting to validate the bound parameter 'loginValue' of type 'Sysmap.Portal.Sanity.Models.Login'.
+2019-02-20 15:35:22.377 -03:00 [DBG] Attempting to bind parameter 'userDAO' of type 'Sysmap.Portal.Sanity.DAO.UserDAO' ...
+2019-02-20 15:35:22.381 -03:00 [DBG] Done attempting to bind parameter 'userDAO' of type 'Sysmap.Portal.Sanity.DAO.UserDAO'.
+2019-02-20 15:35:22.386 -03:00 [DBG] Attempting to validate the bound parameter 'userDAO' of type 'Sysmap.Portal.Sanity.DAO.UserDAO' ...
+2019-02-20 15:35:22.390 -03:00 [DBG] Done attempting to validate the bound parameter 'userDAO' of type 'Sysmap.Portal.Sanity.DAO.UserDAO'.
+2019-02-20 15:35:22.396 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.Models.Login","Sysmap.Portal.Sanity.DAO.UserDAO"]) - Validation state: "Valid"
+2019-02-20 15:35:24.057 -03:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-02-20 15:35:24.061 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1655.8396ms.
+2019-02-20 15:35:24.070 -03:00 [INF] Executing RedirectResult, redirecting to /Home/Home.
+2019-02-20 15:35:24.073 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 1818.6442000000002ms
+2019-02-20 15:35:24.083 -03:00 [DBG] Connection id "0HLKNC8EF65CE" completed keep alive response.
+2019-02-20 15:35:24.092 -03:00 [INF] Request finished in 1943.972ms 302 
+2019-02-20 15:35:24.095 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Home/Home  
+2019-02-20 15:35:24.099 -03:00 [DBG] The request path /Home/Home does not match a supported file type
+2019-02-20 15:35:24.104 -03:00 [DBG] AuthenticationScheme: Cookies was successfully authenticated.
+2019-02-20 15:35:24.107 -03:00 [DBG] Request successfully matched the route with name 'default' and template '{controller=Auth}/{action=Login}/{id?}'.
+2019-02-20 15:35:24.117 -03:00 [INF] Route matched with {action = "Home", controller = "Home"}. Executing action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity)
+2019-02-20 15:35:24.120 -03:00 [DBG] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"]
+2019-02-20 15:35:24.127 -03:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-02-20 15:35:24.135 -03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-02-20 15:35:24.140 -03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2019-02-20 15:35:24.147 -03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-02-20 15:35:24.175 -03:00 [INF] Authorization was successful.
+2019-02-20 15:35:24.178 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:35:24.184 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.83890000000000009ms.
+2019-02-20 15:35:24.194 -03:00 [DBG] View lookup cache miss for view 'Home' in controller 'Home'.
+2019-02-20 15:35:24.213 -03:00 [DBG] Using precompiled view for '/Views/Home/Home.cshtml'.
+2019-02-20 15:35:24.217 -03:00 [INF] Executing ViewResult, running view Home.
+2019-02-20 15:35:24.220 -03:00 [DBG] The view path '/Views/Home/Home.cshtml' was found in 26.423000000000002ms.
+2019-02-20 15:35:24.230 -03:00 [DBG] View lookup cache miss for view '_Layout' in controller 'Home'.
+2019-02-20 15:35:24.239 -03:00 [DBG] Using precompiled view for '/Views/Shared/_Layout.cshtml'.
+2019-02-20 15:35:24.281 -03:00 [DBG] View lookup cache miss for view '../MenuPartial/_AllMenu' in controller 'Home'.
+2019-02-20 15:35:24.292 -03:00 [DBG] Using precompiled view for '/Views/MenuPartial/_AllMenu.cshtml'.
+2019-02-20 15:35:24.319 -03:00 [INF] Executed ViewResult - view Home executed in 125.4954ms.
+2019-02-20 15:35:24.322 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) in 169.3872ms
+2019-02-20 15:35:24.333 -03:00 [DBG] Connection id "0HLKNC8EF65CE" completed keep alive response.
+2019-02-20 15:35:24.339 -03:00 [INF] Request finished in 243.3752ms 200 text/html; charset=utf-8
+2019-02-20 15:35:52.036 -03:00 [INF] Starting Amplifier web host
+2019-02-20 15:35:54.667 -03:00 [INF] User profile is available. Using 'C:\Users\marcelo.martins\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-20 15:35:56.154 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/  
+2019-02-20 15:35:56.539 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:35:56.565 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:35:56.588 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.0196ms.
+2019-02-20 15:35:56.633 -03:00 [INF] Executing ViewResult, running view Login.
+2019-02-20 15:35:56.798 -03:00 [INF] Executed ViewResult - view Login executed in 190.5824ms.
+2019-02-20 15:35:56.802 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 257.175ms
+2019-02-20 15:35:56.829 -03:00 [INF] Request finished in 678.2684ms 200 text/html; charset=utf-8
+2019-02-20 15:35:58.859 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5001/ application/x-www-form-urlencoded 283
+2019-02-20 15:35:58.882 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:35:58.949 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.Models.Login","Sysmap.Portal.Sanity.DAO.UserDAO"]) - Validation state: "Valid"
+2019-02-20 15:36:00.417 -03:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-02-20 15:36:00.420 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1460.1297ms.
+2019-02-20 15:36:00.423 -03:00 [INF] Executing RedirectResult, redirecting to /Home/Home.
+2019-02-20 15:36:00.426 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 1541.164ms
+2019-02-20 15:36:00.431 -03:00 [INF] Request finished in 1572.3596ms 302 
+2019-02-20 15:36:00.439 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Home/Home  
+2019-02-20 15:36:00.444 -03:00 [INF] Route matched with {action = "Home", controller = "Home"}. Executing action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity)
+2019-02-20 15:36:00.461 -03:00 [INF] Authorization was successful.
+2019-02-20 15:36:00.464 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:36:00.469 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.34500000000000003ms.
+2019-02-20 15:36:00.478 -03:00 [INF] Executing ViewResult, running view Home.
+2019-02-20 15:36:00.556 -03:00 [INF] Executed ViewResult - view Home executed in 82.815ms.
+2019-02-20 15:36:00.559 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) in 110.1786ms
+2019-02-20 15:36:00.563 -03:00 [INF] Request finished in 123.8335ms 200 text/html; charset=utf-8
+2019-02-20 15:36:02.423 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/NaturaHome  
+2019-02-20 15:36:02.434 -03:00 [INF] Route matched with {action = "NaturaHome", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity)
+2019-02-20 15:36:02.440 -03:00 [INF] Authorization was successful.
+2019-02-20 15:36:02.445 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:36:31.080 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 28627.5665ms.
+2019-02-20 15:36:31.108 -03:00 [INF] Executing ViewResult, running view NaturaHome.
+2019-02-20 15:36:31.134 -03:00 [INF] Executed ViewResult - view NaturaHome executed in 39.915600000000005ms.
+2019-02-20 15:36:31.136 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) in 28697.3937ms
+2019-02-20 15:36:31.140 -03:00 [INF] Request finished in 28717.0483ms 200 text/html; charset=utf-8
+2019-02-20 15:36:38.362 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ReleasesNatura  
+2019-02-20 15:36:38.371 -03:00 [INF] Route matched with {action = "ReleasesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity)
+2019-02-20 15:36:38.378 -03:00 [INF] Authorization was successful.
+2019-02-20 15:36:38.383 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 15:36:41.564 -03:00 [INF] Natura - Verificando releases ativas
+2019-02-20 15:36:41.759 -03:00 [INF] Natura - Pegando releases ativas
+2019-02-20 15:36:41.897 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3505.1523ms.
+2019-02-20 15:36:41.906 -03:00 [INF] Executing ViewResult, running view ReleasesNatura.
+2019-02-20 15:36:41.943 -03:00 [INF] Executed ViewResult - view ReleasesNatura executed in 41.1726ms.
+2019-02-20 15:36:41.945 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) in 3568.0156ms
+2019-02-20 15:36:41.962 -03:00 [INF] Request finished in 3599.7648ms 200 text/html; charset=utf-8
+2019-02-20 15:36:57.921 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 15:36:57.925 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 15:36:57.928 -03:00 [INF] Authorization was successful.
+2019-02-20 15:36:57.936 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 15:37:05.775 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 15:37:06.122 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 15:37:06.257 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 8316.1563ms.
+2019-02-20 15:37:06.275 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 15:37:06.612 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 346.5819ms.
+2019-02-20 15:37:06.658 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 8730.2132ms
+2019-02-20 15:37:06.671 -03:00 [INF] Request finished in 8750.2618ms 200 text/html; charset=utf-8
+2019-02-20 15:39:16.602 -03:00 [INF] Starting Amplifier web host
+2019-02-20 15:39:19.512 -03:00 [INF] User profile is available. Using 'C:\Users\marcelo.martins\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-20 15:39:21.511 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/  
+2019-02-20 15:39:21.894 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:39:21.925 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:39:21.956 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.621ms.
+2019-02-20 15:39:22.011 -03:00 [INF] Executing ViewResult, running view Login.
+2019-02-20 15:39:22.179 -03:00 [INF] Executed ViewResult - view Login executed in 196.10930000000002ms.
+2019-02-20 15:39:22.193 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 295.1021ms
+2019-02-20 15:39:22.260 -03:00 [INF] Request finished in 750.877ms 200 text/html; charset=utf-8
+2019-02-20 15:39:24.960 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5001/ application/x-www-form-urlencoded 283
+2019-02-20 15:39:24.995 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:39:25.073 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.Models.Login","Sysmap.Portal.Sanity.DAO.UserDAO"]) - Validation state: "Valid"
+2019-02-20 15:39:26.780 -03:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-02-20 15:39:26.783 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1696.2048ms.
+2019-02-20 15:39:26.787 -03:00 [INF] Executing RedirectResult, redirecting to /Home/Home.
+2019-02-20 15:39:26.789 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 1791.9544ms
+2019-02-20 15:39:26.795 -03:00 [INF] Request finished in 1835.5044ms 302 
+2019-02-20 15:39:26.806 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Home/Home  
+2019-02-20 15:39:26.810 -03:00 [INF] Route matched with {action = "Home", controller = "Home"}. Executing action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity)
+2019-02-20 15:39:26.838 -03:00 [INF] Authorization was successful.
+2019-02-20 15:39:26.840 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:39:26.844 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4329ms.
+2019-02-20 15:39:26.854 -03:00 [INF] Executing ViewResult, running view Home.
+2019-02-20 15:39:26.928 -03:00 [INF] Executed ViewResult - view Home executed in 77.431300000000007ms.
+2019-02-20 15:39:26.935 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) in 118.0357ms
+2019-02-20 15:39:26.941 -03:00 [INF] Request finished in 135.1645ms 200 text/html; charset=utf-8
+2019-02-20 15:39:51.101 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/NaturaHome  
+2019-02-20 15:39:51.106 -03:00 [INF] Route matched with {action = "NaturaHome", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity)
+2019-02-20 15:39:51.124 -03:00 [INF] Authorization was successful.
+2019-02-20 15:39:51.127 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:39:51.134 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4318ms.
+2019-02-20 15:39:51.156 -03:00 [INF] Executing ViewResult, running view NaturaHome.
+2019-02-20 15:39:51.185 -03:00 [INF] Executed ViewResult - view NaturaHome executed in 46.1894ms.
+2019-02-20 15:39:51.197 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) in 79.9672ms
+2019-02-20 15:39:51.290 -03:00 [INF] Request finished in 189.7834ms 200 text/html; charset=utf-8
+2019-02-20 15:39:52.478 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ReleasesNatura  
+2019-02-20 15:39:52.484 -03:00 [INF] Route matched with {action = "ReleasesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity)
+2019-02-20 15:39:52.487 -03:00 [INF] Authorization was successful.
+2019-02-20 15:39:52.494 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 15:40:41.176 -03:00 [INF] Natura - Verificando releases ativas
+2019-02-20 15:40:41.377 -03:00 [INF] Natura - Pegando releases ativas
+2019-02-20 15:40:41.513 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 49011.4614ms.
+2019-02-20 15:40:41.522 -03:00 [INF] Executing ViewResult, running view ReleasesNatura.
+2019-02-20 15:40:41.556 -03:00 [INF] Executed ViewResult - view ReleasesNatura executed in 38.3468ms.
+2019-02-20 15:40:41.559 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) in 49071.9672ms
+2019-02-20 15:40:41.635 -03:00 [INF] Request finished in 49157.3737ms 200 text/html; charset=utf-8
+2019-02-20 15:40:46.930 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 15:40:46.936 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 15:40:46.942 -03:00 [INF] Authorization was successful.
+2019-02-20 15:40:46.946 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 15:40:46.958 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 15:40:47.118 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 15:40:47.638 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 682.2328ms.
+2019-02-20 15:40:47.646 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 15:40:47.909 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 267.2896ms.
+2019-02-20 15:40:47.957 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 1015.3652000000001ms
+2019-02-20 15:40:48.000 -03:00 [INF] Request finished in 1076.7265ms 200 text/html; charset=utf-8
+2019-02-20 15:59:05.633 -03:00 [INF] Starting Amplifier web host
+2019-02-20 15:59:07.657 -03:00 [INF] User profile is available. Using 'C:\Users\marcelo.martins\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-20 15:59:11.504 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/  
+2019-02-20 15:59:13.654 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:59:13.689 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:59:13.714 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9874ms.
+2019-02-20 15:59:13.766 -03:00 [INF] Executing ViewResult, running view Login.
+2019-02-20 15:59:14.053 -03:00 [INF] Executed ViewResult - view Login executed in 321.961ms.
+2019-02-20 15:59:14.447 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/css/login.css  
+2019-02-20 15:59:14.450 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo.png  
+2019-02-20 15:59:14.463 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 799.31990000000008ms
+2019-02-20 15:59:14.486 -03:00 [INF] Connection id "0HLKNCLV4L6ML", Request id "0HLKNCLV4L6ML:00000001": the application aborted the connection.
+2019-02-20 15:59:14.486 -03:00 [INF] Connection id "0HLKNCLV4L6MK", Request id "0HLKNCLV4L6MK:00000001": the application aborted the connection.
+2019-02-20 15:59:14.518 -03:00 [INF] Sending file. Request path: '/assets/images/logo.png'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\images\logo.png'
+2019-02-20 15:59:14.522 -03:00 [INF] Sending file. Request path: '/css/login.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\css\login.css'
+2019-02-20 15:59:14.525 -03:00 [INF] Request finished in 74.1312ms 0 image/png
+2019-02-20 15:59:14.526 -03:00 [INF] Request finished in 80.9051ms 0 text/css
+2019-02-20 15:59:14.545 -03:00 [INF] Request finished in 3048.9667ms 200 text/html; charset=utf-8
+2019-02-20 15:59:19.384 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5001/ application/x-www-form-urlencoded 240
+2019-02-20 15:59:19.415 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 15:59:19.481 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.Models.Login","Sysmap.Portal.Sanity.DAO.UserDAO"]) - Validation state: "Valid"
+2019-02-20 15:59:21.200 -03:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-02-20 15:59:21.204 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1707.5994ms.
+2019-02-20 15:59:21.215 -03:00 [INF] Executing RedirectResult, redirecting to /Home/Home.
+2019-02-20 15:59:21.218 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 1799.7953ms
+2019-02-20 15:59:21.228 -03:00 [INF] Request finished in 1845.3414ms 302 
+2019-02-20 15:59:21.241 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Home/Home  
+2019-02-20 15:59:21.247 -03:00 [INF] Route matched with {action = "Home", controller = "Home"}. Executing action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity)
+2019-02-20 15:59:21.267 -03:00 [INF] Authorization was successful.
+2019-02-20 15:59:21.269 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:59:21.275 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4456ms.
+2019-02-20 15:59:21.286 -03:00 [INF] Executing ViewResult, running view Home.
+2019-02-20 15:59:21.343 -03:00 [INF] Executed ViewResult - view Home executed in 61.422900000000006ms.
+2019-02-20 15:59:21.346 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) in 93.2299ms
+2019-02-20 15:59:21.349 -03:00 [INF] Request finished in 108.2385ms 200 text/html; charset=utf-8
+2019-02-20 15:59:21.393 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 15:59:21.440 -03:00 [INF] Connection id "0HLKNCLV4L6MM", Request id "0HLKNCLV4L6MM:00000003": the application aborted the connection.
+2019-02-20 15:59:21.446 -03:00 [INF] Sending file. Request path: '/assets/css/app.min.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\css\app.min.css'
+2019-02-20 15:59:21.450 -03:00 [INF] Request finished in 57.3942ms 0 text/css
+2019-02-20 15:59:22.035 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/fonts/Nunito-Regular.woff  
+2019-02-20 15:59:22.035 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/fonts/Nunito-SemiBold.woff  
+2019-02-20 15:59:22.035 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/fonts/Nunito-Bold.woff  
+2019-02-20 15:59:22.040 -03:00 [INF] Connection id "0HLKNCLV4L6MN", Request id "0HLKNCLV4L6MN:00000001": the application aborted the connection.
+2019-02-20 15:59:22.043 -03:00 [INF] Connection id "0HLKNCLV4L6MO", Request id "0HLKNCLV4L6MO:00000001": the application aborted the connection.
+2019-02-20 15:59:22.045 -03:00 [INF] Connection id "0HLKNCLV4L6MP", Request id "0HLKNCLV4L6MP:00000001": the application aborted the connection.
+2019-02-20 15:59:22.051 -03:00 [INF] Sending file. Request path: '/assets/fonts/Nunito-Regular.woff'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\fonts\Nunito-Regular.woff'
+2019-02-20 15:59:22.055 -03:00 [INF] Sending file. Request path: '/assets/fonts/Nunito-SemiBold.woff'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\fonts\Nunito-SemiBold.woff'
+2019-02-20 15:59:22.062 -03:00 [INF] Sending file. Request path: '/assets/fonts/Nunito-Bold.woff'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\fonts\Nunito-Bold.woff'
+2019-02-20 15:59:22.066 -03:00 [INF] Request finished in 31.3377ms 0 application/font-woff
+2019-02-20 15:59:22.073 -03:00 [INF] Request finished in 38.0149ms 0 application/font-woff
+2019-02-20 15:59:22.078 -03:00 [INF] Request finished in 42.7742ms 0 application/font-woff
+2019-02-20 15:59:22.176 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/favicon.ico  
+2019-02-20 15:59:22.180 -03:00 [INF] Connection id "0HLKNCLV4L6MQ", Request id "0HLKNCLV4L6MQ:00000001": the application aborted the connection.
+2019-02-20 15:59:22.184 -03:00 [INF] Sending file. Request path: '/assets/images/favicon.ico'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\images\favicon.ico'
+2019-02-20 15:59:22.194 -03:00 [INF] Request finished in 17.5079ms 0 image/x-icon
+2019-02-20 15:59:37.157 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/NaturaHome  
+2019-02-20 15:59:37.164 -03:00 [INF] Route matched with {action = "NaturaHome", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity)
+2019-02-20 15:59:37.168 -03:00 [INF] Authorization was successful.
+2019-02-20 15:59:37.173 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 15:59:37.181 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3482ms.
+2019-02-20 15:59:37.202 -03:00 [INF] Executing ViewResult, running view NaturaHome.
+2019-02-20 15:59:37.221 -03:00 [INF] Executed ViewResult - view NaturaHome executed in 29.0515ms.
+2019-02-20 15:59:37.226 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) in 58.7571ms
+2019-02-20 15:59:37.238 -03:00 [INF] Request finished in 80.9008ms 200 text/html; charset=utf-8
+2019-02-20 15:59:39.382 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/HistoricoReleaseNatura  
+2019-02-20 15:59:39.386 -03:00 [INF] Route matched with {action = "HistoricoReleaseNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.HistoricoReleaseNatura (Sysmap.Portal.Sanity)
+2019-02-20 15:59:39.392 -03:00 [INF] Authorization was successful.
+2019-02-20 15:59:39.397 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.HistoricoReleaseNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 15:59:39.406 -03:00 [INF] Natura - lista de releases
+2019-02-20 15:59:39.549 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.HistoricoReleaseNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 147.45350000000002ms.
+2019-02-20 15:59:39.561 -03:00 [INF] Executing ViewResult, running view HistoricoReleaseNatura.
+2019-02-20 15:59:39.648 -03:00 [INF] Executed ViewResult - view HistoricoReleaseNatura executed in 93.964ms.
+2019-02-20 15:59:39.652 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.HistoricoReleaseNatura (Sysmap.Portal.Sanity) in 260.5175ms
+2019-02-20 15:59:39.794 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/dataTables.bootstrap4.css  
+2019-02-20 15:59:39.794 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/responsive.bootstrap4.css  
+2019-02-20 15:59:39.794 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/buttons.bootstrap4.css  
+2019-02-20 15:59:39.838 -03:00 [INF] Sending file. Request path: '/assets/css/vendor/buttons.bootstrap4.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\css\vendor\buttons.bootstrap4.css'
+2019-02-20 15:59:39.850 -03:00 [INF] Request finished in 54.9376ms 200 text/css
+2019-02-20 15:59:39.861 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/buttons.bootstrap4.min.js  
+2019-02-20 15:59:39.813 -03:00 [INF] Request finished in 431.6046ms 200 text/html; charset=utf-8
+2019-02-20 15:59:39.795 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/select.bootstrap4.css  
+2019-02-20 15:59:39.819 -03:00 [INF] Sending file. Request path: '/assets/css/vendor/dataTables.bootstrap4.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\css\vendor\dataTables.bootstrap4.css'
+2019-02-20 15:59:39.874 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/pages/demo.datatable-init.js  
+2019-02-20 15:59:39.872 -03:00 [INF] Sending file. Request path: '/assets/css/vendor/responsive.bootstrap4.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\css\vendor\responsive.bootstrap4.css'
+2019-02-20 15:59:39.878 -03:00 [INF] Connection id "0HLKNCLV4L6MV", Request id "0HLKNCLV4L6MV:00000001": the application aborted the connection.
+2019-02-20 15:59:39.872 -03:00 [INF] Sending file. Request path: '/assets/js/vendor/buttons.bootstrap4.min.js'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\js\vendor\buttons.bootstrap4.min.js'
+2019-02-20 15:59:39.881 -03:00 [INF] Request finished in 133.3171ms 200 text/css
+2019-02-20 15:59:39.889 -03:00 [INF] Sending file. Request path: '/assets/js/pages/demo.datatable-init.js'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\js\pages\demo.datatable-init.js'
+2019-02-20 15:59:39.897 -03:00 [INF] Request finished in 102.9518ms 200 text/css
+2019-02-20 15:59:39.900 -03:00 [INF] Sending file. Request path: '/assets/css/vendor/select.bootstrap4.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\css\vendor\select.bootstrap4.css'
+2019-02-20 15:59:39.907 -03:00 [INF] Request finished in 45.9557ms 200 application/javascript
+2019-02-20 15:59:39.914 -03:00 [INF] Request finished in 40.5056ms 200 application/javascript
+2019-02-20 15:59:39.924 -03:00 [INF] Request finished in 129.7061ms 0 text/css
+2019-02-20 16:00:19.415 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ExportarReleaseNatura?codRelease=TestesNatura_23  
+2019-02-20 16:00:19.427 -03:00 [INF] Route matched with {action = "ExportarReleaseNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ExportarReleaseNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:00:19.434 -03:00 [INF] Authorization was successful.
+2019-02-20 16:00:19.440 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ExportarReleaseNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:00:32.750 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:00:46.276 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ExportarReleaseNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.FileStreamResult in 26845.7932ms.
+2019-02-20 16:00:46.300 -03:00 [INF] Executing Microsoft.AspNetCore.Mvc.FileStreamResult, sending file with download name 'Release_Natura.xlsx' ...
+2019-02-20 16:00:46.358 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ExportarReleaseNatura (Sysmap.Portal.Sanity) in 26947.3492ms
+2019-02-20 16:00:46.411 -03:00 [INF] Request finished in 27018.5777ms 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+2019-02-20 16:00:55.118 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/NaturaHome  
+2019-02-20 16:00:55.121 -03:00 [INF] Route matched with {action = "NaturaHome", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity)
+2019-02-20 16:00:55.136 -03:00 [INF] Authorization was successful.
+2019-02-20 16:00:55.139 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 16:00:55.150 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0228ms.
+2019-02-20 16:00:55.157 -03:00 [INF] Executing ViewResult, running view NaturaHome.
+2019-02-20 16:00:55.164 -03:00 [INF] Executed ViewResult - view NaturaHome executed in 7.9351ms.
+2019-02-20 16:00:55.168 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) in 32.310500000000005ms
+2019-02-20 16:00:55.178 -03:00 [INF] Request finished in 60.2051ms 200 text/html; charset=utf-8
+2019-02-20 16:00:56.117 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ReleasesNatura  
+2019-02-20 16:00:56.121 -03:00 [INF] Route matched with {action = "ReleasesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:00:56.128 -03:00 [INF] Authorization was successful.
+2019-02-20 16:00:56.131 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:00:56.205 -03:00 [INF] Natura - Verificando releases ativas
+2019-02-20 16:00:56.438 -03:00 [INF] Natura - Pegando releases ativas
+2019-02-20 16:00:56.578 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 439.48080000000004ms.
+2019-02-20 16:00:56.589 -03:00 [INF] Executing ViewResult, running view ReleasesNatura.
+2019-02-20 16:00:56.628 -03:00 [INF] Executed ViewResult - view ReleasesNatura executed in 45.0932ms.
+2019-02-20 16:00:56.634 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) in 506.64660000000003ms
+2019-02-20 16:00:56.704 -03:00 [INF] Request finished in 588.0529ms 200 text/html; charset=utf-8
+2019-02-20 16:00:59.142 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/favicon.ico  
+2019-02-20 16:00:59.152 -03:00 [INF] Connection id "0HLKNCLV4L6N2", Request id "0HLKNCLV4L6N2:00000001": the application aborted the connection.
+2019-02-20 16:00:59.159 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\favicon.ico'
+2019-02-20 16:00:59.163 -03:00 [INF] Request finished in 22.6846ms 0 image/x-icon
+2019-02-20 16:00:59.999 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/CadReleaseNatura  
+2019-02-20 16:01:00.004 -03:00 [INF] Route matched with {action = "CadReleaseNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.CadReleaseNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:01:00.012 -03:00 [INF] Authorization was successful.
+2019-02-20 16:01:00.015 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.CadReleaseNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:01:00.023 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.CadReleaseNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.2684ms.
+2019-02-20 16:01:00.031 -03:00 [INF] Executing ViewResult, running view CadReleaseNatura.
+2019-02-20 16:01:00.085 -03:00 [INF] Executed ViewResult - view CadReleaseNatura executed in 57.648500000000006ms.
+2019-02-20 16:01:00.105 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.CadReleaseNatura (Sysmap.Portal.Sanity) in 93.0522ms
+2019-02-20 16:01:00.114 -03:00 [INF] Request finished in 115.5915ms 200 text/html; charset=utf-8
+2019-02-20 16:01:11.049 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/NaturaHome  
+2019-02-20 16:01:11.060 -03:00 [INF] Route matched with {action = "NaturaHome", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity)
+2019-02-20 16:01:11.065 -03:00 [INF] Authorization was successful.
+2019-02-20 16:01:11.069 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 16:01:11.073 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0228ms.
+2019-02-20 16:01:11.081 -03:00 [INF] Executing ViewResult, running view NaturaHome.
+2019-02-20 16:01:11.086 -03:00 [INF] Executed ViewResult - view NaturaHome executed in 4.4375ms.
+2019-02-20 16:01:11.088 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) in 23.5284ms
+2019-02-20 16:01:11.098 -03:00 [INF] Request finished in 50.0825ms 200 text/html; charset=utf-8
+2019-02-20 16:01:12.227 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ReleasesNatura  
+2019-02-20 16:01:12.233 -03:00 [INF] Route matched with {action = "ReleasesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:01:12.243 -03:00 [INF] Authorization was successful.
+2019-02-20 16:01:12.247 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:01:12.261 -03:00 [INF] Natura - Verificando releases ativas
+2019-02-20 16:01:12.406 -03:00 [INF] Natura - Pegando releases ativas
+2019-02-20 16:01:12.551 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 290.7466ms.
+2019-02-20 16:01:12.557 -03:00 [INF] Executing ViewResult, running view ReleasesNatura.
+2019-02-20 16:01:12.561 -03:00 [INF] Executed ViewResult - view ReleasesNatura executed in 4.4805ms.
+2019-02-20 16:01:12.565 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) in 324.56550000000004ms
+2019-02-20 16:01:12.570 -03:00 [INF] Request finished in 343.2089ms 200 text/html; charset=utf-8
+2019-02-20 16:01:13.849 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:01:13.855 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:01:13.867 -03:00 [INF] Authorization was successful.
+2019-02-20 16:01:13.873 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:01:13.885 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:01:14.021 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:01:14.436 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 554.50330000000008ms.
+2019-02-20 16:01:14.446 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:01:14.697 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 254.574ms.
+2019-02-20 16:01:14.729 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 862.45260000000007ms
+2019-02-20 16:01:14.733 -03:00 [INF] Request finished in 884.5059ms 200 text/html; charset=utf-8
+2019-02-20 16:04:44.987 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:04:44.991 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:04:44.995 -03:00 [INF] Authorization was successful.
+2019-02-20 16:04:45.005 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:04:45.014 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:04:45.174 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:04:45.594 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 581.25700000000006ms.
+2019-02-20 16:04:48.444 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:04:48.670 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 3070.7148ms.
+2019-02-20 16:04:48.678 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 3684.1815ms
+2019-02-20 16:04:48.694 -03:00 [INF] Request finished in 3707.41ms 200 text/html; charset=utf-8
+2019-02-20 16:04:48.723 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/dataTables.bootstrap4.css  
+2019-02-20 16:04:48.726 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/responsive.bootstrap4.css  
+2019-02-20 16:04:48.726 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/buttons.bootstrap4.css  
+2019-02-20 16:04:48.728 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:04:48.735 -03:00 [INF] The file /assets/css/vendor/dataTables.bootstrap4.css was not modified
+2019-02-20 16:04:48.737 -03:00 [INF] The file /assets/css/vendor/responsive.bootstrap4.css was not modified
+2019-02-20 16:04:48.740 -03:00 [INF] The file /assets/css/vendor/buttons.bootstrap4.css was not modified
+2019-02-20 16:04:48.743 -03:00 [INF] The file /assets/css/app.min.css was not modified
+2019-02-20 16:04:48.751 -03:00 [INF] Request finished in 27.6887ms 304 text/css
+2019-02-20 16:04:48.752 -03:00 [INF] Request finished in 25.9191ms 304 text/css
+2019-02-20 16:04:48.755 -03:00 [INF] Request finished in 28.744ms 304 text/css
+2019-02-20 16:04:48.761 -03:00 [INF] Request finished in 33.6227ms 304 text/css
+2019-02-20 16:04:48.771 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/select.bootstrap4.css  
+2019-02-20 16:04:48.774 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/app.min.js  
+2019-02-20 16:04:48.777 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/jquery.dataTables.js  
+2019-02-20 16:04:48.786 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.bootstrap4.js  
+2019-02-20 16:04:48.789 -03:00 [INF] The file /assets/css/vendor/select.bootstrap4.css was not modified
+2019-02-20 16:04:48.795 -03:00 [INF] The file /assets/js/app.min.js was not modified
+2019-02-20 16:04:48.800 -03:00 [INF] The file /assets/js/vendor/jquery.dataTables.js was not modified
+2019-02-20 16:04:48.802 -03:00 [INF] The file /assets/js/vendor/dataTables.bootstrap4.js was not modified
+2019-02-20 16:04:48.810 -03:00 [INF] Request finished in 39.5788ms 304 text/css
+2019-02-20 16:04:48.816 -03:00 [INF] Request finished in 42.105ms 304 application/javascript
+2019-02-20 16:04:48.819 -03:00 [INF] Request finished in 41.4109ms 304 application/javascript
+2019-02-20 16:04:48.822 -03:00 [INF] Request finished in 36.058ms 304 application/javascript
+2019-02-20 16:04:48.827 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.responsive.min.js  
+2019-02-20 16:04:48.830 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/responsive.bootstrap4.min.js  
+2019-02-20 16:04:48.850 -03:00 [INF] The file /assets/js/vendor/dataTables.responsive.min.js was not modified
+2019-02-20 16:04:48.854 -03:00 [INF] The file /assets/js/vendor/responsive.bootstrap4.min.js was not modified
+2019-02-20 16:04:48.858 -03:00 [INF] Request finished in 30.5466ms 304 application/javascript
+2019-02-20 16:04:48.860 -03:00 [INF] Request finished in 29.9995ms 304 application/javascript
+2019-02-20 16:04:49.147 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:04:49.147 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:04:49.152 -03:00 [INF] The file /assets/images/logo_Sys_beta.png was not modified
+2019-02-20 16:04:49.155 -03:00 [INF] The file /assets/images/user.png was not modified
+2019-02-20 16:04:49.157 -03:00 [INF] Request finished in 10.1701ms 304 image/png
+2019-02-20 16:04:49.164 -03:00 [INF] Request finished in 16.3336ms 304 image/png
+2019-02-20 16:06:01.816 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:06:01.826 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:06:01.832 -03:00 [INF] Authorization was successful.
+2019-02-20 16:06:01.834 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:06:01.843 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:06:01.977 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:06:02.363 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 519.966ms.
+2019-02-20 16:06:02.697 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:06:02.874 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 506.3869ms.
+2019-02-20 16:06:02.876 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 1044.9829ms
+2019-02-20 16:06:02.883 -03:00 [INF] Request finished in 1067.0963ms 200 text/html; charset=utf-8
+2019-02-20 16:06:02.911 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:06:02.912 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/select.bootstrap4.css  
+2019-02-20 16:06:02.912 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/dataTables.bootstrap4.css  
+2019-02-20 16:06:02.912 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/responsive.bootstrap4.css  
+2019-02-20 16:06:02.968 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/app.min.js  
+2019-02-20 16:06:02.939 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/buttons.bootstrap4.css  
+2019-02-20 16:06:02.985 -03:00 [INF] The file /assets/css/app.min.css was not modified
+2019-02-20 16:06:02.990 -03:00 [INF] The file /assets/css/vendor/select.bootstrap4.css was not modified
+2019-02-20 16:06:03.003 -03:00 [INF] Request finished in 91.5024ms 304 text/css
+2019-02-20 16:06:02.992 -03:00 [INF] The file /assets/css/vendor/dataTables.bootstrap4.css was not modified
+2019-02-20 16:06:02.994 -03:00 [INF] The file /assets/css/vendor/responsive.bootstrap4.css was not modified
+2019-02-20 16:06:02.996 -03:00 [INF] The file /assets/js/app.min.js was not modified
+2019-02-20 16:06:03.037 -03:00 [INF] Request finished in 69.9777ms 304 application/javascript
+2019-02-20 16:06:03.017 -03:00 [INF] Request finished in 105.2342ms 304 text/css
+2019-02-20 16:06:03.024 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/jquery.dataTables.js  
+2019-02-20 16:06:03.026 -03:00 [INF] Request finished in 114.103ms 304 text/css
+2019-02-20 16:06:03.033 -03:00 [INF] Request finished in 120.0979ms 304 text/css
+2019-02-20 16:06:03.000 -03:00 [INF] The file /assets/css/vendor/buttons.bootstrap4.css was not modified
+2019-02-20 16:06:03.048 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.bootstrap4.js  
+2019-02-20 16:06:03.051 -03:00 [INF] The file /assets/js/vendor/jquery.dataTables.js was not modified
+2019-02-20 16:06:03.053 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.responsive.min.js  
+2019-02-20 16:06:03.061 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/responsive.bootstrap4.min.js  
+2019-02-20 16:06:03.103 -03:00 [INF] The file /assets/js/vendor/responsive.bootstrap4.min.js was not modified
+2019-02-20 16:06:03.066 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:06:03.091 -03:00 [INF] Request finished in 66.9758ms 304 application/javascript
+2019-02-20 16:06:03.092 -03:00 [INF] The file /assets/js/vendor/dataTables.bootstrap4.js was not modified
+2019-02-20 16:06:03.099 -03:00 [INF] The file /assets/js/vendor/dataTables.responsive.min.js was not modified
+2019-02-20 16:06:03.064 -03:00 [INF] Request finished in 124.9079ms 304 text/css
+2019-02-20 16:06:03.111 -03:00 [INF] Request finished in 50.5812ms 304 application/javascript
+2019-02-20 16:06:03.114 -03:00 [INF] The file /assets/images/logo_Sys_beta.png was not modified
+2019-02-20 16:06:03.124 -03:00 [INF] Request finished in 75.9886ms 304 application/javascript
+2019-02-20 16:06:03.127 -03:00 [INF] Request finished in 73.6924ms 304 application/javascript
+2019-02-20 16:06:03.130 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:06:03.139 -03:00 [INF] Request finished in 72.4212ms 304 image/png
+2019-02-20 16:06:03.148 -03:00 [INF] The file /assets/images/user.png was not modified
+2019-02-20 16:06:03.153 -03:00 [INF] Request finished in 22.7671ms 304 image/png
+2019-02-20 16:06:16.404 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:06:16.407 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:06:16.412 -03:00 [INF] Authorization was successful.
+2019-02-20 16:06:16.417 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:06:16.423 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:06:16.564 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:06:16.965 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 541.4407ms.
+2019-02-20 16:06:17.277 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:06:17.438 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 469.1564ms.
+2019-02-20 16:06:17.441 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 1029.8654000000001ms
+2019-02-20 16:06:17.478 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:06:17.478 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/dataTables.bootstrap4.css  
+2019-02-20 16:06:17.478 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/responsive.bootstrap4.css  
+2019-02-20 16:06:17.480 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/buttons.bootstrap4.css  
+2019-02-20 16:06:17.482 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/select.bootstrap4.css  
+2019-02-20 16:06:17.503 -03:00 [INF] The file /assets/css/app.min.css was not modified
+2019-02-20 16:06:17.504 -03:00 [INF] Request finished in 1100.7851ms 200 text/html; charset=utf-8
+2019-02-20 16:06:17.507 -03:00 [INF] The file /assets/css/vendor/dataTables.bootstrap4.css was not modified
+2019-02-20 16:06:17.510 -03:00 [INF] The file /assets/css/vendor/responsive.bootstrap4.css was not modified
+2019-02-20 16:06:17.515 -03:00 [INF] The file /assets/css/vendor/buttons.bootstrap4.css was not modified
+2019-02-20 16:06:17.518 -03:00 [INF] The file /assets/css/vendor/select.bootstrap4.css was not modified
+2019-02-20 16:06:17.521 -03:00 [INF] Request finished in 42.3385ms 304 text/css
+2019-02-20 16:06:17.526 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/app.min.js  
+2019-02-20 16:06:17.529 -03:00 [INF] Request finished in 50.3793ms 304 text/css
+2019-02-20 16:06:17.533 -03:00 [INF] Request finished in 54.4507ms 304 text/css
+2019-02-20 16:06:17.540 -03:00 [INF] Request finished in 61.2753ms 304 text/css
+2019-02-20 16:06:17.552 -03:00 [INF] The file /assets/js/app.min.js was not modified
+2019-02-20 16:06:17.550 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/jquery.dataTables.js  
+2019-02-20 16:06:17.555 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.responsive.min.js  
+2019-02-20 16:06:17.543 -03:00 [INF] Request finished in 61.2251ms 304 text/css
+2019-02-20 16:06:17.557 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.bootstrap4.js  
+2019-02-20 16:06:17.577 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/responsive.bootstrap4.min.js  
+2019-02-20 16:06:17.666 -03:00 [INF] The file /assets/js/vendor/responsive.bootstrap4.min.js was not modified
+2019-02-20 16:06:17.587 -03:00 [INF] The file /assets/js/vendor/jquery.dataTables.js was not modified
+2019-02-20 16:06:17.583 -03:00 [INF] Request finished in 57.9071ms 304 application/javascript
+2019-02-20 16:06:17.590 -03:00 [INF] The file /assets/js/vendor/dataTables.responsive.min.js was not modified
+2019-02-20 16:06:17.671 -03:00 [INF] Request finished in 93.348ms 304 application/javascript
+2019-02-20 16:06:17.594 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:06:17.658 -03:00 [INF] The file /assets/js/vendor/dataTables.bootstrap4.js was not modified
+2019-02-20 16:06:17.687 -03:00 [INF] Request finished in 136.983ms 304 application/javascript
+2019-02-20 16:06:17.690 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:06:17.696 -03:00 [INF] Request finished in 141.7065ms 304 application/javascript
+2019-02-20 16:06:17.702 -03:00 [INF] The file /assets/images/logo_Sys_beta.png was not modified
+2019-02-20 16:06:17.707 -03:00 [INF] Request finished in 150.0934ms 304 application/javascript
+2019-02-20 16:06:17.713 -03:00 [INF] The file /assets/images/user.png was not modified
+2019-02-20 16:06:17.720 -03:00 [INF] Request finished in 126.1813ms 304 image/png
+2019-02-20 16:06:17.728 -03:00 [INF] Request finished in 38.3189ms 304 image/png
+2019-02-20 16:07:41.139 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:07:41.143 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:07:41.153 -03:00 [INF] Authorization was successful.
+2019-02-20 16:07:41.162 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:07:41.168 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:07:41.331 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:07:41.849 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 681.3668ms.
+2019-02-20 16:07:42.337 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:07:42.532 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 675.0202ms.
+2019-02-20 16:07:42.535 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 1381.9884ms
+2019-02-20 16:07:42.551 -03:00 [INF] Request finished in 1411.753ms 200 text/html; charset=utf-8
+2019-02-20 16:07:42.598 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:07:42.598 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/dataTables.bootstrap4.css  
+2019-02-20 16:07:42.599 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/responsive.bootstrap4.css  
+2019-02-20 16:07:42.599 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/buttons.bootstrap4.css  
+2019-02-20 16:07:42.599 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/select.bootstrap4.css  
+2019-02-20 16:07:42.649 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/app.min.js  
+2019-02-20 16:07:42.650 -03:00 [INF] The file /assets/css/app.min.css was not modified
+2019-02-20 16:07:42.653 -03:00 [INF] The file /assets/css/vendor/dataTables.bootstrap4.css was not modified
+2019-02-20 16:07:42.669 -03:00 [INF] Request finished in 70.9957ms 304 text/css
+2019-02-20 16:07:42.657 -03:00 [INF] The file /assets/css/vendor/responsive.bootstrap4.css was not modified
+2019-02-20 16:07:42.660 -03:00 [INF] The file /assets/css/vendor/buttons.bootstrap4.css was not modified
+2019-02-20 16:07:42.662 -03:00 [INF] The file /assets/css/vendor/select.bootstrap4.css was not modified
+2019-02-20 16:07:42.705 -03:00 [INF] Request finished in 105.6194ms 304 text/css
+2019-02-20 16:07:42.684 -03:00 [INF] Request finished in 85.4197ms 304 text/css
+2019-02-20 16:07:42.688 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/jquery.dataTables.js  
+2019-02-20 16:07:42.695 -03:00 [INF] Request finished in 96.1852ms 304 text/css
+2019-02-20 16:07:42.700 -03:00 [INF] Request finished in 101.4674ms 304 text/css
+2019-02-20 16:07:42.735 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/responsive.bootstrap4.min.js  
+2019-02-20 16:07:42.666 -03:00 [INF] The file /assets/js/app.min.js was not modified
+2019-02-20 16:07:42.723 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.bootstrap4.js  
+2019-02-20 16:07:42.729 -03:00 [INF] The file /assets/js/vendor/jquery.dataTables.js was not modified
+2019-02-20 16:07:42.732 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.responsive.min.js  
+2019-02-20 16:07:42.737 -03:00 [INF] The file /assets/js/vendor/responsive.bootstrap4.min.js was not modified
+2019-02-20 16:07:42.713 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:07:42.777 -03:00 [INF] The file /assets/images/logo_Sys_beta.png was not modified
+2019-02-20 16:07:42.760 -03:00 [INF] The file /assets/js/vendor/dataTables.bootstrap4.js was not modified
+2019-02-20 16:07:42.762 -03:00 [INF] Request finished in 74.0668ms 304 application/javascript
+2019-02-20 16:07:42.765 -03:00 [INF] The file /assets/js/vendor/dataTables.responsive.min.js was not modified
+2019-02-20 16:07:42.773 -03:00 [INF] Request finished in 37.7091ms 304 application/javascript
+2019-02-20 16:07:42.740 -03:00 [INF] Request finished in 91.2348ms 304 application/javascript
+2019-02-20 16:07:42.779 -03:00 [INF] Request finished in 66.8235ms 304 image/png
+2019-02-20 16:07:42.785 -03:00 [INF] Request finished in 62.1169ms 304 application/javascript
+2019-02-20 16:07:42.790 -03:00 [INF] Request finished in 58.2016ms 304 application/javascript
+2019-02-20 16:07:42.799 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:07:42.812 -03:00 [INF] The file /assets/images/user.png was not modified
+2019-02-20 16:07:42.818 -03:00 [INF] Request finished in 18.429ms 304 image/png
+2019-02-20 16:11:16.572 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:11:16.575 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:11:16.580 -03:00 [INF] Authorization was successful.
+2019-02-20 16:11:16.587 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:11:16.596 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:11:16.746 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:11:17.139 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 543.1916ms.
+2019-02-20 16:11:17.378 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 798.85430000000008ms
+2019-02-20 16:11:17.385 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
+C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\Views\Natura\TestesNatura.cshtml(126,65): Error RZ1027: An opening "(" is missing the corresponding closing ")".
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.OnCacheMiss(String normalizedPath)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRazorPageFactoryProvider.CreateFactory(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.CreateCacheResult(HashSet`1 expirationTokens, String relativePath, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.OnCacheMiss(ViewLocationExpanderContext expanderContext, ViewLocationCacheKey cacheKey)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.LocatePageFromViewLocations(ActionContext actionContext, String pageName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewEngines.CompositeViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.FindView(ActionContext actionContext, ViewResult viewResult)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-20 16:11:17.506 -03:00 [INF] Request finished in 934.859ms 500 text/html; charset=utf-8
+2019-02-20 16:11:28.463 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ReleasesNatura  
+2019-02-20 16:11:28.472 -03:00 [INF] Route matched with {action = "ReleasesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:11:28.476 -03:00 [INF] Authorization was successful.
+2019-02-20 16:11:28.478 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:11:28.486 -03:00 [INF] Natura - Verificando releases ativas
+2019-02-20 16:11:28.646 -03:00 [INF] Natura - Pegando releases ativas
+2019-02-20 16:11:28.790 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 303.58340000000004ms.
+2019-02-20 16:11:28.794 -03:00 [INF] Executing ViewResult, running view ReleasesNatura.
+2019-02-20 16:11:28.799 -03:00 [INF] Executed ViewResult - view ReleasesNatura executed in 5.1114000000000006ms.
+2019-02-20 16:11:28.804 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) in 327.958ms
+2019-02-20 16:11:28.810 -03:00 [INF] Request finished in 347.1633ms 200 text/html; charset=utf-8
+2019-02-20 16:11:30.134 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ReleasesNatura  
+2019-02-20 16:11:30.137 -03:00 [INF] Route matched with {action = "ReleasesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:11:30.140 -03:00 [INF] Authorization was successful.
+2019-02-20 16:11:30.142 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:11:30.151 -03:00 [INF] Natura - Verificando releases ativas
+2019-02-20 16:11:30.382 -03:00 [INF] Natura - Pegando releases ativas
+2019-02-20 16:11:30.581 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 430.1877ms.
+2019-02-20 16:11:30.586 -03:00 [INF] Executing ViewResult, running view ReleasesNatura.
+2019-02-20 16:11:30.590 -03:00 [INF] Executed ViewResult - view ReleasesNatura executed in 4.3598ms.
+2019-02-20 16:11:30.597 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) in 456.6931ms
+2019-02-20 16:11:30.604 -03:00 [INF] Request finished in 470.4018ms 200 text/html; charset=utf-8
+2019-02-20 16:11:30.649 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/app.min.js  
+2019-02-20 16:11:30.649 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:11:30.652 -03:00 [INF] The file /assets/js/app.min.js was not modified
+2019-02-20 16:11:30.654 -03:00 [INF] The file /assets/css/app.min.css was not modified
+2019-02-20 16:11:30.656 -03:00 [INF] Request finished in 7.5638ms 304 application/javascript
+2019-02-20 16:11:30.669 -03:00 [INF] Request finished in 19.5547ms 304 text/css
+2019-02-20 16:11:30.673 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:11:30.673 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:11:30.685 -03:00 [INF] The file /assets/images/logo_Sys_beta.png was not modified
+2019-02-20 16:11:30.687 -03:00 [INF] The file /assets/images/user.png was not modified
+2019-02-20 16:11:30.700 -03:00 [INF] Request finished in 26.9126ms 304 image/png
+2019-02-20 16:11:30.690 -03:00 [INF] Request finished in 17.9992ms 304 image/png
+2019-02-20 16:11:32.264 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:11:32.269 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:11:32.273 -03:00 [INF] Authorization was successful.
+2019-02-20 16:11:32.280 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:11:32.291 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:11:32.441 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:11:32.869 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 578.70710000000008ms.
+2019-02-20 16:11:33.202 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:11:33.369 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 494.5097ms.
+2019-02-20 16:11:33.373 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 1100.0163ms
+2019-02-20 16:11:33.384 -03:00 [INF] Request finished in 1120.5714ms 200 text/html; charset=utf-8
+2019-02-20 16:11:42.123 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:11:42.127 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:11:42.135 -03:00 [INF] Authorization was successful.
+2019-02-20 16:11:42.138 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:11:42.150 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:11:42.301 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:11:42.789 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 639.6267ms.
+2019-02-20 16:11:42.795 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:11:42.904 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 109.3172ms.
+2019-02-20 16:11:42.919 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 784.1413ms
+2019-02-20 16:11:42.953 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/dataTables.bootstrap4.css  
+2019-02-20 16:11:42.953 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:11:42.952 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/select.bootstrap4.css  
+2019-02-20 16:11:42.981 -03:00 [INF] The file /assets/css/vendor/dataTables.bootstrap4.css was not modified
+2019-02-20 16:11:42.985 -03:00 [INF] The file /assets/css/app.min.css was not modified
+2019-02-20 16:11:42.980 -03:00 [INF] Request finished in 857.2407ms 200 text/html; charset=utf-8
+2019-02-20 16:11:42.952 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/buttons.bootstrap4.css  
+2019-02-20 16:11:42.952 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/responsive.bootstrap4.css  
+2019-02-20 16:11:42.998 -03:00 [INF] The file /assets/css/vendor/select.bootstrap4.css was not modified
+2019-02-20 16:11:43.003 -03:00 [INF] Request finished in 50.1715ms 304 text/css
+2019-02-20 16:11:43.007 -03:00 [INF] Request finished in 54.6686ms 304 text/css
+2019-02-20 16:11:43.010 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/app.min.js  
+2019-02-20 16:11:43.017 -03:00 [INF] The file /assets/css/vendor/buttons.bootstrap4.css was not modified
+2019-02-20 16:11:43.019 -03:00 [INF] The file /assets/css/vendor/responsive.bootstrap4.css was not modified
+2019-02-20 16:11:43.022 -03:00 [INF] Request finished in 69.651ms 304 text/css
+2019-02-20 16:11:43.028 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/jquery.dataTables.js  
+2019-02-20 16:11:43.033 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.bootstrap4.js  
+2019-02-20 16:11:43.038 -03:00 [INF] The file /assets/js/app.min.js was not modified
+2019-02-20 16:11:43.044 -03:00 [INF] Request finished in 91.5492ms 304 text/css
+2019-02-20 16:11:43.049 -03:00 [INF] Request finished in 96.6617ms 304 text/css
+2019-02-20 16:11:43.053 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.responsive.min.js  
+2019-02-20 16:11:43.077 -03:00 [INF] The file /assets/js/vendor/dataTables.responsive.min.js was not modified
+2019-02-20 16:11:43.083 -03:00 [INF] Request finished in 30.0625ms 304 application/javascript
+2019-02-20 16:11:43.063 -03:00 [INF] Request finished in 53.2187ms 304 application/javascript
+2019-02-20 16:11:43.090 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:11:43.055 -03:00 [INF] The file /assets/js/vendor/jquery.dataTables.js was not modified
+2019-02-20 16:11:43.060 -03:00 [INF] The file /assets/js/vendor/dataTables.bootstrap4.js was not modified
+2019-02-20 16:11:43.115 -03:00 [INF] Request finished in 81.8706ms 304 application/javascript
+2019-02-20 16:11:43.074 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:11:43.108 -03:00 [INF] The file /assets/images/user.png was not modified
+2019-02-20 16:11:43.110 -03:00 [INF] Request finished in 81.5052ms 304 application/javascript
+2019-02-20 16:11:43.071 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/responsive.bootstrap4.min.js  
+2019-02-20 16:11:43.125 -03:00 [INF] The file /assets/images/logo_Sys_beta.png was not modified
+2019-02-20 16:11:43.128 -03:00 [INF] Request finished in 38.2938ms 304 image/png
+2019-02-20 16:11:43.135 -03:00 [INF] The file /assets/js/vendor/responsive.bootstrap4.min.js was not modified
+2019-02-20 16:11:43.138 -03:00 [INF] Request finished in 63.594ms 304 image/png
+2019-02-20 16:11:43.147 -03:00 [INF] Request finished in 75.1762ms 304 application/javascript
+2019-02-20 16:12:02.309 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:12:02.315 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:12:02.320 -03:00 [INF] Authorization was successful.
+2019-02-20 16:12:02.323 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:12:02.327 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:12:02.474 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:12:02.968 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 641.0937ms.
+2019-02-20 16:12:03.425 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:12:03.609 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 636.0372ms.
+2019-02-20 16:12:03.612 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 1291.4558ms
+2019-02-20 16:12:03.630 -03:00 [INF] Request finished in 1323.4274ms 200 text/html; charset=utf-8
+2019-02-20 16:12:03.665 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:12:03.667 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/responsive.bootstrap4.css  
+2019-02-20 16:12:03.667 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/dataTables.bootstrap4.css  
+2019-02-20 16:12:03.668 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/buttons.bootstrap4.css  
+2019-02-20 16:12:03.674 -03:00 [INF] The file /assets/css/app.min.css was not modified
+2019-02-20 16:12:03.677 -03:00 [INF] The file /assets/css/vendor/responsive.bootstrap4.css was not modified
+2019-02-20 16:12:03.686 -03:00 [INF] The file /assets/css/vendor/dataTables.bootstrap4.css was not modified
+2019-02-20 16:12:03.688 -03:00 [INF] The file /assets/css/vendor/buttons.bootstrap4.css was not modified
+2019-02-20 16:12:03.702 -03:00 [INF] Request finished in 36.6454ms 304 text/css
+2019-02-20 16:12:03.706 -03:00 [INF] Request finished in 38.6253ms 304 text/css
+2019-02-20 16:12:03.712 -03:00 [INF] Request finished in 44.5548ms 304 text/css
+2019-02-20 16:12:03.719 -03:00 [INF] Request finished in 50.851ms 304 text/css
+2019-02-20 16:12:03.725 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/vendor/select.bootstrap4.css  
+2019-02-20 16:12:03.733 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/app.min.js  
+2019-02-20 16:12:03.735 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/jquery.dataTables.js  
+2019-02-20 16:12:03.743 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.responsive.min.js  
+2019-02-20 16:12:03.776 -03:00 [INF] The file /assets/css/vendor/select.bootstrap4.css was not modified
+2019-02-20 16:12:03.778 -03:00 [INF] The file /assets/js/app.min.js was not modified
+2019-02-20 16:12:03.781 -03:00 [INF] The file /assets/js/vendor/jquery.dataTables.js was not modified
+2019-02-20 16:12:03.783 -03:00 [INF] The file /assets/js/vendor/dataTables.responsive.min.js was not modified
+2019-02-20 16:12:03.790 -03:00 [INF] Request finished in 64.9697ms 304 text/css
+2019-02-20 16:12:03.793 -03:00 [INF] Request finished in 59.4615ms 304 application/javascript
+2019-02-20 16:12:03.796 -03:00 [INF] Request finished in 61.5418ms 304 application/javascript
+2019-02-20 16:12:03.803 -03:00 [INF] Request finished in 60.6499ms 304 application/javascript
+2019-02-20 16:12:03.806 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/responsive.bootstrap4.min.js  
+2019-02-20 16:12:03.811 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/js/vendor/dataTables.bootstrap4.js  
+2019-02-20 16:12:03.825 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:12:03.829 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:12:03.829 -03:00 [INF] The file /assets/js/vendor/responsive.bootstrap4.min.js was not modified
+2019-02-20 16:12:03.845 -03:00 [INF] Request finished in 38.9435ms 304 application/javascript
+2019-02-20 16:12:03.837 -03:00 [INF] The file /assets/images/user.png was not modified
+2019-02-20 16:12:03.839 -03:00 [INF] The file /assets/images/logo_Sys_beta.png was not modified
+2019-02-20 16:12:03.835 -03:00 [INF] The file /assets/js/vendor/dataTables.bootstrap4.js was not modified
+2019-02-20 16:12:03.855 -03:00 [INF] Request finished in 30.6972ms 304 image/png
+2019-02-20 16:12:03.860 -03:00 [INF] Request finished in 34.4206ms 304 image/png
+2019-02-20 16:12:03.869 -03:00 [INF] Request finished in 58.4849ms 304 application/javascript
+2019-02-20 16:12:52.411 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Auth/Logout  
+2019-02-20 16:12:52.416 -03:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Logout (Sysmap.Portal.Sanity)
+2019-02-20 16:12:52.421 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Logout (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 16:12:52.439 -03:00 [INF] AuthenticationScheme: Cookies signed out.
+2019-02-20 16:12:52.442 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Logout (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 11.3567ms.
+2019-02-20 16:12:52.449 -03:00 [INF] Executing ViewResult, running view Login.
+2019-02-20 16:12:52.462 -03:00 [INF] Executed ViewResult - view Login executed in 12.9269ms.
+2019-02-20 16:12:52.467 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Logout (Sysmap.Portal.Sanity) in 46.3186ms
+2019-02-20 16:12:52.474 -03:00 [INF] Request finished in 62.0698ms 200 text/html; charset=utf-8
+2019-02-20 16:13:12.954 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5001/ application/x-www-form-urlencoded 282
+2019-02-20 16:13:12.958 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 16:13:12.970 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.Models.Login","Sysmap.Portal.Sanity.DAO.UserDAO"]) - Validation state: "Valid"
+2019-02-20 16:13:13.329 -03:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-02-20 16:13:13.333 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 351.52930000000003ms.
+2019-02-20 16:13:13.337 -03:00 [INF] Executing RedirectResult, redirecting to /Natura/NaturaHome.
+2019-02-20 16:13:13.341 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 375.168ms
+2019-02-20 16:13:13.344 -03:00 [INF] Request finished in 389.5509ms 302 
+2019-02-20 16:13:13.352 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/NaturaHome  
+2019-02-20 16:13:13.354 -03:00 [INF] Route matched with {action = "NaturaHome", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity)
+2019-02-20 16:13:13.358 -03:00 [INF] Authorization was successful.
+2019-02-20 16:13:13.361 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 16:13:13.366 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0183ms.
+2019-02-20 16:13:13.372 -03:00 [INF] Executing ViewResult, running view NaturaHome.
+2019-02-20 16:13:13.390 -03:00 [INF] Executed ViewResult - view NaturaHome executed in 17.8981ms.
+2019-02-20 16:13:13.394 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.NaturaHome (Sysmap.Portal.Sanity) in 36.1479ms
+2019-02-20 16:13:13.407 -03:00 [INF] Request finished in 55.2723ms 200 text/html; charset=utf-8
+2019-02-20 16:13:20.141 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/ReleasesNatura  
+2019-02-20 16:13:20.143 -03:00 [INF] Route matched with {action = "ReleasesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:13:20.149 -03:00 [INF] Authorization was successful.
+2019-02-20 16:13:20.154 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:13:20.161 -03:00 [INF] Natura - Verificando releases ativas
+2019-02-20 16:13:20.312 -03:00 [INF] Natura - Pegando releases ativas
+2019-02-20 16:13:20.465 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 304.11420000000004ms.
+2019-02-20 16:13:20.469 -03:00 [INF] Executing ViewResult, running view ReleasesNatura.
+2019-02-20 16:13:20.473 -03:00 [INF] Executed ViewResult - view ReleasesNatura executed in 3.2289000000000003ms.
+2019-02-20 16:13:20.481 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.ReleasesNatura (Sysmap.Portal.Sanity) in 332.31780000000003ms
+2019-02-20 16:13:20.488 -03:00 [INF] Request finished in 347.9117ms 200 text/html; charset=utf-8
+2019-02-20 16:13:21.487 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Natura/TestesNatura?codRelease=TestesNatura_23  
+2019-02-20 16:13:21.489 -03:00 [INF] Route matched with {action = "TestesNatura", controller = "Natura"}. Executing action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity)
+2019-02-20 16:13:21.493 -03:00 [INF] Authorization was successful.
+2019-02-20 16:13:21.499 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) with arguments (["TestesNatura_23","Sysmap.Portal.Sanity.DAO.NaturaDAO"]) - Validation state: "Valid"
+2019-02-20 16:13:21.505 -03:00 [INF] Natura - Get release: TestesNatura_23
+2019-02-20 16:13:21.654 -03:00 [INF] Natura - Carregando lista de teste release cod: TestesNatura_23
+2019-02-20 16:13:22.042 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 537.05000000000007ms.
+2019-02-20 16:13:22.048 -03:00 [INF] Executing ViewResult, running view TestesNatura.
+2019-02-20 16:13:22.180 -03:00 [INF] Executed ViewResult - view TestesNatura executed in 131.60580000000002ms.
+2019-02-20 16:13:22.182 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.NaturaController.TestesNatura (Sysmap.Portal.Sanity) in 689.14560000000006ms
+2019-02-20 16:13:22.188 -03:00 [INF] Request finished in 701.9335ms 200 text/html; charset=utf-8
+2019-02-20 16:16:34.167 -03:00 [INF] Starting Amplifier web host
+2019-02-20 16:16:34.872 -03:00 [INF] User profile is available. Using 'C:\Users\marcelo.martins\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-02-20 16:16:38.259 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/  
+2019-02-20 16:16:39.739 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 16:16:39.833 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 16:16:39.864 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.75650000000000006ms.
+2019-02-20 16:16:39.973 -03:00 [INF] Executing ViewResult, running view Login.
+2019-02-20 16:16:40.503 -03:00 [INF] Executed ViewResult - view Login executed in 599.4935ms.
+2019-02-20 16:16:40.508 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 719.6262ms
+2019-02-20 16:16:40.524 -03:00 [INF] Request finished in 2272.9513ms 200 text/html; charset=utf-8
+2019-02-20 16:16:40.569 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/css/login.css  
+2019-02-20 16:16:40.569 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo.png  
+2019-02-20 16:16:40.638 -03:00 [INF] Connection id "0HLKNCVN4HHC7", Request id "0HLKNCVN4HHC7:00000002": the application aborted the connection.
+2019-02-20 16:16:40.688 -03:00 [INF] Connection id "0HLKNCVN4HHC8", Request id "0HLKNCVN4HHC8:00000001": the application aborted the connection.
+2019-02-20 16:16:40.692 -03:00 [INF] Sending file. Request path: '/css/login.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\css\login.css'
+2019-02-20 16:16:40.696 -03:00 [INF] Sending file. Request path: '/assets/images/logo.png'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\images\logo.png'
+2019-02-20 16:16:40.699 -03:00 [INF] Request finished in 129.8509ms 0 text/css
+2019-02-20 16:16:40.702 -03:00 [INF] Request finished in 132.6802ms 0 image/png
+2019-02-20 16:16:41.027 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/images/favicon.ico  
+2019-02-20 16:16:41.046 -03:00 [INF] Request finished in 19.4759ms 404 
+2019-02-20 16:16:44.289 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5001/ application/x-www-form-urlencoded 240
+2019-02-20 16:16:44.345 -03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity)
+2019-02-20 16:16:44.462 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) with arguments (["Sysmap.Portal.Sanity.Models.Login","Sysmap.Portal.Sanity.DAO.UserDAO"]) - Validation state: "Valid"
+2019-02-20 16:16:45.984 -03:00 [INF] AuthenticationScheme: Cookies signed in.
+2019-02-20 16:16:45.988 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1495.5671ms.
+2019-02-20 16:16:45.993 -03:00 [INF] Executing RedirectResult, redirecting to /Home/Home.
+2019-02-20 16:16:45.999 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.AuthController.Login (Sysmap.Portal.Sanity) in 1648.6042ms
+2019-02-20 16:16:46.005 -03:00 [INF] Request finished in 1715.6925ms 302 
+2019-02-20 16:16:46.024 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/Home/Home  
+2019-02-20 16:16:46.031 -03:00 [INF] Route matched with {action = "Home", controller = "Home"}. Executing action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity)
+2019-02-20 16:16:46.050 -03:00 [INF] Authorization was successful.
+2019-02-20 16:16:46.052 -03:00 [INF] Executing action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) - Validation state: "Valid"
+2019-02-20 16:16:46.056 -03:00 [INF] Executed action method Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1751ms.
+2019-02-20 16:16:46.067 -03:00 [INF] Executing ViewResult, running view Home.
+2019-02-20 16:16:46.154 -03:00 [INF] Executed ViewResult - view Home executed in 90.715ms.
+2019-02-20 16:16:46.157 -03:00 [INF] Executed action Sysmap.Portal.Sanity.Controllers.HomeController.Home (Sysmap.Portal.Sanity) in 121.8486ms
+2019-02-20 16:16:46.164 -03:00 [INF] Request finished in 140.3786ms 200 text/html; charset=utf-8
+2019-02-20 16:16:46.212 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/css/app.min.css  
+2019-02-20 16:16:46.216 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/user.png  
+2019-02-20 16:16:46.216 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/logo_Sys_beta.png  
+2019-02-20 16:16:46.256 -03:00 [INF] Connection id "0HLKNCVN4HHC9", Request id "0HLKNCVN4HHC9:00000004": the application aborted the connection.
+2019-02-20 16:16:46.260 -03:00 [INF] Connection id "0HLKNCVN4HHCB", Request id "0HLKNCVN4HHCB:00000001": the application aborted the connection.
+2019-02-20 16:16:46.264 -03:00 [INF] Connection id "0HLKNCVN4HHCA", Request id "0HLKNCVN4HHCA:00000001": the application aborted the connection.
+2019-02-20 16:16:46.271 -03:00 [INF] Sending file. Request path: '/assets/css/app.min.css'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\css\app.min.css'
+2019-02-20 16:16:46.276 -03:00 [INF] Sending file. Request path: '/assets/images/user.png'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\images\user.png'
+2019-02-20 16:16:46.283 -03:00 [INF] Sending file. Request path: '/assets/images/logo_Sys_beta.png'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\images\logo_Sys_beta.png'
+2019-02-20 16:16:46.289 -03:00 [INF] Request finished in 80.1835ms 0 text/css
+2019-02-20 16:16:46.299 -03:00 [INF] Request finished in 83.2502ms 0 image/png
+2019-02-20 16:16:46.307 -03:00 [INF] Request finished in 90.7119ms 0 image/png
+2019-02-20 16:16:46.322 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/fonts/Nunito-SemiBold.woff  
+2019-02-20 16:16:46.326 -03:00 [INF] Sending file. Request path: '/assets/fonts/Nunito-SemiBold.woff'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\fonts\Nunito-SemiBold.woff'
+2019-02-20 16:16:46.340 -03:00 [INF] Request finished in 17.2088ms 200 application/font-woff
+2019-02-20 16:16:46.334 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/fonts/Nunito-Bold.woff  
+2019-02-20 16:16:46.334 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/fonts/Nunito-Regular.woff  
+2019-02-20 16:16:46.352 -03:00 [INF] Connection id "0HLKNCVN4HHCE", Request id "0HLKNCVN4HHCE:00000001": the application aborted the connection.
+2019-02-20 16:16:46.355 -03:00 [INF] Connection id "0HLKNCVN4HHCC", Request id "0HLKNCVN4HHCC:00000001": the application aborted the connection.
+2019-02-20 16:16:46.361 -03:00 [INF] Sending file. Request path: '/assets/fonts/Nunito-Bold.woff'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\fonts\Nunito-Bold.woff'
+2019-02-20 16:16:46.368 -03:00 [INF] Sending file. Request path: '/assets/fonts/Nunito-Regular.woff'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\fonts\Nunito-Regular.woff'
+2019-02-20 16:16:46.376 -03:00 [INF] Request finished in 42.2569ms 0 application/font-woff
+2019-02-20 16:16:46.386 -03:00 [INF] Request finished in 52.2989ms 0 application/font-woff
+2019-02-20 16:16:46.450 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/assets/images/favicon.ico  
+2019-02-20 16:16:46.466 -03:00 [INF] Sending file. Request path: '/assets/images/favicon.ico'. Physical path: 'C:\GITHUB\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\wwwroot\assets\images\favicon.ico'
+2019-02-20 16:16:46.476 -03:00 [INF] Request finished in 25.8854ms 200 image/x-icon

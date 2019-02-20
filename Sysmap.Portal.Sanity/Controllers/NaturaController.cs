@@ -77,14 +77,12 @@ namespace Sysmap.Portal.Sanity.Controllers
         #region Exporta Release para excel
         [HttpGet]
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
-        public async Task<IActionResult> ExportarReleaseNatura(int idRelease, [FromServices]NaturaDAO naturaDAO)
+        public async Task<IActionResult> ExportarReleaseNatura(string codRelease, [FromServices]NaturaDAO naturaDAO)
         {
-
-
-            List<NaturaTeste> testes = naturaDAO.TestesByIdRelease_Natura(idRelease);
+            List<NaturaTeste> testes = naturaDAO.ListaTestes_Natura(codRelease);
 
             string sWebRootFolder = _hostingEnvironment.WebRootPath;
-            string sFileName = @"TestesRelease_Natura.xlsx";
+            string sFileName = @"Release_Natura.xlsx";
             string URL = string.Format("{0}://{1}/{2}", Request.Scheme, Request.Host, sFileName);
             FileInfo file = new FileInfo(Path.Combine(sWebRootFolder, sFileName));
 
@@ -104,82 +102,38 @@ namespace Sysmap.Portal.Sanity.Controllers
                 IRow row = excelSheet.CreateRow(0);
 
                 row.CreateCell(0).SetCellValue("Numero Teste");
-                row.CreateCell(1).SetCellValue("Executor");
-                row.CreateCell(2).SetCellValue("Status da Execução");
-                row.CreateCell(3).SetCellValue("Status do chamado");
-                row.CreateCell(4).SetCellValue("Sistema");
-                row.CreateCell(5).SetCellValue("Cenario");
-                row.CreateCell(6).SetCellValue("Pre Condição");
-                row.CreateCell(7).SetCellValue("Passos");
-                row.CreateCell(8).SetCellValue("Result esperado");
-                row.CreateCell(9).SetCellValue("Pos condição");
-                row.CreateCell(10).SetCellValue("Observação");
-                row.CreateCell(11).SetCellValue("Data execução");
-                row.CreateCell(12).SetCellValue("Data executado");
+                row.CreateCell(1).SetCellValue("Sistema");
+                row.CreateCell(2).SetCellValue("Funcionalidade");
+                row.CreateCell(3).SetCellValue("Cenario");
+                row.CreateCell(4).SetCellValue("Pre condicao");
+                row.CreateCell(5).SetCellValue("Passos");
+                row.CreateCell(6).SetCellValue("Result Esperado");
+                row.CreateCell(7).SetCellValue("Pos condicao");
+                row.CreateCell(8).SetCellValue("Executor");
+                row.CreateCell(9).SetCellValue("Massa");
+                row.CreateCell(10).SetCellValue("Observacao");
+                row.CreateCell(11).SetCellValue("Link doc");
+                row.CreateCell(12).SetCellValue("Data execucao");
 
                 int count = 1;
 
-                string executado = "";
-                string chamado_status = "";
-
                 foreach (var item in testes)
                 {
-                    switch (item.execucao_status)
-                    {
-                        case 0:
-                            executado = "Não Executado";
-                            break;
-                        case 1:
-                            executado = "Em execução";
-                            break;
-                        case 2:
-                            executado = "Bloqueado";
-                            break;
-                        case 3:
-                            executado = "Teste Falhou";
-                            break;
-                        case 4:
-                            executado = "Teste com sucesso";
-                            break;
-                    }
-
-                    switch (item.chamado_status)
-                    {
-                        case 0:
-                            chamado_status = "N/A";
-                            break;
-                        case 1:
-                            chamado_status = "Aberto";
-                            break;
-                        case 2:
-                            chamado_status = "Em correção";
-                            break;
-                        case 3:
-                            chamado_status = "Liberado para teste";
-                            break;
-                        case 4:
-                            chamado_status = "Em teste";
-                            break;
-                        case 5:
-                            chamado_status = "Fechado";
-                            break;
-                    }
-
                     row = excelSheet.CreateRow(count);
 
                     row.CreateCell(0).SetCellValue(item.numero_teste);
-                    row.CreateCell(1).SetCellValue(item.executor);
-                    row.CreateCell(2).SetCellValue(executado);
-                    row.CreateCell(3).SetCellValue(chamado_status);
-                    row.CreateCell(4).SetCellValue(item.sistema);
-                    row.CreateCell(5).SetCellValue(item.cenario);
-                    row.CreateCell(6).SetCellValue(item.pre_condicao);
-                    row.CreateCell(7).SetCellValue(item.passos);
-                    row.CreateCell(8).SetCellValue(item.result_esperado);
-                    row.CreateCell(9).SetCellValue(item.pos_condicao);
+                    row.CreateCell(1).SetCellValue(item.sistema);
+                    row.CreateCell(2).SetCellValue(item.funcionalidade);
+                    row.CreateCell(3).SetCellValue(item.cenario);
+                    row.CreateCell(4).SetCellValue(item.pre_condicao);
+                    row.CreateCell(5).SetCellValue(item.passos);
+                    row.CreateCell(6).SetCellValue(item.result_esperado);
+                    row.CreateCell(7).SetCellValue(item.pos_condicao);
+                    row.CreateCell(8).SetCellValue(item.executor);
+                    row.CreateCell(9).SetCellValue(item.massa);
                     row.CreateCell(10).SetCellValue(item.observacao);
+                    row.CreateCell(11).SetCellValue(item.url_doc);
                     row.CreateCell(11).SetCellValue(item.data_execucao.Value.ToShortDateString());
-                    row.CreateCell(12).SetCellValue(item.data_executado.ToShortDateString());
 
                     count += 1;
                 }
@@ -219,8 +173,7 @@ namespace Sysmap.Portal.Sanity.Controllers
             else
             {
                 int maxId = naturaDAO.GetMaxId_Release();
-                naturaRelease.cod_release = "TestesNatura_" + maxId.ToString();
-
+ 
                 string webRootPath = _hostingEnvironment.WebRootPath;
                 StringBuilder sb = new StringBuilder();
 
@@ -229,6 +182,8 @@ namespace Sysmap.Portal.Sanity.Controllers
                     ModelState.AddModelError("", "Planilha não encontrada!");
                     return View();
                 }
+
+                naturaRelease.cod_release = "Release_" + maxId.ToString();
 
                 List<NaturaTeste> listTestes = new List<NaturaTeste>();
 
@@ -314,87 +269,15 @@ namespace Sysmap.Portal.Sanity.Controllers
         }
         #endregion
 
-        #region Exporta Release demo
-        //[HttpGet]
-        //[Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
-        //public async Task<IActionResult> ReleaseDemoNatura(int idRelease, [FromServices]NaturaDAO naturaDAO)
-        //{
-
-
-        //    List<NaturaTeste> testes = naturaDAO.TestesByIdRelease_Natura(idRelease);
-
-        //    string sWebRootFolder = _hostingEnvironment.WebRootPath;
-        //    string sFileName = @"ReleaseNaturaDemo.xlsx";
-        //    string URL = string.Format("{0}://{1}/{2}", Request.Scheme, Request.Host, sFileName);
-        //    FileInfo file = new FileInfo(Path.Combine(sWebRootFolder, sFileName));
-
-        //    if (file.Exists)
-        //    {
-        //        file.Delete();
-        //        //file.Create();
-        //    }
-
-        //    var memory = new MemoryStream();
-
-        //    using (var fs = new FileStream(Path.Combine(sWebRootFolder, sFileName), FileMode.Create, FileAccess.Write))
-        //    {
-        //        IWorkbook workbook;
-        //        workbook = new XSSFWorkbook();
-        //        ISheet excelSheet = workbook.CreateSheet("Testes");
-        //        IRow row = excelSheet.CreateRow(0);
-
-        //        row.CreateCell(0).SetCellValue("Numero Teste");
-        //        row.CreateCell(1).SetCellValue("Executador");
-        //        row.CreateCell(2).SetCellValue("Sistema");
-        //        row.CreateCell(3).SetCellValue("Cenario");
-        //        row.CreateCell(4).SetCellValue("Pre Condição");
-        //        row.CreateCell(5).SetCellValue("Passos");
-        //        row.CreateCell(6).SetCellValue("Result esperado");
-        //        row.CreateCell(7).SetCellValue("Pos condição");
-        //        row.CreateCell(8).SetCellValue("Observação");
-        //        row.CreateCell(9).SetCellValue("Data execução");
-
-        //        int count = 1;
-
-        //        foreach (var item in testes)
-        //        {
-
-        //            row = excelSheet.CreateRow(count);
-
-        //            row.CreateCell(0).SetCellValue(item.numero_teste);
-        //            row.CreateCell(1).SetCellValue(item.executor);
-        //            row.CreateCell(2).SetCellValue(item.sistema);
-        //            row.CreateCell(3).SetCellValue(item.cenario);
-        //            row.CreateCell(4).SetCellValue(item.pre_condicao);
-        //            row.CreateCell(5).SetCellValue(item.passos);
-        //            row.CreateCell(6).SetCellValue(item.result_esperado);
-        //            row.CreateCell(7).SetCellValue(item.pos_condicao);
-        //            row.CreateCell(8).SetCellValue(item.observacao);
-        //            row.CreateCell(9).SetCellValue(item.data_execucao.ToShortDateString());
-
-        //            count += 1;
-        //        }
-
-        //        workbook.Write(fs);
-        //    }
-        //    using (var stream = new FileStream(Path.Combine(sWebRootFolder, sFileName), FileMode.Open))
-        //    {
-        //        await stream.CopyToAsync(memory);
-        //    }
-        //    memory.Position = 0;
-
-        //    file.Delete();
-
-        //    return File(memory, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", sFileName);
-        //}
-        #endregion
-
         #region Lista de testes da Release X da Natura
         [HttpGet]
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult TestesNatura(string codRelease,[FromServices]NaturaDAO naturaDAO)
         {
+            NaturaRelease naturaRelease = naturaDAO.GetRelease(codRelease);
             List<NaturaTeste> naturaTestes = naturaDAO.ListaTestes_Natura(codRelease);
+           
+            ViewBag.Ambiente = naturaRelease.sistema;
             ViewBag.CodRelease = (from x in naturaTestes select x.cod_release).First();
 
             return View(naturaTestes);
@@ -406,6 +289,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult EditarTesteNatura (int idTeste, [FromServices]NaturaDAO naturaDAO)
         {
+          
             NaturaTeste teste = naturaDAO.Teste_Natura(idTeste);
 
             return View(teste);
