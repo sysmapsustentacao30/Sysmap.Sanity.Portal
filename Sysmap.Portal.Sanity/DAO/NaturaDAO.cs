@@ -28,7 +28,6 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
-                _logger.LogInformation("Natura - Verificando releases ativas");
 
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
@@ -90,7 +89,6 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
-                _logger.LogInformation("Natura - Get release: {0}", codRelease);
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (MySqlConnection mysqlCon = new MySqlConnection(ConnectionString))
@@ -113,7 +111,6 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
-                _logger.LogInformation("Natura - Atualizando dados da release: {0}", naturaRelease.cod_release);
 
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
@@ -138,7 +135,6 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
-                _logger.LogInformation("Natura - lista de releases");
 
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
@@ -209,8 +205,6 @@ namespace Sysmap.Portal.Sanity.DAO
 
             try
             {
-                _logger.LogInformation("Natura - Carregando lista de teste release cod: {0}", codRelease);
-
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 string query = @"SELECT * FROM Sanity.testes_natura t
@@ -266,7 +260,6 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
-                _logger.LogInformation("Natura - Atualizando teste id: {0}", teste.id_natura_teste.ToString());
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 string query = @"UPDATE Sanity.testes_natura
@@ -328,7 +321,6 @@ namespace Sysmap.Portal.Sanity.DAO
         {
             try
             {
-                _logger.LogInformation("Deletando teste CodRelease: {0} e Nº teste: {1}", codRelease, nTeste);
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 string query = @"CALL Sanity.procDeletaTeste_Natura(@codRelease,@nTeste);";

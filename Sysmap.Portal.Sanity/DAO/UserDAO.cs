@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
 using Sysmap.Portal.Sanity.Models;
 
@@ -11,10 +12,12 @@ namespace Sysmap.Portal.Sanity.DAO
     public class UserDAO
     {
         private IConfiguration _configuracoes;
+        private readonly ILogger _logger;
 
-        public UserDAO(IConfiguration config)
+        public UserDAO(IConfiguration config, ILogger<UserDAO> logger)
         {
             _configuracoes = config;
+            _logger = logger;
         }
 
         internal bool VerifyUser(string email, string password)
@@ -35,9 +38,10 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 userExist = false;
+                _logger.LogError("Error: {0}", ex);
             }
 
             return userExist;
@@ -66,9 +70,9 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Error: {0}", ex);
             }
 
             return VerifyUser(user.Email, user.Password);
@@ -88,9 +92,9 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                _logger.LogError("Error: {0}", ex);
             }
 
 
@@ -116,9 +120,9 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Error: {0}", ex);
             }
 
 
@@ -144,9 +148,9 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Error: {0}", ex);
             }
         }
 
@@ -164,9 +168,9 @@ namespace Sysmap.Portal.Sanity.DAO
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError("Error: {0}", ex);
             }
         }
     }

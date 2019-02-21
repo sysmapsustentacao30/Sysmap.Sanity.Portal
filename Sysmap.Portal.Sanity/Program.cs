@@ -14,7 +14,6 @@ namespace Sysmap.Portal.Sanity
             Log.Logger = new LoggerConfiguration()
            .Enrich.FromLogContext()
            .WriteTo.Console()
-           .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
            .CreateLogger();
 
             try

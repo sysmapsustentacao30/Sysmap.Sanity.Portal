@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Sysmap.Portal.Sanity.DAO;
 using Sysmap.Portal.Sanity.Models;
 using System.Collections.Generic;
@@ -12,6 +13,13 @@ namespace Sysmap.Portal.Sanity.Controllers
     [AllowAnonymous]
     public class AuthController : Controller
     {
+        private readonly ILogger _logger;
+
+        public AuthController(ILogger<AuthController> logger)
+        {
+            _logger = logger;
+        }
+
 
         [HttpGet]
         public IActionResult Login()
@@ -48,6 +56,9 @@ namespace Sysmap.Portal.Sanity.Controllers
                                         new ClaimsPrincipal(claimsIdentity),
                                         authProperties);
                 string[] sistema = user.TypeUser.Split("-");
+
+
+                _logger.LogInformation("Login user: {0}", User.Identity.Name);
 
                 if(sistema[0] == "All")
                 {
