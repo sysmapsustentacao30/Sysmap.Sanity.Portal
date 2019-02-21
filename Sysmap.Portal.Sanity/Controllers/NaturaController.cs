@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
@@ -20,9 +21,12 @@ namespace Sysmap.Portal.Sanity.Controllers
     public class NaturaController : Controller
     {
         private IHostingEnvironment _hostingEnvironment;
-        public NaturaController(IHostingEnvironment hostingEnvironment)
+        private readonly ILogger _logger;
+
+        public NaturaController(IHostingEnvironment hostingEnvironment, ILogger<NaturaController> logger)
         {
             _hostingEnvironment = hostingEnvironment;
+            _logger = logger;
         }
 
         #region Home Natura
@@ -39,6 +43,8 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult ReleasesNatura([FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- Get Releases Ativas / User: {0}", User.Identity.Name);
+
             ViewBag.CaptaAtiva = naturaDAO.ExistReleaseAtiva_Natura();
 
             if (ViewBag.CaptaAtiva)
@@ -57,6 +63,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,Natura-Admin")]
         public IActionResult AtualizaReleaseNatura(NaturaRelease naturaRelease, [FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- Atualiza o status de execução da Release : {0} / User: {1}",naturaRelease.cod_release ,User.Identity.Name);
             naturaDAO.AtualizaRelease_Natura(naturaRelease);
 
             return RedirectToAction("ReleasesNatura", "Natura");
@@ -68,6 +75,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult HistoricoReleaseNatura([FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- Historico de Releases / User: {0}", User.Identity.Name);
             List<NaturaRelease> captas = naturaDAO.ListRelease_Natura();
 
             return View(captas);
@@ -79,6 +87,8 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public async Task<IActionResult> ExportarReleaseNatura(string codRelease, [FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- Exporta Release cod: {0} / User: {1}", codRelease, User.Identity.Name);
+
             List<NaturaTeste> testes = naturaDAO.ListaTestes_Natura(codRelease);
 
             string sWebRootFolder = _hostingEnvironment.WebRootPath;
@@ -113,13 +123,59 @@ namespace Sysmap.Portal.Sanity.Controllers
                 row.CreateCell(9).SetCellValue("Massa");
                 row.CreateCell(10).SetCellValue("Observacao");
                 row.CreateCell(11).SetCellValue("Link doc");
-                row.CreateCell(12).SetCellValue("Data execucao");
+                row.CreateCell(12).SetCellValue("Data prevista");
+                row.CreateCell(13).SetCellValue("Data executado");
+                row.CreateCell(14).SetCellValue("Status teste");
+                row.CreateCell(15).SetCellValue("Status chamado");
 
                 int count = 1;
+                string statusTeste = "";
+                string statusChamado = "";
 
                 foreach (var item in testes)
                 {
                     row = excelSheet.CreateRow(count);
+
+                    switch(item.execucao_status)
+                    {
+                        case 0:
+                            statusTeste = "Não Executado";
+                            break;
+                        case 1:
+                            statusTeste = "Em execução";
+                            break;
+                        case 2:
+                            statusTeste = "Bloqueado";
+                            break;
+                        case 3:
+                            statusTeste = "Teste Falhou";
+                            break;
+                        case 4:
+                            statusTeste = "Teste com sucesso";
+                                break;
+                    }
+
+                    switch (item.chamado_status)
+                    {
+                        case 0:
+                            statusChamado = "N/A";
+                            break;
+                        case 1:
+                            statusChamado = "Aberto";
+                            break;
+                        case 2:
+                            statusChamado = "Em correção";
+                            break;
+                        case 3:
+                            statusChamado = "Liberado para teste";
+                            break;
+                        case 4:
+                            statusChamado = "Em teste";
+                            break;
+                        case 5:
+                            statusChamado = "Fechado";
+                            break;
+                    }
 
                     row.CreateCell(0).SetCellValue(item.numero_teste);
                     row.CreateCell(1).SetCellValue(item.sistema);
@@ -133,7 +189,10 @@ namespace Sysmap.Portal.Sanity.Controllers
                     row.CreateCell(9).SetCellValue(item.massa);
                     row.CreateCell(10).SetCellValue(item.observacao);
                     row.CreateCell(11).SetCellValue(item.url_doc);
-                    row.CreateCell(11).SetCellValue(item.data_execucao.Value.ToShortDateString());
+                    row.CreateCell(12).SetCellValue(item.data_execucao.Value.ToString("dd/MM/yyyy"));
+                    row.CreateCell(13).SetCellValue(item.data_executado.ToString("dd/MM/yyyy"));
+                    row.CreateCell(14).SetCellValue(statusTeste);
+                    row.CreateCell(15).SetCellValue(statusChamado);
 
                     count += 1;
                 }
@@ -157,6 +216,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,Natura-Admin")]
         public IActionResult CadReleaseNatura([FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- [HttpGet] Cadastra nova release / User: {0}", User.Identity.Name);
             return View();
         }
 
@@ -164,8 +224,8 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,Natura-Admin")]
         public IActionResult CadReleaseNatura(NaturaRelease naturaRelease, IFormFile file, [FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- [HttPost] Cadastra nova release / User: {0}", User.Identity.Name);
 
-    
             if (!ModelState.IsValid)
             {
                 return View();
@@ -274,6 +334,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult TestesNatura(string codRelease,[FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- Lista de testes da Release cod: {0}/ User: {1}",codRelease, User.Identity.Name);
             NaturaRelease naturaRelease = naturaDAO.GetRelease(codRelease);
             List<NaturaTeste> naturaTestes = naturaDAO.ListaTestes_Natura(codRelease);
            
@@ -289,7 +350,8 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult EditarTesteNatura (int idTeste, [FromServices]NaturaDAO naturaDAO)
         {
-          
+            _logger.LogInformation("Natura- [HttpGet] Editar Teste id: {0}/ User: {1}", idTeste, User.Identity.Name);
+
             NaturaTeste teste = naturaDAO.Teste_Natura(idTeste);
 
             return View(teste);
@@ -299,8 +361,9 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult EditarTesteNatura(NaturaTeste teste,int ultimo_executado, int ultimo_chamado, [FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- [HttpPost] Editar Teste id: {0}/ User: {1}", teste.id_natura_teste, User.Identity.Name);
 
-            if(teste.execucao_status == 3 && teste.chamado_status == 0)
+            if (teste.execucao_status == 3 && teste.chamado_status == 0)
             {
                 ModelState.AddModelError("observacao", "Informe o numero do chamado aqui!");
                 ModelState.AddModelError("chamado_status", "Este campo é obrigatório!");
@@ -331,6 +394,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,Natura-Admin")]
         public IActionResult AddTesteNatura (string codRelease, [FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- [HttpGet] Adicionar Teste a release cod: {0}/ User: {1}", codRelease, User.Identity.Name);
             List<NaturaTeste> naturaTestes = naturaDAO.ListaTestes_Natura(codRelease);
 
             ViewBag.CodRelease = (from x in naturaTestes select x.cod_release).First();
@@ -343,6 +407,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,Natura-Admin")]
         public IActionResult AddTesteNatura(NaturaTeste naturaTeste, [FromServices]NaturaDAO naturaDAO)
         {
+
             if (!ModelState.IsValid)
             {
                 List<NaturaTeste> naturaTestes = naturaDAO.ListaTestes_Natura(naturaTeste.cod_release);
@@ -354,6 +419,8 @@ namespace Sysmap.Portal.Sanity.Controllers
             }
             naturaTeste.execucao_status = 0;
             naturaTeste.chamado_status = 0;
+
+            _logger.LogInformation("Natura- [HttpPost] Adicionar Teste a release cod: {0}/ User: {1}", naturaTeste.cod_release, User.Identity.Name);
             naturaDAO.AddTest_Natura(naturaTeste);
 
             return RedirectToAction("TestesNatura", "Natura", new { codRelease = naturaTeste.cod_release });
@@ -488,6 +555,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         [Authorize(Roles = "All-Admin,Natura-Admin")]
         public async Task<IActionResult> DelTesteNatura(string codRelease,int nTeste, [FromServices]NaturaDAO naturaDAO)
         {
+            _logger.LogInformation("Natura- [HttpGet] Deletar Teste da release cod: {0}, nTeste: {1}/ User: {2}", codRelease, nTeste, User.Identity.Name);
             await naturaDAO.DeletaTeste_Natura(codRelease, nTeste);
 
             return RedirectToAction("TestesNatura", "Natura", new { codRelease });

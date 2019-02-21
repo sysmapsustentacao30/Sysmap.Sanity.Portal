@@ -68,7 +68,7 @@ using Sysmap.Portal.Sanity.Models;
             WriteLiteral("\r\n<div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <div class=\"page-title-box\">\r\n            <div class=\"page-title-right\">\r\n                <ol class=\"breadcrumb m-0\">\r\n                    <li>");
             EndContext();
             BeginContext(312, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a5b77f4423d4a1985a88012b7b13f73", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ebeae6ef87684f10a20d738e68ed5f31", async() => {
                 BeginContext(363, 6, true);
                 WriteLiteral("Natura");
                 EndContext();
@@ -365,7 +365,7 @@ WriteAttributeValue("", 2863, Url.Action("TestesNatura","Natura",new {codRelease
                 ");
             EndContext();
             BeginContext(3770, 2309, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42cc4e930c194d8daf2c811c7ff10655", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f38afe080514e0eab0e0b5140336e3e", async() => {
                 BeginContext(3835, 146, true);
                 WriteLiteral("\r\n                    <div class=\"form-group\">\r\n                        <label for=\"recipient-name\" class=\"col-form-label\">Data Inicial:</label>\r\n");
                 EndContext();
@@ -430,7 +430,7 @@ WriteAttributeValue("", 2863, Url.Action("TestesNatura","Natura",new {codRelease
                             ");
                 EndContext();
                 BeginContext(5312, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddeb902d5cb94724a59e9550d8ee0b8f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f909edfc81fa49188e65f1296f62fc5a", async() => {
                     BeginContext(5330, 17, true);
                     WriteLiteral("0- Não Executado.");
                     EndContext();
@@ -452,7 +452,7 @@ WriteAttributeValue("", 2863, Url.Action("TestesNatura","Natura",new {codRelease
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(5386, 42, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee347dbfbd1d4bbb9df5be5c5047a822", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "818b7ff5a4294ccc90a5010da30bf104", async() => {
                     BeginContext(5404, 15, true);
                     WriteLiteral("1- Em execução.");
                     EndContext();
@@ -474,7 +474,7 @@ WriteAttributeValue("", 2863, Url.Action("TestesNatura","Natura",new {codRelease
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(5458, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94c18e0dc5b942578d90758261a60484", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4e256fb852a4aceb3a4be7ad77a6b9d", async() => {
                     BeginContext(5476, 13, true);
                     WriteLiteral("2- Executado.");
                     EndContext();
