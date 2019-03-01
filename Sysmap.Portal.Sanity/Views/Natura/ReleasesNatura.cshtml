@@ -30,8 +30,8 @@
                     <div class="card-body">
                         <h4 class="card-title">Informações:</h4>
                         <p><i class="fas fa-sitemap"></i> Ambiente: @item.sistema</p>
-                        <p><i class="fas fa-calendar-day"></i> Data inicial: @item.data_inicial.ToString("dd/MM/yyyy")</p>
-                        <p><i class="fas fa-calendar-day"></i> Data final: @item.data_final.ToString("dd/MM/yyyy")</p>
+                        <p><i class="fas fa-calendar-day"></i> Data inicial: @item.data_inicial.ToString("yyyy/MM/dd")</p>
+                        <p><i class="fas fa-calendar-day"></i> Data final: @item.data_final.ToString("yyyy/MM/dd")</p>
                         @switch (item.status)
                         {
                             case 0:
@@ -145,10 +145,10 @@
             modal.find('.modal-title').text('Sistema: ' + sistema);
 
             var arr_data_inicio = data_inicio.split('/');
-            data_inicio = new Date(arr_data_inicio[2], arr_data_inicio[1] - 1, arr_data_inicio[0])
+            data_inicio = new Date(arr_data_inicio[2], arr_data_inicio[1] -1, arr_data_inicio[0])
 
             var arr_data_final = data_final.split('/');
-            data_final = new Date(arr_data_final[2], arr_data_final[1] - 1, arr_data_final[0])
+            data_final = new Date(arr_data_final[2], arr_data_final[1] -1, arr_data_final[0])
 
 
             document.getElementById("status_modal").value = status;
