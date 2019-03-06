@@ -48,8 +48,8 @@
                         @if (!User.IsInRole("Natura-User"))
                         {
                             <input value="@item.status" id="status_@item.cod_release" hidden />
-                            <input value="@item.data_inicial.ToShortDateString()" id="datainicio_@item.cod_release" hidden />
-                            <input value="@item.data_final.ToShortDateString()" id="datafinal_@item.cod_release" hidden />
+                            <input value="@item.data_inicial.ToString("yyyy-MM-dd")" id="datainicio_@item.cod_release" hidden />
+                            <input value="@item.data_final.ToString("yyyy-MM-dd")" id="datafinal_@item.cod_release" hidden />
                             <input value="@item.id_release" id="id_release_@item.cod_release" hidden />
                             <input value="@item.sistema" id="sistema_@item.cod_release" hidden />
 
@@ -144,19 +144,17 @@
             var modal = $(this);
             modal.find('.modal-title').text('Sistema: ' + sistema);
 
-            var arr_data_inicio = data_inicio.split('/');
-            data_inicio = new Date(arr_data_inicio[2], arr_data_inicio[1] -1, arr_data_inicio[0])
+            $('#data_inicial_modal').val(data_inicio);
+            $('#data_final_modal').val(data_final);
+            $('#status_modal').val(status);
+            $('#codigo_modal').val(codigo);
+            $('#sistema_modal').val(sistema);
+            $('#id_release_modal').val(id_release);
 
-            var arr_data_final = data_final.split('/');
-            data_final = new Date(arr_data_final[2], arr_data_final[1] -1, arr_data_final[0])
-
-
-            document.getElementById("status_modal").value = status;
-            document.getElementById("codigo_modal").value = codigo;
-            document.getElementById("sistema_modal").value = sistema;
-            document.getElementById("data_inicial_modal").value = data_inicio.toISOString().slice(0, 10);
-            document.getElementById("data_final_modal").value = data_final.toISOString().slice(0, 10);
-            document.getElementById("id_release_modal").value = id_release;
+            //document.getElementById("status_modal").value = status;
+            //document.getElementById("codigo_modal").value = codigo;
+            //document.getElementById("sistema_modal").value = sistema;
+            //document.getElementById("id_release_modal").value = id_release;
         });
     </script>
 }
