@@ -52,6 +52,7 @@
                             <input value="@item.data_final.ToString("yyyy-MM-dd")" id="datafinal_@item.cod_release" hidden />
                             <input value="@item.id_release" id="id_release_@item.cod_release" hidden />
                             <input value="@item.sistema" id="sistema_@item.cod_release" hidden />
+                            <input value="@item.anotacoes" id="anotacoes_@item.cod_release" hidden />
 
                             <button type="button" class="btn btn-outline-primary btn-rounded" data-toggle="modal" data-target="#exampleModal" data-whatever="@item.cod_release"><i class="fas fa-edit"></i> Alterar Status</button>
                         }
@@ -100,6 +101,10 @@
                         }
                     </div>
                     <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Anotações: </label>
+                        <textarea class="form-control" id="anotacoes_modal" name="anotacoes" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Status da Release:</label>
                         <select id="status_modal" name="status" class="form-control">
                             <option value="0">0- Não Executado.</option>
@@ -140,6 +145,7 @@
             var data_inicio = document.getElementById("datainicio_" + codigo).value;
             var data_final = document.getElementById("datafinal_" + codigo).value;
             var status = document.getElementById("status_" + codigo).value;
+            var anotacoes = document.getElementById("anotacoes_" + codigo).value;
             
             var modal = $(this);
             modal.find('.modal-title').text('Sistema: ' + sistema);
@@ -149,12 +155,9 @@
             $('#status_modal').val(status);
             $('#codigo_modal').val(codigo);
             $('#sistema_modal').val(sistema);
+            $('#anotacoes_modal').val(anotacoes);
             $('#id_release_modal').val(id_release);
 
-            //document.getElementById("status_modal").value = status;
-            //document.getElementById("codigo_modal").value = codigo;
-            //document.getElementById("sistema_modal").value = sistema;
-            //document.getElementById("id_release_modal").value = id_release;
         });
     </script>
 }

@@ -47,12 +47,12 @@
                 <tr>
                     <th></th>
                     <th>Nº:</th>
+                    <th>Prioridade</th>
                     <th>Sistema:</th>
                     <th>Cenario:</th>
                     <th>Executor:</th>
                     <th>Status:</th>
                     <th>Funcionalidade:</th>
-                    @*<th>Data executado:</th>*@
                     <th>Observação:</th>
                     <th>Documentação:</th>
                     <th>Data prevista:</th>
@@ -68,6 +68,9 @@
                     </td>
                     <td>
                         @item.numero_teste
+                    </td>
+                    <td>
+                        @item.prioridade
                     </td>
                     <td>
                         @item.sistema
@@ -93,6 +96,9 @@
                             case 3:
                                 <text>Teste Falhou</text>
                                 break;
+                            case 5:
+                                <text>Não se aplica</text>
+                                break;
                             case 4:
                                 <text>Teste com sucesso</text>
                                 break;
@@ -114,7 +120,7 @@
                         }
                         else
                         {
-                            <text>@item.data_execucao.Value.ToString("dd/MM/yyyy")</text>
+                            <text>@item.data_execucao.Value.ToString("yyyy/MM/dd")</text>
                         }
                     </td>
                     <td>
@@ -124,7 +130,7 @@
                         }
                         else
                         {
-                            <text> @item.data_executado.ToString("dd/MM/yyyy")</text>
+                            <text> @item.data_executado.ToString("yyyy/MM/dd")</text>
                         }
                     </td>
                 </tr>

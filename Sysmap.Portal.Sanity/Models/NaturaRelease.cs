@@ -26,5 +26,7 @@ namespace Sysmap.Portal.Sanity.Models
         [Required(ErrorMessage = "Data final dos testes é obrigatorio!")]
         [Display(Name = "Data final: ")]
         public DateTime data_final { get; set; }
+
+        public string anotacoes { get; set; }
     }
 }

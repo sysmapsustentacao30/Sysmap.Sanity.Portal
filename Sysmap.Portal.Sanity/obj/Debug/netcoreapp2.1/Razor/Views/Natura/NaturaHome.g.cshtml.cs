@@ -89,7 +89,7 @@ using Sysmap.Portal.Sanity.Models;
                 ");
             EndContext();
             BeginContext(757, 118, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8751d3a7364420184ad57b9a1eec5af", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "81ad572b173248f29887f74e4092c17a", async() => {
                 BeginContext(856, 15, true);
                 WriteLiteral("Releases Natura");
                 EndContext();
@@ -129,7 +129,7 @@ using Sysmap.Portal.Sanity.Models;
                 ");
             EndContext();
             BeginContext(1333, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d27954916184858adef28b65ba4cb44", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6316089b59de462f906e5ef18c32269d", async() => {
                 BeginContext(1434, 17, true);
                 WriteLiteral("Cadastrar Release");
                 EndContext();
@@ -169,7 +169,7 @@ using Sysmap.Portal.Sanity.Models;
                 ");
             EndContext();
             BeginContext(1845, 127, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ad7a12699d249de8004f3ed8776ed6b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b19cc94ba98d48aaa0a005ba14377761", async() => {
                 BeginContext(1952, 16, true);
                 WriteLiteral("Historico Natura");
                 EndContext();

@@ -19,12 +19,17 @@
 
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label class="col-form-label">Executor: </label>
                             <input class="form-control" asp-for="executor">
                             <span asp-validation-for="executor" class="text-danger"></span>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
+                            <label class="col-form-label">Prioridade: </label>
+                            <input asp-for="prioridade" class="form-control" />
+                            <span asp-validation-for="prioridade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
                             <label class="col-form-label">Sistema: </label>
                             <input asp-for="sistema" class="form-control" />
                             <span asp-validation-for="sistema" class="text-danger"></span>
@@ -82,8 +87,9 @@
                                 <option value="0">0- Não Executado.</option>
                                 <option value="1">1- Em execução.</option>
                                 <option value="2">2- Bloqueado.</option>
-                                <option value="3">3- Teste Falhou</option>
-                                <option value="4">4- Teste com sucesso</option>
+                                <option value="3">3- Teste Falhou.</option>
+                                <option value="5">4- Não se aplica.</option>
+                                <option value="4">5- Teste com sucesso.</option>
                             </select>
                         </div>
                         <div class="form-group col-md-4" id="chamado" hidden>
