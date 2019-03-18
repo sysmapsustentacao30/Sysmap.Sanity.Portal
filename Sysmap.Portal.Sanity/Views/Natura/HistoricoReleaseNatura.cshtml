@@ -30,6 +30,7 @@
 <table id="basic-datatable" class="table dt-responsive nowrap" width="100%">
     <thead class="thead-dark">
         <tr>
+            <th>Ações</th>
             <th>
                 Codigo
             </th>
@@ -39,37 +40,43 @@
             <th>
                 Status
             </th>
-            <th>Ações</th>
+            <th>
+                Anotaçoes
+            </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.cod_release)
-                </td>
-                <td>
-                    @item.sistema
-                </td>
-                <td>
-                    @switch (item.status)
-                    {
-                        case 0:
-                            <text>Não Executado</text>
-                            break;
-                        case 1:
-                            <text> Em execução </text>
-                            break;
-                        case 2:
-                            <text> Executado </text>
-                            break;
-                    }
-                </td>
-                <td>
-                    <a href="@Url.Action("ExportarReleaseNatura","Natura",new {codRelease = item.cod_release })" class="btn btn-outline-success btn-rounded"><i class="fas fa-file-excel"></i> Exportar</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <a href="@Url.Action("ExportarReleaseNatura","Natura",new {codRelease = item.cod_release })" class="btn btn-outline-success btn-rounded"><i class="fas fa-file-excel"></i> Exportar</a> |
+                <button class="btn btn-outline-info btn-rounded" onclick="reabrir_release('@item.cod_release')"><i class="fas fa-lock-open"></i> Reabrir</button>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_release)
+            </td>
+            <td>
+                @item.sistema
+            </td>
+            <td>
+                @switch (item.status)
+                {
+                    case 0:
+                        <text>Não Executado</text>
+                        break;
+                    case 1:
+                        <text> Em execução </text>
+                        break;
+                    case 2:
+                        <text> Executado </text>
+                        break;
+                }
+            </td>
+            <td>
+                @item.anotacoes
+            </td>
+        </tr>
         }
     </tbody>
 </table>
@@ -93,4 +100,13 @@
     <!-- demo app -->
     <script src="~/assets/js/pages/demo.datatable-init.js"></script>
     <!-- end demo js-->
+
+    <script type="text/javascript">
+        function reabrir_release(cod_release) {
+            $.post("/Natura/ReabriRelease", { codRelease: cod_release }, function (result) {
+                //$("span").html(result);
+                location.reload();
+            });
+        }
+    </script>
 }

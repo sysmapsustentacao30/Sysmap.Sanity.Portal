@@ -65,7 +65,7 @@ namespace Sysmap.Portal.Sanity.DAO
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                    var result = mysqlCon.Query<NaturaRelease>("SELECT * FROM Sanity.release_natura WHERE status != 2 order by data_inicial;");
+                    var result = mysqlCon.Query<NaturaRelease>("SELECT * FROM Sanity.release_natura WHERE status != 2 order by data_inicial desc;");
 
                     foreach (NaturaRelease item in result)
                     {
@@ -114,11 +114,31 @@ namespace Sysmap.Portal.Sanity.DAO
 
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
-                string query = @"UPDATE Sanity.release_natura SET status = @status, data_inicial = @data_inicial, data_final = @data_final WHERE id_release = @id_release;";
+                string query = @"UPDATE Sanity.release_natura SET status = @status, data_inicial = @data_inicial, data_final = @data_final, anotacoes = @anotacoes WHERE id_release = @id_release;";
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                    mysqlCon.Execute(query, new {naturaRelease.status, naturaRelease.data_inicial, naturaRelease.data_final, naturaRelease.id_release});
+                    mysqlCon.Execute(query, new {naturaRelease.status, naturaRelease.data_inicial, naturaRelease.data_final, naturaRelease.anotacoes, naturaRelease.id_release});
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro: {0}", ex);
+            }
+        }
+
+        internal void ReabriRelease(string codRelease)
+        {
+            try
+            {
+
+                string ConnectionString = _configuracoes.GetConnectionString("Sanity");
+
+                string query = @"UPDATE Sanity.release_natura SET status = 1 WHERE cod_release = @codRelease;";
+
+                using (var mysqlCon = new MySqlConnection(ConnectionString))
+                {
+                    mysqlCon.Execute(query, new { codRelease });
                 }
             }
             catch (Exception ex)
@@ -188,7 +208,7 @@ namespace Sysmap.Portal.Sanity.DAO
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                    mysqlCon.Execute("INSERT INTO `Sanity`.`testes_natura` (`cod_release`,`numero_teste`,`executor`,`execucao_status`,`chamado_status`,`sistema`,`cenario`,`pre_condicao`,`passos`,`result_esperado`,`pos_condicao`,`observacao`,data_execucao,funcionalidade,massa,url_doc) VALUES (@cod_release,@numero_teste,@executor,@execucao_status,@chamado_status,@sistema,@cenario,@pre_condicao,@passos,@result_esperado,@pos_condicao,@observacao,@data_execucao,@funcionalidade,@massa,@url_doc);", naturaTeste);
+                    mysqlCon.Execute("INSERT INTO `Sanity`.`testes_natura` (`cod_release`,`numero_teste`,`executor`,`execucao_status`,`chamado_status`,`sistema`,`cenario`,`pre_condicao`,`passos`,`result_esperado`,`pos_condicao`,`observacao`,data_execucao,funcionalidade,massa, url_doc, prioridade) VALUES (@cod_release,@numero_teste,@executor,@execucao_status,@chamado_status,@sistema,@cenario,@pre_condicao,@passos,@result_esperado,@pos_condicao,@observacao,@data_execucao,@funcionalidade,@massa,@url_doc,@prioridade);", naturaTeste);
                 }
             }
             catch (Exception ex)
@@ -276,7 +296,8 @@ namespace Sysmap.Portal.Sanity.DAO
                                     observacao = @observacao,
                                     data_execucao = @data_execucao,
                                     data_executado = @data_executado,
-                                    url_doc = @url_doc
+                                    url_doc = @url_doc,
+                                    prioridade = @prioridade
                                 WHERE id_natura_teste = @id_natura_teste;";
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))

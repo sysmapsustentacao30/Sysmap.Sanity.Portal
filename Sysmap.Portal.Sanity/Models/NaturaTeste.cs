@@ -65,5 +65,7 @@ namespace Sysmap.Portal.Sanity.Models
 
         [Display(Name = "Documentação: ")]
         public string url_doc { get; set; }
+
+        public int prioridade { get; set; }
     }
 }

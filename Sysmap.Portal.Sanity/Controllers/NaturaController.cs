@@ -68,6 +68,16 @@ namespace Sysmap.Portal.Sanity.Controllers
 
             return RedirectToAction("ReleasesNatura", "Natura");
         }
+
+        [HttpPost]
+        [Authorize(Roles = "All-Admin,Natura-Admin")]
+        public IActionResult ReabriRelease(string codRelease, [FromServices]NaturaDAO naturaDAO)
+        {
+            _logger.LogInformation("Natura- Reabrindo release cod {0} / User: {1}", codRelease, User.Identity.Name);
+            naturaDAO.ReabriRelease(codRelease);
+
+            return RedirectToAction("HistoricoReleaseNatura", "Natura");
+        }
         #endregion
 
         #region Lista com historico com todos as Releases.
@@ -124,9 +134,10 @@ namespace Sysmap.Portal.Sanity.Controllers
                 row.CreateCell(10).SetCellValue("Observacao");
                 row.CreateCell(11).SetCellValue("Link doc");
                 row.CreateCell(12).SetCellValue("Data prevista");
-                row.CreateCell(13).SetCellValue("Data executado");
-                row.CreateCell(14).SetCellValue("Status teste");
-                row.CreateCell(15).SetCellValue("Status chamado");
+                row.CreateCell(13).SetCellValue("Prioridade");
+                row.CreateCell(14).SetCellValue("Data executado");
+                row.CreateCell(16).SetCellValue("Status teste");
+                row.CreateCell(16).SetCellValue("Status chamado");
 
                 int count = 1;
                 string statusTeste = "";
@@ -190,9 +201,10 @@ namespace Sysmap.Portal.Sanity.Controllers
                     row.CreateCell(10).SetCellValue(item.observacao);
                     row.CreateCell(11).SetCellValue(item.url_doc);
                     row.CreateCell(12).SetCellValue(item.data_execucao.Value.ToString("dd/MM/yyyy"));
-                    row.CreateCell(13).SetCellValue(item.data_executado.ToString("dd/MM/yyyy"));
-                    row.CreateCell(14).SetCellValue(statusTeste);
-                    row.CreateCell(15).SetCellValue(statusChamado);
+                    row.CreateCell(13).SetCellValue(item.prioridade);
+                    row.CreateCell(14).SetCellValue(item.data_executado.ToString("dd/MM/yyyy"));
+                    row.CreateCell(15).SetCellValue(statusTeste);
+                    row.CreateCell(16).SetCellValue(statusChamado);
 
                     count += 1;
                 }
@@ -211,7 +223,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         }
         #endregion
 
-        #region Cria uma nova Release(Lista de teste) e importa planilha com os dados.
+        #region Cadastrar Release(Lista de teste) e importa planilha com os dados.
         [HttpGet]
         [Authorize(Roles = "All-Admin,Natura-Admin")]
         public IActionResult CadReleaseNatura([FromServices]NaturaDAO naturaDAO)
@@ -300,6 +312,7 @@ namespace Sysmap.Portal.Sanity.Controllers
                                 massa = row.GetCell(9)?.ToString(),
                                 observacao = row.GetCell(10)?.ToString(),
                                 url_doc = row.GetCell(11)?.ToString(),
+                                prioridade = Convert.ToInt16(row.GetCell(13)?.ToString()),
                                 data_execucao = data,
                                 execucao_status = 0,
                                 chamado_status = 0
@@ -310,18 +323,20 @@ namespace Sysmap.Portal.Sanity.Controllers
 
                         }
                     }
+
+                    //Registra na tabela de releases da natura.
+                    naturaDAO.AddRelease_Natura(naturaRelease);
+
                     //Add Testes
                     foreach (NaturaTeste teste in listTestes)
                     {
                         naturaDAO.AddTest_Natura(teste);
                     }
 
-                    //Registra cod dos testes do capta,dia e status
-                    naturaDAO.AddRelease_Natura(naturaRelease);
 
                     //Deleta arquivo criado
                     FileInfo fileInfo = new FileInfo(Path.Combine(webRootPath, file.FileName));
-                     fileInfo.Delete();
+                    fileInfo.Delete();
                 }
 
                 return RedirectToAction("ReleasesNatura", "Natura");
@@ -523,6 +538,7 @@ namespace Sysmap.Portal.Sanity.Controllers
                                 observacao = row.GetCell(10)?.ToString(),
                                 url_doc = row.GetCell(11)?.ToString(),
                                 data_execucao = data,
+                                prioridade = Convert.ToUInt16(row.GetCell(13)?.ToString()),
                                 execucao_status = 0,
                                 chamado_status = 0
 

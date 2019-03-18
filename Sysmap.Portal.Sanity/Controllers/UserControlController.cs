@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,22 @@ namespace Sysmap.Portal.Sanity.Controllers
 
             if (result)
             {
+                //var smtpClient = new SmtpClient {
+                //    Host = "smtp.gmail.com",
+                //    Port = 587,
+                //    EnableSsl = true,
+                //    Credentials = new NetworkCredential("from@gmail.com", "password")
+                //};
+
+                //using (var message = new MailMessage("from@gmail.com", user.Email)
+                //{
+                //    Subject = "Cadastro Portal Sanity",
+                //    Body = "Body"
+                //})
+                //{
+                //    smtpClient.SendMailAsync(message);
+                //}
+
                 return RedirectToAction("ListUser","UserControl");
             }
 

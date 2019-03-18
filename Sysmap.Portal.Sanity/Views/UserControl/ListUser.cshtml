@@ -49,7 +49,7 @@
                         @Html.DisplayFor(modelItem => item.TypeUser)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.DateCreate)
+                        @item.DateCreate.ToString("yyyy/MM/dd")
                     </td>
                     <td>
                         <a href="@Url.Action("EditUser","UserControl",new {email = item.Email })" class="btn btn-outline-info"><i class="fas fa-user-cog"></i> Editar</a> |
