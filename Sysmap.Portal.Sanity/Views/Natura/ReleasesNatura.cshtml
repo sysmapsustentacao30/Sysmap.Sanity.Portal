@@ -52,7 +52,7 @@
                             <input value="@item.data_final.ToString("yyyy-MM-dd")" id="datafinal_@item.cod_release" hidden />
                             <input value="@item.id_release" id="id_release_@item.cod_release" hidden />
                             <input value="@item.sistema" id="sistema_@item.cod_release" hidden />
-                            <input value="@item.anotacoes" id="anotacoes_@item.cod_release" hidden />
+                            <textarea id="anotacoes_@item.cod_release"  hidden>@item.anotacoes</textarea>
 
                             <button type="button" class="btn btn-outline-primary btn-rounded" data-toggle="modal" data-target="#exampleModal" data-whatever="@item.cod_release"><i class="fas fa-edit"></i> Alterar Status</button>
                         }
