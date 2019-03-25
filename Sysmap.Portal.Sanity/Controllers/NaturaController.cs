@@ -80,7 +80,7 @@ namespace Sysmap.Portal.Sanity.Controllers
         }
         #endregion
 
-        #region Lista com historico com todos as Releases.
+        #region Lista de historico com todos as Releases.
         [HttpGet]
         [Authorize(Roles = "All-Admin,All-User,Natura-Admin,Natura-User")]
         public IActionResult HistoricoReleaseNatura([FromServices]NaturaDAO naturaDAO)
@@ -313,6 +313,13 @@ namespace Sysmap.Portal.Sanity.Controllers
                                 observacao = row.GetCell(10)?.ToString(),
                                 url_doc = row.GetCell(11)?.ToString(),
                                 prioridade = Convert.ToInt16(row.GetCell(13)?.ToString()),
+                                cn_login = row.GetCell(14)?.ToString(),
+                                cn_senha = row.GetCell(15)?.ToString(),
+                                gr_login = row.GetCell(16)?.ToString(),
+                                gr_senha = row.GetCell(17)?.ToString(),
+                                lider_login = row.GetCell(18)?.ToString(),
+                                lider_senha = row.GetCell(19)?.ToString(),
+                                browser = row.GetCell(20)?.ToString(),
                                 data_execucao = data,
                                 execucao_status = 0,
                                 chamado_status = 0
@@ -380,7 +387,7 @@ namespace Sysmap.Portal.Sanity.Controllers
 
             if (teste.execucao_status == 3 && teste.chamado_status == 0)
             {
-                ModelState.AddModelError("observacao", "Informe o numero do chamado aqui!");
+                ModelState.AddModelError("observacao", "Informe o numero do chamado aqui aberto aqui!");
                 ModelState.AddModelError("chamado_status", "Este campo é obrigatório!");
                 return View(teste);
             }
@@ -539,6 +546,13 @@ namespace Sysmap.Portal.Sanity.Controllers
                                 url_doc = row.GetCell(11)?.ToString(),
                                 data_execucao = data,
                                 prioridade = Convert.ToUInt16(row.GetCell(13)?.ToString()),
+                                cn_login = row.GetCell(14)?.ToString(),
+                                cn_senha = row.GetCell(15)?.ToString(),
+                                gr_login = row.GetCell(16)?.ToString(),
+                                gr_senha = row.GetCell(17)?.ToString(),
+                                lider_login = row.GetCell(18)?.ToString(),
+                                lider_senha = row.GetCell(19)?.ToString(),
+                                browser = row.GetCell(20)?.ToString(),
                                 execucao_status = 0,
                                 chamado_status = 0
 

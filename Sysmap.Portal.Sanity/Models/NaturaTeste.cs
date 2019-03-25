@@ -67,5 +67,19 @@ namespace Sysmap.Portal.Sanity.Models
         public string url_doc { get; set; }
 
         public int prioridade { get; set; }
+
+        public string cn_login { get; set; }
+
+        public string cn_senha { get; set; }
+
+        public string gr_login { get; set; }
+
+        public string gr_senha { get; set; }
+
+        public string lider_login { get; set; }
+
+        public string lider_senha { get; set; }
+
+        public string browser { get; set; }
     }
 }

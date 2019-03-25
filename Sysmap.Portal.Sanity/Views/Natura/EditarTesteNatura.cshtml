@@ -1,7 +1,7 @@
 ﻿@model Sysmap.Portal.Sanity.Models.NaturaTeste
 
 @{
-    ViewData["Title"] = "Teste-" + ViewBag.NumeroTeste;
+    ViewData["Title"] = "Teste" + ViewBag.NumeroTeste;
 }
 
 <h2>Teste numero: @Model.numero_teste</h2>
@@ -19,26 +19,70 @@
 
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label class="col-form-label">Executor: </label>
                             <input class="form-control" asp-for="executor">
                             <span asp-validation-for="executor" class="text-danger"></span>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label class="col-form-label">Prioridade: </label>
                             <input asp-for="prioridade" class="form-control" />
                             <span asp-validation-for="prioridade" class="text-danger"></span>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label class="col-form-label">Sistema: </label>
                             <input asp-for="sistema" class="form-control" />
                             <span asp-validation-for="sistema" class="text-danger"></span>
                         </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Browser: </label>
+                            <input asp-for="browser" class="form-control" />
+                            <span asp-validation-for="browser" class="text-danger"></span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-form-label">Cenario: </label>
-                        <input asp-for="cenario" class="form-control" />
-                        <span asp-validation-for="cenario" class="text-danger"></span>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">CN Login: </label>
+                            <input class="form-control" asp-for="cn_login">
+                            <span asp-validation-for="cn_login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">CN Senha: </label>
+                            <input asp-for="cn_senha" class="form-control" />
+                            <span asp-validation-for="cn_senha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">GR Login: </label>
+                            <input asp-for="gr_login" class="form-control" />
+                            <span asp-validation-for="gr_login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">GR Senha: </label>
+                            <input asp-for="gr_senha" class="form-control" />
+                            <span asp-validation-for="gr_senha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">Lider Login: </label>
+                            <input asp-for="lider_login" class="form-control" />
+                            <span asp-validation-for="lider_login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">Lider Senha: </label>
+                            <input asp-for="lider_senha" class="form-control" />
+                            <span asp-validation-for="lider_senha" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">Funcionalidade: </label>
+                            <input asp-for="funcionalidade" class="form-control" />
+                            <span asp-validation-for="funcionalidade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">Cenario: </label>
+                            <input asp-for="cenario" class="form-control" />
+                            <span asp-validation-for="cenario" class="text-danger"></span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label">Pré Condição</label>

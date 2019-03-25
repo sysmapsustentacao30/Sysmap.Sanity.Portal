@@ -17,45 +17,70 @@
 
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label class="col-form-label">Funcionalidade:</label>
-                            <input type="text" asp-for="funcionalidade" class="form-control" />
-                            <span asp-validation-for="funcionalidade" class="text-danger"></span>
-                            <input class="form-control" name="numero_teste" value="@ViewBag.Cenario" readonly hidden />
-                            <input class="form-control" name="cod_release" value="@ViewBag.CodRelease" readonly hidden />
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="col-form-label">Massa: </label>
-                            <input type="text" asp-for="massa" class="form-control" />
-                            <span asp-validation-for="massa" class="text-danger"></span>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="col-form-label">Prioridade: </label>
-                            <input type="number" asp-for="prioridade" class="form-control" />
-                            <span asp-validation-for="prioridade" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label class="col-form-label">Executor: </label>
                             <input class="form-control" asp-for="executor">
                             <span asp-validation-for="executor" class="text-danger"></span>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Prioridade: </label>
+                            <input asp-for="prioridade" class="form-control" />
+                            <span asp-validation-for="prioridade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
                             <label class="col-form-label">Sistema: </label>
                             <input asp-for="sistema" class="form-control" />
                             <span asp-validation-for="sistema" class="text-danger"></span>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label class="col-form-label">Data de execução: </label>
-                            <input type="date" asp-for="data_execucao" class="form-control" />
-                            <span asp-validation-for="data_execucao" class="text-danger"></span>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Browser: </label>
+                            <input asp-for="browser" class="form-control" />
+                            <span asp-validation-for="browser" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-form-label">Cenario: </label>
-                        <textarea asp-for="cenario" rows="1" class="form-control"></textarea>
-                        <span asp-validation-for="cenario" class="text-danger"></span>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">CN Login: </label>
+                            <input class="form-control" asp-for="cn_login">
+                            <span asp-validation-for="cn_login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">CN Senha: </label>
+                            <input asp-for="cn_senha" class="form-control" />
+                            <span asp-validation-for="cn_senha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">GR Login: </label>
+                            <input asp-for="gr_login" class="form-control" />
+                            <span asp-validation-for="gr_login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">GR Senha: </label>
+                            <input asp-for="gr_senha" class="form-control" />
+                            <span asp-validation-for="gr_senha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">Lider Login: </label>
+                            <input asp-for="lider_login" class="form-control" />
+                            <span asp-validation-for="lider_login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="col-form-label">Lider Senha: </label>
+                            <input asp-for="lider_senha" class="form-control" />
+                            <span asp-validation-for="lider_senha" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">Funcionalidade: </label>
+                            <input asp-for="funcionalidade" class="form-control" />
+                            <span asp-validation-for="funcionalidade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">Cenario: </label>
+                            <input asp-for="cenario" class="form-control" />
+                            <span asp-validation-for="cenario" class="text-danger"></span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label">Pré Condição</label>
@@ -78,6 +103,11 @@
                         <span asp-validation-for="pos_condicao" class="text-danger"></span>
                     </div>
                     <div class="form-group">
+                        <label class="col-form-label">Massa: </label>
+                        <textarea asp-for="massa" rows="5" class="form-control"></textarea>
+                        <span asp-validation-for="massa" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
                         <label class="col-form-label">Observação: </label>
                         <textarea asp-for="observacao" rows="1" class="form-control"></textarea>
                         <span asp-validation-for="observacao" class="text-danger"></span>
@@ -85,8 +115,8 @@
                     <div class="form-group">
                         <label class="col-form-label">Link documentação: </label>
                         <textarea asp-for="url_doc" rows="1" class="form-control"></textarea>
-                        <span asp-validation-for="url_doc" class="text-danger"></span>
                     </div>
+
                     <button type="submit" class="btn btn-outline-success btn-rounded"><i class="fas fa-save"></i> Salvar</button>| <a href="@Url.Action("TestesNatura","Natura",new { codRelease = ViewBag.CodRelease } )" class="btn btn-outline-secondary btn-rounded"><i class="fas fa-backward"></i> Voltar</a>
                 </form>
             </div> <!-- end card-body -->
