@@ -238,6 +238,12 @@ namespace Sysmap.Portal.Sanity.Controllers
         {
             _logger.LogInformation("Natura- [HttPost] Cadastra nova release / User: {0}", User.Identity.Name);
 
+            if(naturaRelease.sistema == "null")
+            {
+                ModelState.AddModelError("sistema", "Campo 'Ambiente' é obrigatorio");
+                return View();
+            }
+
             if (!ModelState.IsValid)
             {
                 return View();

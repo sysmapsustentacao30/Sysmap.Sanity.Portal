@@ -62,7 +62,7 @@ using Sysmap.Portal.Sanity.Models;
             WriteLiteral("\r\n<li class=\"side-nav-title side-nav-item\">Portal Sanity</li>\r\n\r\n<li class=\"side-nav-item\">\r\n    ");
             EndContext();
             BeginContext(97, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d1a1c888930843aaa845ec66bfd265c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9dee35a9698e4abca7507ce9c93eb381", async() => {
                 BeginContext(162, 72, true);
                 WriteLiteral("\r\n        <i class=\"fas fa-home\"></i>\r\n        <span> Home </span>\r\n    ");
                 EndContext();
@@ -98,7 +98,7 @@ using Sysmap.Portal.Sanity.Models;
             ");
             EndContext();
             BeginContext(567, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b97272ddf2f48f4a9ef97af2956b60d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7d69bd514a641f8a230d30ebd6b6fad", async() => {
                 BeginContext(614, 32, true);
                 WriteLiteral("<i class=\"fas fa-cube\"></i> Vivo");
                 EndContext();
@@ -122,7 +122,7 @@ using Sysmap.Portal.Sanity.Models;
             WriteLiteral("\r\n        </li>\r\n        <li>\r\n            ");
             EndContext();
             BeginContext(693, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9a8de6477bb468999884ca77fcc09a0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fac31a3a1eb84909b3485036e0176af1", async() => {
                 BeginContext(744, 34, true);
                 WriteLiteral("<i class=\"fas fa-cube\"></i> Natura");
                 EndContext();
@@ -167,7 +167,7 @@ using Sysmap.Portal.Sanity.Models;
     ");
             EndContext();
             BeginContext(1578, 173, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05df37bb818244f68d7ea05ebb59d327", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "695eea1a4f624d8fb55cadf761265af6", async() => {
                 BeginContext(1654, 93, true);
                 WriteLiteral("\r\n        <i class=\"fas fa-address-book\"></i>\r\n        <span> Lista de usuarios </span>\r\n    ");
                 EndContext();
