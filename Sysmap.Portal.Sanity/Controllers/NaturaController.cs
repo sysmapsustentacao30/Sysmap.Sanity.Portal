@@ -303,6 +303,17 @@ namespace Sysmap.Portal.Sanity.Controllers
                                 data = Convert.ToDateTime(dataExec);
                             }
 
+                            var prioridadeExcel = row.GetCell(13)?.ToString();
+                            int prioridadeTeste = 0;
+                            if(prioridadeExcel == "" || prioridadeExcel is null)
+                            {
+
+                            }
+                            else
+                            {
+                                prioridadeTeste = Convert.ToInt16(row.GetCell(13)?.ToString());
+                            }
+
                             NaturaTeste naturaTeste = new NaturaTeste
                             {
                                 cod_release = naturaRelease.cod_release,
@@ -318,7 +329,8 @@ namespace Sysmap.Portal.Sanity.Controllers
                                 massa = row.GetCell(9)?.ToString(),
                                 observacao = row.GetCell(10)?.ToString(),
                                 url_doc = row.GetCell(11)?.ToString(),
-                                prioridade = Convert.ToInt16(row.GetCell(13)?.ToString()),
+                                data_execucao = data,
+                                prioridade = prioridadeTeste,
                                 cn_login = row.GetCell(14)?.ToString(),
                                 cn_senha = row.GetCell(15)?.ToString(),
                                 gr_login = row.GetCell(16)?.ToString(),
@@ -326,7 +338,6 @@ namespace Sysmap.Portal.Sanity.Controllers
                                 lider_login = row.GetCell(18)?.ToString(),
                                 lider_senha = row.GetCell(19)?.ToString(),
                                 browser = row.GetCell(20)?.ToString(),
-                                data_execucao = data,
                                 execucao_status = 0,
                                 chamado_status = 0
 
