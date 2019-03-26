@@ -56,7 +56,7 @@ using Sysmap.Portal.Sanity.Models;
             WriteLiteral("<li class=\"side-nav-title side-nav-item\">Portal Sanity</li>\r\n\r\n<li class=\"side-nav-item\">\r\n    ");
             EndContext();
             BeginContext(95, 145, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f28a73c96ec4ae3b6d3df2beda76492", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ede285fae7174cc8b63032015f7bb877", async() => {
                 BeginContext(164, 72, true);
                 WriteLiteral("\r\n        <i class=\"fas fa-home\"></i>\r\n        <span> Home </span>\r\n    ");
                 EndContext();

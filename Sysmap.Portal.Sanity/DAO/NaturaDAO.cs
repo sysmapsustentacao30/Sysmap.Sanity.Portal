@@ -208,7 +208,7 @@ namespace Sysmap.Portal.Sanity.DAO
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                    mysqlCon.Execute("INSERT INTO `Sanity`.`testes_natura` (`cod_release`,`numero_teste`,`executor`,`execucao_status`,`chamado_status`,`sistema`,`cenario`,`pre_condicao`,`passos`,`result_esperado`,`pos_condicao`,`observacao`,data_execucao,funcionalidade,massa, url_doc, prioridade) VALUES (@cod_release,@numero_teste,@executor,@execucao_status,@chamado_status,@sistema,@cenario,@pre_condicao,@passos,@result_esperado,@pos_condicao,@observacao,@data_execucao,@funcionalidade,@massa,@url_doc,@prioridade);", naturaTeste);
+                    mysqlCon.Execute("INSERT INTO `Sanity`.`testes_natura` (`cod_release`,`numero_teste`,`executor`,`execucao_status`,`chamado_status`,`sistema`,`cenario`,`pre_condicao`,`passos`,`result_esperado`,`pos_condicao`,`observacao`,data_execucao,funcionalidade,massa, url_doc, prioridade,cn_login,cn_senha,gr_login,gr_senha,lider_login,lider_senha,browser) VALUES (@cod_release,@numero_teste,@executor,@execucao_status,@chamado_status,@sistema,@cenario,@pre_condicao,@passos,@result_esperado,@pos_condicao,@observacao,@data_execucao,@funcionalidade,@massa,@url_doc,@prioridade,@cn_login,@cn_senha,@gr_login,@gr_senha,@lider_login,@lider_senha,@browser);", naturaTeste);
                 }
             }
             catch (Exception ex)
@@ -297,7 +297,14 @@ namespace Sysmap.Portal.Sanity.DAO
                                     data_execucao = @data_execucao,
                                     data_executado = @data_executado,
                                     url_doc = @url_doc,
-                                    prioridade = @prioridade
+                                    prioridade = @prioridade,
+                                    cn_login = @cn_login,
+                                    cn_senha = @cn_senha,
+                                    gr_login = @gr_login,
+                                    gr_senha = @gr_senha,
+                                    lider_login = @lider_login,
+                                    lider_senha = @lider_senha,
+                                    browser = @browser
                                 WHERE id_natura_teste = @id_natura_teste;";
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
