@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GITHUB\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj": {}
+    "C:\\RepositoryGitHub\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj": {}
   },
   "projects": {
-    "C:\\GITHUB\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj": {
+    "C:\\RepositoryGitHub\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GITHUB\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj",
+        "projectUniqueName": "C:\\RepositoryGitHub\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj",
         "projectName": "Sysmap.Portal.Sanity",
-        "projectPath": "C:\\GITHUB\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj",
+        "projectPath": "C:\\RepositoryGitHub\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\Sysmap.Portal.Sanity.csproj",
         "packagesPath": "C:\\Users\\marcelo.martins\\.nuget\\packages\\",
-        "outputPath": "C:\\GITHUB\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\obj\\",
+        "outputPath": "C:\\RepositoryGitHub\\Sysmap.Sanity.Portal\\Sysmap.Portal.Sanity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -21,15 +21,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.myget.org/F/workflow/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "netcoreapp2.2": {
             "projectReferences": {}
           }
         },
@@ -40,11 +39,11 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
+        "netcoreapp2.2": {
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[1.50.5, )"
+              "version": "[1.60.6, )"
             },
             "DotNetCore.NPOI": {
               "target": "Package",
@@ -53,31 +52,31 @@
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.1, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.0, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.0.2105168, )"
+              "version": "[1.7.9, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.1.1, )"
+              "version": "[2.2.3, )"
             },
             "MySql.Data": {
               "target": "Package",
-              "version": "[8.0.13, )"
+              "version": "[8.0.16, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
