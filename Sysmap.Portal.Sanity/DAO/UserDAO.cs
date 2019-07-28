@@ -41,7 +41,7 @@ namespace Sysmap.Portal.Sanity.DAO
             catch (Exception ex)
             {
                 userExist = false;
-                _logger.LogError("Error: {0}", ex);
+                _logger.LogError("Error: {0}", ex.Message);
             }
 
             return userExist;
@@ -72,7 +72,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error: {0}", ex);
+                _logger.LogError("Error: {0}", ex.Message);
             }
 
             return VerifyUser(user.Email, user.Password);
@@ -94,7 +94,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error: {0}", ex);
+                _logger.LogError("Error: {0}", ex.Message);
             }
 
 
@@ -122,7 +122,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error: {0}", ex);
+                _logger.LogError("Error: {0}", ex.Message);
             }
 
 
@@ -150,7 +150,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error: {0}", ex);
+                _logger.LogError("Error: {0}", ex.Message);
             }
         }
 
@@ -170,7 +170,7 @@ namespace Sysmap.Portal.Sanity.DAO
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error: {0}", ex);
+                _logger.LogError("Error: {0}", ex.Message);
             }
         }
     }

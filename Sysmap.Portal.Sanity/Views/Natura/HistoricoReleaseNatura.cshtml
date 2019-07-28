@@ -50,8 +50,9 @@
         {
         <tr>
             <td>
-                <a href="@Url.Action("ExportarReleaseNatura","Natura",new {codRelease = item.cod_release })" class="btn btn-outline-success btn-rounded"><i class="fas fa-file-excel"></i> Exportar</a> |
-                <button class="btn btn-outline-info btn-rounded" onclick="reabrir_release('@item.cod_release')"><i class="fas fa-lock-open"></i> Reabrir</button>
+                <a href="http://zeta.sysmap.com.br:3000/d/2-VjWt5mz/release-natura?orgId=1&var-release=@item.cod_release&from=@item.data_inicial.ToFileTimeUtc()" class="text-secondary" target="_blank"><i class="fas fa-chart-pie"></i> Grafana</a> |
+                <a href="@Url.Action("ExportarReleaseNatura","Natura",new {codRelease = item.cod_release })" class="text-success"><i class="fas fa-file-excel"></i> Exportar</a> |
+                <button class="text-info" onclick="reabrir_release('@item.cod_release')"><i class="fas fa-lock-open"></i> Reabrir</button>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.cod_release)

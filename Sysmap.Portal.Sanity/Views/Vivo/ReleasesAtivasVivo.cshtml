@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.VivoRelease>
+
+@{
+    ViewData["Title"] = "Releases Ativas Vivo";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="@Url.Action("VivoHome","Vivo")">Vivo Home</a></li>
+                    <li class="breadcrumb-item active">Vivo Sanity</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Releases Ativas Vivo </h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6">
+            <div class="card">
+                <h5 class="card-header">Código: @item.CodRelease</h5>
+                <div class="card-body">
+                    <h4 class="card-title">Informações:</h4>
+                    <p><i class="fas fa-calendar-day"></i> Data inicial: @item.DataRelease.ToString("dd/MM/yyyy")</p>
+                    <a href="http://zeta.sysmap.com.br:3000/d/PuMueL9ik/release-vivo?orgId=1&refresh=5s&var-release=@item.CodRelease" class="btn btn-outline-info btn-rounded" target="_blank">
+                        <i class="fas fa-chart-pie"></i>
+                        <span> Grafana </span>
+                    </a> |
+                    <button type="button" class="btn btn-outline-info btn-rounded" data-toggle="modal" data-target="#exampleModal" data-whatever="@item.CodRelease"><i class="fas fa-edit"></i> Alterar Status</button>
+                    |  <a href="@Url.Action("ListaTestes","Vivo",new {idRelease = item.IdRelease })" class="btn btn-outline-info btn-rounded"><i class="fas fa-list-ol"></i> Lista de Testes </a>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col-->
+    }
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="AtualizaReleaseVivo" asp-controller="Vivo">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Status da Release:</label>
+                        <select id="status_modal" name="status" class="form-control">
+                            <option value="0">0- Não Executada.</option>
+                            <option value="1">1- Finalizar Release.</option>
+                        </select>
+                    </div>
+                    <input id="codigo_modal" name="Codrelease" hidden />
+      
+                    <button type="submit" class="btn btn-outline-success btn-rounded"><i class="fas fa-save"></i> Salvar</button> | <button type="button" class="btn btn-outline-secondary btn-rounded" data-dismiss="modal"><i class="fas fa-times"></i> Fechar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $(".card").mousemove(function () {
+                $(this).addClass("shadow-lg")
+            });
+
+            $(".card").mouseout(function () {
+                $(this).removeClass("shadow-lg")
+            });
+        });
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+
+            //Dados da release selecionada
+            var codigo = button.data('whatever');
+
+            var modal = $(this);
+            modal.find('.modal-title').text(codigo);
+            $('#codigo_modal').val(codigo);
+
+        });
+    </script>
+}
