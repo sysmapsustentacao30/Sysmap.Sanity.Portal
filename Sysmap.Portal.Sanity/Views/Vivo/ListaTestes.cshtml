@@ -1,0 +1,151 @@
+﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.TestesVivo>
+
+@{
+    ViewData["Title"] = "Lista de Testes";
+}
+
+@section head{
+    <!-- third party css -->
+    <link href="~/assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/vendor/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="@Url.Action("ReleasesAtivasVivo","Vivo")">Releases Ativas</a></li>
+                    <li class="breadcrumb-item active"> Lista de testes</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Código da release: @ViewBag.CodRelease</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card col-12">
+        <div class="card-header">
+            @*@if (User.IsInRole("Admin"))
+            {
+                <button type="button" class="btn btn-outline-secondary btn-sm btn-rounded" data-toggle="modal" data-target="#addTeste"><i class="fas fa-cogs"></i> Gerenciador dos Testes</button>
+            }*@
+        </div>
+        <div class="card-body">
+            <table id="basic-datatable" class="table dt-responsive" width="100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th></th>
+                        <th>Editar:</th>
+                        <th>
+                            Nº:
+                        </th>
+                        <th>
+                            Executor:
+                        </th>
+                        <th>
+                            Status:
+                        </th>
+                        <th>
+                            Tipo Teste
+                        </th>
+                        <th>
+                            Sistema:
+                        </th>
+                        <th>
+                            Plataforma
+                        </th>
+                        <th>
+                            Tipo Massa:
+                        </th>
+                        <th>
+                            Massa:
+                        </th>
+                        <th>
+                            Demanda
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td></td>
+                            <td><a href="@Url.Action("EditarTeste","Vivo",new {idTeste = item.IdTeste})" class="text-info"><i class="fas fa-edit"></i> Editar</a></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cenario)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Analista)
+                            </td>
+                            <td>
+                                @switch (item.Status)
+                                {
+                                    case 0:
+                                        <text>Não Executado</text>
+                                        break;
+                                    case 1:
+                                        <text>Em execução</text>
+                                        break;
+                                    case 2:
+                                        <text>Bloqueado</text>
+                                        break;
+                                    case 3:
+                                        <text>Teste Falhou</text>
+                                        break;
+                                    case 5:
+                                        <text>Não se aplica</text>
+                                        break;
+                                    case 4:
+                                        <text>Teste com sucesso</text>
+                                        break;
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoTeste)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sistema)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Plataforma)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoMassa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Massa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Demanda)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <!-- third party js -->
+    <script src="~/assets/js/vendor/jquery.dataTables.js"></script>
+    <script src="~/assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="~/assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <!-- third party js ends -->
+
+    <script type="text/Javascript">
+        $('#basic-datatable').DataTable({
+            stateSave: true
+        });
+    </script>
+
+}

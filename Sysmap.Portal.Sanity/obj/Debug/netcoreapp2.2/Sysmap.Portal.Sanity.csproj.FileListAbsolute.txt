@@ -33,10 +33,6 @@ C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcorea
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\UserControl\DeleteUser.g.cshtml.cs
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\UserControl\EditUser.g.cshtml.cs
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\UserControl\ListUser.g.cshtml.cs
-C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\CenariosVivo.g.cshtml.cs
-C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\CriarCenarioVivo.g.cshtml.cs
-C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\EditarCenarioVivo.g.cshtml.cs
-C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\HistoricoReleaseVivo.g.cshtml.cs
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\VivoHome.g.cshtml.cs
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
@@ -46,3 +42,8 @@ C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcorea
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Sysmap.Portal.Sanity.dll
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Sysmap.Portal.Sanity.pdb
 C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Sysmap.Portal.Sanity.csproj.CopyComplete
+C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\ReleasesAtivasVivo.g.cshtml.cs
+C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\CadastrarReleaseVivo.g.cshtml.cs
+C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\HistoricoReleaseVivo.g.cshtml.cs
+C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\ListaTestes.g.cshtml.cs
+C:\RepositoryGitHub\Sysmap.Sanity.Portal\Sysmap.Portal.Sanity\obj\Debug\netcoreapp2.2\Razor\Views\Vivo\EditarTeste.g.cshtml.cs

@@ -1,71 +1,49 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
 using Sysmap.Portal.Sanity.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sysmap.Portal.Sanity.DAO
 {
     public class VivoDAO
     {
         private IConfiguration _configuracoes;
+        private readonly ILogger _logger;
 
-        public VivoDAO(IConfiguration config)
+        public VivoDAO(IConfiguration config, ILogger<VivoDAO> logger)
         {
             _configuracoes = config;
+            _logger = logger;
         }
-        #region Release
-        internal dynamic ReleaseAtivaVivo()
+
+        #region Pegando releases ativas
+        internal List<VivoRelease> GetReleasesVivoAtivas()
         {
-            bool releaseAtiva = false;
+            List<VivoRelease> vivoRelease = new List<VivoRelease>();
             try
             {
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (MySqlConnection mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                    int result = mysqlCon.Query<int>(@"SELECT count(*) FROM Sanity.`Release` Where Status = 0;").First();
-
-                    if (result == 1)
-                    {
-                        releaseAtiva = true;
-                    }
+                    vivoRelease = mysqlCon.Query<VivoRelease>(@"SELECT * FROM Sanity.`Release` Where Status = 0;").ToList();
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                releaseAtiva = false;
-            }
-
-            return releaseAtiva;
-        }
-
-        internal VivoRelease GetReleaseVivoAtiva()
-        {
-            VivoRelease vivoRelease = new VivoRelease();
-            try
-            {
-                string ConnectionString = _configuracoes.GetConnectionString("Sanity");
-
-                using (MySqlConnection mysqlCon = new MySqlConnection(ConnectionString))
-                {
-                    vivoRelease = mysqlCon.Query<VivoRelease>(@"SELECT * FROM Sanity.`Release` Where Status = 0;").First();
-                }
-
-            }
-            catch (Exception)
-            {
-                
+                _logger.LogError(ex.Message);
             }
 
             return vivoRelease;
         }
+        #endregion
 
+        #region Lista com todas as releases.
         internal List<VivoRelease> GetListReleaseVivo()
         {
             List<VivoRelease> vivoRelease = new List<VivoRelease>();
@@ -76,49 +54,20 @@ namespace Sysmap.Portal.Sanity.DAO
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                    var result = mysqlCon.Query<VivoRelease>("SELECT * FROM Sanity.`Release`;");
-
-                    foreach (VivoRelease cenario in result)
-                    {
-                        vivoRelease.Add(cenario);
-                    }
+                    vivoRelease = mysqlCon.Query<VivoRelease>("SELECT * FROM Sanity.`Release`;").ToList();
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError(ex.Message);
             }
 
             return vivoRelease;
         }
+        #endregion
 
-        internal List<VivoCenarios> GetCenariosVivo_CodRelease(int codRelease)
-        {
-            List<VivoCenarios> vivoCenarios = new List<VivoCenarios>();
-
-            try
-            {
-                string ConnectionString = _configuracoes.GetConnectionString("Sanity");
-
-                using (var mysqlCon = new MySqlConnection(ConnectionString))
-                {
-                    var result = mysqlCon.Query<VivoCenarios>("SELECT * FROM Sanity.Cenarios WHERE CodRelease = @CodRelease;",new { CodRelease = codRelease});
-
-                    foreach (VivoCenarios cenario in result)
-                    {
-                        vivoCenarios.Add(cenario);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            return vivoCenarios;
-        }
-
-        internal void AtualizaReleaseVivo(VivoRelease vivoRelease)
+        #region Atualiza status da release
+        internal void AtualizaReleaseVivo(string codRelease, int status)
         {
             try
             {
@@ -126,47 +75,151 @@ namespace Sysmap.Portal.Sanity.DAO
 
                 using (MySqlConnection mySqlCon = new MySqlConnection(ConnectionString))
                 {
-                    var param = new { Status = vivoRelease.Status, CodRelease = vivoRelease.CodRelease };
+                    var param = new { Status = status, CodRelease = codRelease };
                     mySqlCon.Execute("UPDATE `Sanity`.`Release` SET `Status` = @Status WHERE `CodRelease` = @CodRelease;", param);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError(ex.Message);
             }
         }
         #endregion
 
-        #region Cenarios
-        internal List<VivoCenarios> GetListCenariosVivo()
+        #region Deleta os dados da release
+        internal void DeletaReleaseVivo(string codRelease)
         {
-            List<VivoCenarios> vivoCenarios = new List<VivoCenarios>();
+            try
+            {
+                string ConnectionString = _configuracoes.GetConnectionString("Sanity");
+
+                using (MySqlConnection mySqlCon = new MySqlConnection(ConnectionString))
+                {
+                    mySqlCon.Execute("DELETE FROM Sanity.Release WHERE CodRelease = @CodRelease;", new { CodRelease = codRelease });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
 
             try
             {
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
-                using (var mysqlCon = new MySqlConnection(ConnectionString))
+                using (MySqlConnection mySqlCon = new MySqlConnection(ConnectionString))
                 {
-                    var result = mysqlCon.Query<VivoCenarios>("CALL `Sanity`.`procGetRelease`();");
+                    mySqlCon.Execute("DELETE FROM Sanity.TestesVivo WHERE CodRelease = @CodRelease;", new { CodRelease = codRelease });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+        }
+            #endregion
 
-                    foreach (VivoCenarios cenario in result)
+        #region Inserindo dados da release
+        internal bool InsertReleaseVivo(VivoRelease vivoRelease)
+        {
+            bool insertSucess = true;
+            try
+            {
+                string ConnectionString = _configuracoes.GetConnectionString("Sanity");
+
+                using (MySqlConnection mySqlCon = new MySqlConnection(ConnectionString))
+                {
+                    var param = new { CodRelease = vivoRelease.CodRelease, DataRelease = vivoRelease.DataRelease };
+                    mySqlCon.Execute("INSERT INTO `Sanity`.`Release` (`CodRelease`,`DataRelease`) VALUES (@CodRelease,@DataRelease);", param);
+                }
+            }
+            catch (Exception ex)
+            {
+                insertSucess = false;
+                _logger.LogError(ex.Message);
+            }
+
+            return insertSucess;
+        }
+        #endregion
+
+        #region Insert Lista de Testes
+        internal void InsertTestesVivo(List<TestesVivo> listTeste)
+        {
+            foreach (var teste in listTeste)
+            {
+                try
+                {
+                    string insertQuery = @"INSERT INTO Sanity.TestesVivo
+                                            (`IdRelease`,
+                                            `CodRelease`,
+                                            `Cenario`,
+                                            `Excluido`,
+                                            `Prioridade`,
+                                            `Demanda`,
+                                            `Analista`,
+                                            `Login`,
+                                            `Senha`,
+                                            `Status`,
+                                            `Sistema`,
+                                            `Plataforma`,
+                                            `Funcionalidade`,
+                                            `Size`,
+                                            `TipoTeste`,
+                                            `Descricao`,
+                                            `ResultEsperado`,
+                                            `TipoMassa`,
+                                            `Massa`,
+                                            `Documento`,
+                                            `ICCID`,
+                                            `LinhaGerada`,
+                                            `SolicGerada`,
+                                            `Observacao`)
+                                        VALUES
+                                            (@IdRelease,
+                                            @CodRelease,
+                                            @Cenario,
+                                            @Excluido,
+                                            @Prioridade,
+                                            @Demanda,
+                                            @Analista,
+                                            @Login,
+                                            @Senha,
+                                            @Status,
+                                            @Sistema,
+                                            @Plataforma,
+                                            @Funcionalidade,
+                                            @Size,
+                                            @TipoTeste,
+                                            @Descricao,
+                                            @ResultEsperado,
+                                            @TipoMassa,
+                                            @Massa,
+                                            @Documento,
+                                            @ICCID,
+                                            @LinhaGerada,
+                                            @SolicGerada,
+                                            @Observacao);";
+
+                    string ConnectionString = _configuracoes.GetConnectionString("Sanity");
+                    using (MySqlConnection mySqlCon = new MySqlConnection(ConnectionString))
                     {
-                        vivoCenarios.Add(cenario);
+                        mySqlCon.Execute(insertQuery, teste);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex.Message);
+                }
             }
 
-            return vivoCenarios;
         }
+        #endregion
 
-        internal VivoCenarios GetCenarioVivo(int nCenario)
+        #region Lista de testes de uma Release
+        internal List<TestesVivo> ListaTestesVivo(int idRelease)
         {
-            VivoCenarios vivoCenario = new VivoCenarios();
+            List<TestesVivo> vivoTestes = new List<TestesVivo>();
 
             try
             {
@@ -174,78 +227,77 @@ namespace Sysmap.Portal.Sanity.DAO
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                   vivoCenario = mysqlCon.Query<VivoCenarios>("CALL `Sanity`.`procGetCenario`(@Cenario);",new {Cenario = nCenario}).SingleOrDefault();
-
+                    vivoTestes = mysqlCon.Query<TestesVivo>("SELECT * FROM Sanity.TestesVivo Where IdRelease = @IdRelease",new { IdRelease = idRelease}).ToList();
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError(ex.Message);
             }
 
-            return vivoCenario;
+            return vivoTestes;
         }
+        #endregion
 
-        internal void CriaCenarioVivo(VivoCenarios vivoCenarios)
+        #region Pegando dados do teste por id
+        internal TestesVivo GetTesteVivo(int idTeste)
         {
+            TestesVivo testeVivo = new TestesVivo();
+
             try
             {
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
 
                 using (var mysqlCon = new MySqlConnection(ConnectionString))
                 {
-                    mysqlCon.Execute("INSERT INTO `Sanity`.`Cenarios` (`CodRelease`,`Excluido`,`Cenario`,`Prioridade`,`Demanda`,`Tipo`,`Analista`,`Login`,`Senha`,`Status`,`Executado`,`Sistema`,`Plataforma`,`Funcionalidade`,`Size`,`TipoTeste`,`Descricao`,`ResultEsperado`,`TipoMassa`,`Massa`,`Documento`,`ICCID`,`SolicGerada`,`LinhaGerada`,`Observacao`) VALUES (@CodRelease,@Excluido,@Cenario, @Prioridade, @Demanda, @Tipo, @Analista, @Login, @Senha, @Status, @Executado, @Sistema, @Plataforma, @Funcionalidade, @Size, @TipoTeste, @Descricao, @ResultEsperado, @TipoMassa, @Massa, @Documento, @IccID, @SolicGerada, @LinhaGerada, @Observacao);", vivoCenarios);
+                    testeVivo = mysqlCon.Query<TestesVivo>("SELECT * FROM Sanity.TestesVivo Where IdTeste = @IdTeste", new { IdTeste = idTeste }).First();
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError(ex.Message);
             }
-        }
 
-        internal void AtualizaCenarioVivo(VivoCenarios vivoCenario)
+            return testeVivo;
+        }
+        #endregion
+
+        #region Atualiza os dados do teste
+        internal void UpdateTesteVivo(TestesVivo teste)
         {
             try
             {
-                var query = @"UPDATE Sanity.Cenarios 
-                                SET Cenario = @Cenario, 
-	                                Prioridade = @Prioridade, 
-	                                Demanda = @Demanda, 
-	                                Tipo = @Tipo, 
-	                                Analista = @Analista, 
-	                                Login = @Login, 
-	                                Senha = @Senha, 
-	                                Status = @Status, 
-	                                Executado = @Executado, 
-	                                Sistema = @Sistema, 
-	                                Plataforma = @Plataforma, 
-	                                Funcionalidade = @Funcionalidade, 
-	                                Size = @Size, 
-	                                TipoTeste = @TipoTeste, 
-	                                Descricao = @Descricao, 
-	                                ResultEsperado = @ResultEsperado, 
-	                                TipoMassa = @TipoMassa, 
-	                                Massa = @Massa, 
-	                                Documento = @Documento, 
-	                                ICCID = @IccID, 
-	                                SolicGerada = @SolicGerada, 
-	                                LinhaGerada = @LinhaGerada, 
-	                                Observacao = @Observacao 
-                            WHERE Cenario = @Cenario
-                                  AND Excluido = 0
-                                  AND CodRelease = @CodRelease";
+                string updateQuery = @"UPDATE Sanity.TestesVivo
+                                       SET
+	                                        Analista = @Analista,
+	                                        Login = @Login,
+	                                        Senha = @Senha,
+	                                        Demanda = @Demanda,
+	                                        Sistema = @Sistema,
+	                                        Plataforma = @Plataforma,
+	                                        TipoTeste = @TipoTeste,
+	                                        Funcionalidade = @Funcionalidade,
+	                                        Descricao = @Descricao,
+	                                        ResultEsperado = @ResultEsperado,
+	                                        TipoMassa = @TipoMassa,
+	                                        Massa = @Massa,
+	                                        Documento = @Documento,
+	                                        ICCID = @ICCID,
+	                                        LinhaGerada = @LinhaGerada,
+	                                        SolicGerada = @SolicGerada,
+	                                        Status = @Status,
+	                                        Observacao = @Observacao
+                                       WHERE IdTeste = @IdTeste;";
 
                 string ConnectionString = _configuracoes.GetConnectionString("Sanity");
-
-                using (var mysqlCon = new MySqlConnection(ConnectionString))
+                using (MySqlConnection mySqlCon = new MySqlConnection(ConnectionString))
                 {
-                    mysqlCon.Execute(query, vivoCenario);
+                    mySqlCon.Execute(updateQuery, teste);
                 }
-
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError(ex.Message);
             }
         }
         #endregion

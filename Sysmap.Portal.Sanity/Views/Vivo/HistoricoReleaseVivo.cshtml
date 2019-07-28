@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.VivoCenarios>
+﻿@model IEnumerable<Sysmap.Portal.Sanity.Models.VivoRelease>
 
 @{
-    ViewData["Title"] = "HistoricoReleaseVivo";
+    ViewData["Title"] = "Historico de Releases Vivo";
 }
 
 @section head{
@@ -13,72 +13,37 @@
     <!-- third party css end -->
 }
 
-<h2 style="text-align:center">Historico de Releases da Vivo</h2>
-
 <div class="row">
     <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="header-title">Codigo da Release</h4>
-                <p class="text-muted">
-                    Selecione o codigo da release que deseja pesquisar.
-                </p>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <form asp-action="HistoricoReleaseVivo">
-
-                            <div class="form-group mb-3">
-                                <select class="form-control" id="codRelease" name="codRelease">
-                                    <option value="">Selecione...</option>
-                                    @foreach (var item in ViewBag.CodCenarios)
-                                    {
-                                        <option value="@item">@item</option>
-                                    }
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                @*<input type="submit" value="Pesquisar" class="btn btn-outline-info" />*@
-                                <button type="submit" class="btn btn-outline-info"><i class="fas fa-search"></i> Pesquisar</button>
-                            </div>
-                        </form>
-                    </div> <!-- end col -->
-                </div>
-                <!-- end row-->
-            </div> <!-- end card-body -->
-        </div> <!-- end card -->
-    </div><!-- end col -->
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="@Url.Action("VivoHome","Vivo")">Vivo Home</a></li>
+                    <li class="breadcrumb-item active">Histórico de Releases</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Vivo Sanity</h4>
+        </div>
+    </div>
 </div>
 
-@if (ViewBag.SearchRelease)
-{
-
-    <h2>Release nº @ViewBag.Codigo</h2>
-
-    <p>
-        <a href="@Url.Action("ExportRelease","Vivo",new { release =  @ViewBag.Codigo})" class="btn btn-outline-info"><i class="fas fa-file-excel"></i> Exportar</a>
-    </p>
-
-    <div class="row">
+<div class="card col-12">
+    <div class="card-header">
+        <h4>Histórico de releases Vivo</h4>
+    </div>
+    <div class="card-body">
         <table id="basic-datatable" class="table dt-responsive nowrap" width="100%">
             <thead class="thead-dark">
                 <tr>
+                    <th>Ações: </th>
                     <th>
-                        Cenario
+                        CRQ:
                     </th>
                     <th>
-                        Demanda
+                        Status:
                     </th>
                     <th>
-                        Analista
-                    </th>
-                    <th>
-                        Status
-                    </th>
-                    <th>
-                        Sistema
-                    </th>
-                    <th>
-                        Plataforma
+                        Data da Release
                     </th>
                 </tr>
             </thead>
@@ -87,48 +52,37 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Cenario)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Demanda)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Analista)
-                        </td>
-                        <td>
-                            @if (item.Executado == 0)
-                            {
-                                <text>Não Executado</text>
-                            }
-                            else if (item.Executado == 1)
-                            {
-                                <text>Em Execução</text>
-                            }
-                            else if (item.Executado == 2)
-                            {
-                                <text>Executado com Erro</text>
-                            }
-                            else
-                            {
-                                <text>Executado com Sucesso</text>
+                            <a href="javascript:reativaRelease('@item.CodRelease')" class="text-info"><i class="fas fa-lock-open"></i> Reativar</a> |
+                            <a href="@Url.Action("ExportRelease","Vivo", new { idRelease = item.IdRelease, codRelease = item.CodRelease})" class="text-success"><i class="fas fa-file-excel"></i> Exportar</a> |
+                            <a href="http://zeta.sysmap.com.br:3000/d/PuMueL9ik/release-vivo?orgId=1&refresh=5s&var-release=@item.CodRelease" class="text-secondary" target="_blank"><i class="fas fa-chart-pie"></i> Grafana</a> | 
+                            @if (User.IsInRole("All-Admin") || User.IsInRole("Vivo-Admin")) {
+                            <a href="javascript:deletaRelease('@item.CodRelease')" class="text-danger"><i class="fas fa-trash"></i> Deletar</a>
                             }
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Sistema)
+                            @Html.DisplayFor(modelItem => item.CodRelease)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Plataforma)
+                            @switch (item.Status)
+                            {
+                                case 0:
+                                    <text>Não Executado</text>
+                                    break;
+                                case 1:
+                                    <text> Executado </text>
+                                    break;
+                            }
+                        </td>
+                        <td>
+                            @item.DataRelease.ToString("yyyy-MM-dd")
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-}
-
-<div>
-    <a asp-action="VivoHome"><i class="fas fa-angle-double-left"></i> Voltar para Home</a>
 </div>
+
 
 @section scripts{
 
@@ -137,15 +91,28 @@
     <script src="~/assets/js/vendor/dataTables.bootstrap4.js"></script>
     <script src="~/assets/js/vendor/dataTables.responsive.min.js"></script>
     <script src="~/assets/js/vendor/responsive.bootstrap4.min.js"></script>
-    <script src="~/assets/js/vendor/dataTables.buttons.min.js"></script>
-    <script src="~/assets/js/vendor/buttons.bootstrap4.min.js"></script>
-    <script src="~/assets/js/vendor/buttons.html5.min.js"></script>
-    <script src="~/assets/js/vendor/buttons.flash.min.js"></script>
-    <script src="~/assets/js/vendor/buttons.print.min.js"></script>
-    <script src="~/assets/js/vendor/dataTables.keyTable.min.js"></script>
-    <script src="~/assets/js/vendor/dataTables.select.min.js"></script>
     <!-- third party js ends -->
-    <!-- demo app -->
-    <script src="~/assets/js/pages/demo.datatable-init.js"></script>
-    <!-- end demo js-->
+
+    <script type="text/Javascript">
+        $('#basic-datatable').DataTable({
+            stateSave: true
+        });
+
+        function reativaRelease(codRelease)
+        { 
+            $.post("/Vivo/AtualizaReleaseVivo", { codRelease: codRelease,status: 0})
+            .done(function (data) {
+                location.reload();
+            });
+        };
+
+        function deletaRelease(codRelease)
+        { 
+            $.post("/Vivo/DeletaReleaseVivo", { codRelease: codRelease})
+            .done(function (data) {
+                location.reload();
+            });
+        }
+    </script>
+
 }

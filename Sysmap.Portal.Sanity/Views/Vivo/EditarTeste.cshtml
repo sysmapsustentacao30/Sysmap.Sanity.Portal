@@ -1,0 +1,158 @@
+﻿@model Sysmap.Portal.Sanity.Models.TestesVivo
+
+@{
+    ViewData["Title"] = "Editar Teste";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="@Url.Action("ListaTestes","Vivo",new {idRelease = Model.IdRelease })">Lista de testes</a></li>
+                    <li class="breadcrumb-item active"> Editar Teste</li>
+                </ol>
+            </div>
+            <h4 class="page-title">@Model.CodRelease</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header"><h4>Teste Nº: @Model.Cenario</h4></div>
+            <div class="card-body">
+                <form method="post" asp-action="EditarTeste" asp-controller="Vivo">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Analista: </label>
+                            <input class="form-control" asp-for="Analista">
+                            <span asp-validation-for="Analista" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Login: </label>
+                            <input asp-for="Login" class="form-control" />
+                            <span asp-validation-for="Login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Senha: </label>
+                            <input asp-for="Senha" class="form-control" />
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Demanda: </label>
+                            <input asp-for="Demanda" class="form-control" />
+                            <span asp-validation-for="Demanda" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Sistema: </label>
+                            <input class="form-control" asp-for="Sistema">
+                            <span asp-validation-for="Sistema" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Plataforma: </label>
+                            <input asp-for="Plataforma" class="form-control" />
+                            <span asp-validation-for="Plataforma" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Tipo do Teste: </label>
+                            <input asp-for="TipoTeste" class="form-control" />
+                            <span asp-validation-for="TipoTeste" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Funcionalidade: </label>
+                            <input asp-for="Funcionalidade" class="form-control" />
+                            <span asp-validation-for="Funcionalidade" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label class="col-form-label">Descrição: </label>
+                            <textarea asp-for="Descricao" rows="3" class="form-control"></textarea>
+                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label class="col-form-label">Resultado esperado: </label>
+                            <textarea asp-for="ResultEsperado" rows="3" class="form-control"></textarea>
+                            <span asp-validation-for="ResultEsperado" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label class="col-form-label">Tipo de massa: </label>
+                            <input class="form-control" asp-for="TipoMassa">
+                            <span asp-validation-for="TipoMassa" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="col-form-label">Massa: </label>
+                            <input asp-for="Massa" class="form-control" />
+                            <span asp-validation-for="Massa" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="col-form-label">Documento: </label>
+                            <input asp-for="Documento" class="form-control" />
+                            <span asp-validation-for="Documento" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">ICCID: </label>
+                            <input class="form-control" asp-for="ICCID">
+                            <span asp-validation-for="ICCID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Linha gerada: </label>
+                            <input asp-for="LinhaGerada" class="form-control" />
+                            <span asp-validation-for="LinhaGerada" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Solicitação gerada: </label>
+                            <input asp-for="SolicGerada" class="form-control" />
+                            <span asp-validation-for="SolicGerada" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="col-form-label">Status da execução: </label>
+                            <select asp-for="Status" class="form-control" id="execucao_status">
+                                <option value="0">0- Não Executado.</option>
+                                <option value="1">1- Em execução.</option>
+                                <option value="2">2- Bloqueado.</option>
+                                <option value="3">3- Teste Falhou.</option>
+                                <option value="5">4- Não se aplica.</option>
+                                <option value="4">5- Teste com sucesso.</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label class="col-form-label">Observação: </label>
+                            <textarea asp-for="Observacao" rows="3" class="form-control"></textarea>
+                            <span asp-validation-for="Observacao" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <input asp-for="IdTeste" hidden />
+                        <input asp-for="IdRelease" hidden />
+                        <button type="submit" class="btn btn-outline-success btn-rounded"><i class="fas fa-save"></i> Salvar</button>
+                        <a href="@Url.Action("ListaTestes","Vivo",new {idRelease = Model.IdRelease })" class="btn btn-outline-secondary btn-rounded"><i class="fas fa-backward"></i> Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
